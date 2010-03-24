@@ -1,0 +1,27 @@
+% Advertise for OASIS project
+% author Sylvain Le Gall
+
+Websites related to OASIS or that use it are encouraged to add an OASIS logo in
+their page to indicate their support to the project. The logo should be linked 
+to the OASIS website: 
+[http://oasis.forge.ocamlcore.org][http://oasis.forge.ocamlcore.org].
+
+
+Choose the mose appropriate logo for your website and copy the associated HTML code.
+
+![OASIS badge](oasis-badge.png)
+
+    <a href="http://oasis.forge.ocamlcore.org/">
+      <img
+      src="http://oasis.forge.ocamlcore.org/oasis-badge.png"
+      alt="OASIS" style="border: none;" />
+    </a>
+
+![Powered by OASIS](powered-by-oasis.png)
+
+    <a href="http://oasis.forge.ocamlcore.org/">
+      <img
+      src="http://oasis.forge.ocamlcore.org/powered-by-oasis.png"
+      alt="OASIS" style="border: none;" />
+    </a>
+

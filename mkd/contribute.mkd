@@ -1,0 +1,93 @@
+% Contribute to OASIS project
+
+## Help spread the word
+
+The best way to help the OASIS project is to use it, of course. From the
+beginning, OASIS has been designed using real-life projects as examples to
+define features. The first public version was the one matching the most
+common requirements for the author's projects. It is now time to expand this
+requirements to your projects as well.
+
+* [Try OASIS](quickstart.html) on your libraries/programs
+* If it doesn't work out of the box, 
+  [fix the generated files](MANUAL.html#customization-of-generated-files)
+* Once it works for your project, send 
+  [us your fix](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=293)
+  for inclusion
+* You can also 
+  [advertise](advertise.html)
+  for the OASIS project on your project webpages.
+* Ask to be added to the [list of projects using OASIS](alreadyusing.html).
+  Fill a bug with website as component, "project using oasis" as summary" and
+  tell us a few words about your project in the description, 
+  [start here](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291)
+
+We really appreciate to get your feedback, through 
+[bug reports](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291)
+or 
+[features requests](https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=add).
+
+## Write plugins and tools
+
+If your requirements cannot be fulfilled by the actual code, you can extend
+OASIS features through plugins. For now, plugins development need to be done
+with the OASIS source tree. 
+
+* Get a copy of the OASIS source tree (see next section)
+* Add a directory into `src/plugins/`
+* Add an "open" statement in `src/OASISBuiltinPlugins.ml`
+* Create a test into `test/data` and call it from within a test case (see
+  `test/TestFull.ml`)
+* Create your plugin
+
+Writing tools is not yet very easy. You need to depend only on the content of
+`src/oasis`, which should become a library soon. Theses files contain
+everything needed to parse and extract information from an `_oasis` file.
+
+## Get involved into development
+
+The main page for development is the [project on forge.ocamlcore.org][]. 
+You can browse the source code of the [project][] and of its [website][].
+
+  [project on forge.ocamlcore.org]: http://forge.ocamlcore.org/projects/oasis
+  [project]: http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=summary
+  [website]: http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=website;a=summary
+
+To get a copy of the source tree, you must use darcs anonymously: 
+
+    $> darcs get http://darcs.ocamlcore.org/repos/oasis
+
+or if you have write access to the project: 
+
+    $> darcs get scm.ocamlcore.org:/darcsroot/oasis/oasis oasis
+
+Once you have the source code, you can pick a [bug][] or a [feature request][] to fix. 
+
+  [bug]: https://forge.ocamlcore.org/tracker/?func=browse&group_id=54&atid=291
+  [feature request]: https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=browse
+
+You can send back patches using darcs:
+
+    $> darcs send 
+
+or commit directly your changes, if you have write access to the project:
+
+    $> darcs push 
+
+or with a [bug report](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291).
+
+Further documentation about darcs on [darcs.net](http://darcs.net/manual/)
+
+You can also subscribe to the 
+[oasis-devel mailing list](https://lists.forge.ocamlcore.org/cgi-bin/listinfo/oasis-devel). 
+
+## Translation
+
+OASIS uses ocaml-gettext for internationalization support. If you want to
+translate it to another languages, just fetch the `.pot` 
+[files](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=tree;f=/po/oasis.pot) 
+and start translating.
+
+Once done, you can submit a bug report or send
+[us](mailto:oasis-devel@lists.forge.ocamlcore.org) an email so that we can
+include your work into the next version of OASIS. 

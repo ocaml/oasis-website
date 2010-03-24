@@ -1,0 +1,20 @@
+% OASIS Documentation
+% author Sylvain Le Gall
+
+This section provides information you need to get started. 
+
+Begin with the [OASIS Quickstart](quickstart.html) which show you how to set up
+OASIS for a single executable and library. You can then move on to the 
+[OASIS User manual](MANUAL.html) to go in depth.
+
+You can also browse the 
+[examples directory](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=tree;f=/examples) 
+which contains additional examples how to use OASIS in your project. There are also
+many [projects](alreadyusing.html) already using OASIS, you can take example on them.
+
+Extra documentation can be found in the forge.ocamlcore.org project
+documentation [section](https://forge.ocamlcore.org/docman/?group_id=54). In
+particular, some
+[slides](https://forge.ocamlcore.org/docman/view.php/54/94/SlidesCamlConsortium2009.pdf)
+about OASIS design which was presented at OCaml Consortium meeting on December
+4th 2009.

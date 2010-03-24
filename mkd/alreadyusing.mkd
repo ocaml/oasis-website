@@ -1,0 +1,6 @@
+% Projects using OASIS
+
+* [OCaml Fileutils](https://forge.ocamlcore.org/projects/ocaml-fileutils)
+* [OCaml Gettext](https://forge.ocamlcore.org/projects/ocaml-gettext)
+* [OCaml Data Notation](https://forge.ocamlcore.org/projects/odn)
+* [ocamlify](https://forge.ocamlcore.org/projects/ocamlify)
