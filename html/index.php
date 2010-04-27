@@ -27,7 +27,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
       create standard entry points in the source code build system and allows external tools to analyse
       projects easily.</p>
 
-      <p>It is inspired by <a href="http://www.haskell.org/cabal">Cabal</a> which is the same kind of tools for
+      <p>It is inspired by <a href="http://www.haskell.org/cabal">Cabal</a> which is the same kind of tool for
       <a href="http://www.haskell.org">Haskell</a>.</p>
 
       <p>OASIS was created with <a href="http://brion.inria.fr/gallium/index.php/Ocamlbuild">OCamlbuild</a> in mind.
