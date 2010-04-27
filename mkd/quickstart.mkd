@@ -11,7 +11,13 @@ way here but there are many more possible options that you can use. Read the
 
 Download an OASIS installer and execute. It will install OASIS in a directory.
 
-TODO
+Pick up the right installer on the [download page][]. It is recommended to use
+a binary installer, so that you don't have to compile OASIS by yourself. The
+installers use BitRock [InstallBuilder][] with an Open Source license, many thanks 
+to BitRock
+
+  [download page]: https://forge.ocamlcore.org/frs/?group_id=54
+  [InstallBuilder]: http://installbuilder.bitrock.com
 
 # The `_oasis` file
 
@@ -36,12 +42,42 @@ This first commmand create the only OCaml source file we need.
 
     $> OASIS -quickstart
 
-    TODO
+    Creating _oasis file
+
+    Value for field 'Name'? (type '?' for help) helloworld
+
+    Value for field 'Version'? (type '?' for help) 0.1
+
+    Value for field 'Synopsis'? (type '?' for help) Hello world with OCaml and OASIS
+
+    Value for field 'Authors'? (type '?' for help) Sylvain Le Gall
+
+    Value for field 'License'? (type '?' for help) LGPL
+
+    # Here we ask for help
+
+    Create a section? (default is 'n', type '?' for help) ?
+    n: stop
+    l: create a library
+    e: create an executable
+    f: create a flag
+    s: create a source repository
+    t: create a test
+
+    Create a section? (default is 'n', type '?' for help) e
+
+    Executable name? helloworld
+
+    Value for field 'Path'? (type '?' for help) .
+
+    Value for field 'MainIs'? (type '?' for help) main.ml
+
+    Create another section? (default is 'n', type '?' for help) n
 
 Let take a look at the result:
 
     $> cat _oasis 
-    OASISFormat: 1.0
+    OASISFormat: 0.1
     Name:        helloworld
     Version:     0.1
     Synopsis:    Hello world with OCaml and OASIS
