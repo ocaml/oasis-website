@@ -9,7 +9,7 @@ install systems in their projects. It should help to create standard entry
 points in the source code build system, allowing external tools to analyse
 projects easily.
 
-This tool is freely inspired by [Cabal][] which is the same kind of tools for
+This tool is freely inspired by [Cabal][] which is the same kind of tool for
 [Haskell][].
 
   [Cabal]: http://www.haskell.org/cabal
@@ -23,8 +23,7 @@ This file is used to generate a skeleton for build, configure and install
 systems. Generation can be customized through extra fields or directly inside
 generated files.
 
-The main entry point is a toplevel OCaml script `setup.ml` which can be used as
-a standard entry point for building project.  It is self contained.  Once
+The main entry point is an OCaml script `setup.ml`. It is self contained. Once
 generated there is no additional dependencies (just like an autoconf
 `configure` script).
 
@@ -145,11 +144,10 @@ Tests and flags can be combined using standard boolean operation:
 * `expr1 || expr2`: boolean or.
 * `true` and `false`.
 
-Toplevel
---------
+Package
+-------
 
-Toplevel fields are the defined outside sections. They apply to the whole
-project.
+Package fields are defined outside sections. They apply to the whole project.
 
 Fields:
 
@@ -163,13 +161,25 @@ Fields:
  * `LicenseFile`: File containing license.
  * `Authors`: Real people that had contributed to the package. (__mandatory__)
  * `Copyrights`: Copyright owners.
- * `Maintainers`: Current maintainers of the package
+ * `Maintainers`: Current maintainers of the package.
  * `License`: License type of the package. (__mandatory__)
  * `OCamlVersion`: Version constraint on OCaml.
  * `FindlibVersion`: Version constraint on Finblib.
  * `ConfType`: Configuration system.
+ * `PreConfCommand`: Command to run before configuration.
+ * `PostConfCommand`: Command to run after configuration.
  * `BuildType`: Build system.
+ * `PreBuildCommand`: Command to run before build.
+ * `PostBuildCommand`: Command to run after build.
  * `InstallType`: Install/uninstall system.
+ * `PreInstallCommand`: Command to run before install.
+ * `PostInstallCommand`: Command to run after install.
+ * `PreUninstallCommand`: Command to run before uninstall.
+ * `PostUninstallCommand`: Command to run after uninstall.
+ * `PreCleanCommand`: Command to run before clean.
+ * `PostCleanCommand`: Command to run after clean.
+ * `PreDistcleanCommand`: Command to run before distclean.
+ * `PostDistcleanCommand`: Command to run after distclean.
  * `Homepage`: URL of the package homepage.
  * `Categories`: URL(s) describing categories of the package.
  * `FilesAB`: Files to generate using environment variable substitution.
@@ -179,7 +189,7 @@ Fields:
  * `BuildTools`: Tools required to compile, including internal executables.
 
 `BuildDepends` and `BuildTools` are appended to all sections and not used
-directly at toplevel.
+directly in the package.
 
 Sections
 --------
@@ -243,6 +253,7 @@ Define an OCaml library. OCaml API is generated using `ocamldoc` applied to
 Fields:
 
  * `Modules`: List of modules to compile.
+ * `InternalModules`: List of modules to compile which are not exported.
  * `FindlibParent`: Library which includes the current library. The current
    library will be built as its parents and installed along it.
  * `FindlibName`: Name used by findlib.
@@ -261,14 +272,22 @@ Fields:
  * `Custom`: Create custom bytecode executable.
  * Include all common fields.
 
-### Documentation
+### Document
 
-Define a generated documentation.
+Define a generated document.
 
 Fields:
 
  * `BuildTools`: Tools required to compile, including internal executables.
  * `Type`: Plugin to use to build documentation.
+ * `PreCommand`: Command to run before building the doc.
+ * `PostCommand`: Command to run after building the doc.
+ * `Title`: Title of the document. (__mandatory__)
+ * `Authors`: Authors of the document.
+ * `Abstract`: Short paragraph giving an overview of the document.
+ * `Format`: Format for the document.
+ * `Index`: Index or top-level file for the document, only apply to HTML and
+   Info.
  * `InstallDir`: Default target directory to install data and documentation.
  * `Build`: Set if the section should be built.
  * `Install`: Set if the section should be distributed.
@@ -281,10 +300,12 @@ Define a test to run.
 
 Fields:
 
- * `BuildTools`: Tools required to compile, including internal executables.
  * `Type`: Plugin to use to run test.
+ * `TestTools`: Tools required to run the test, including internal executables.
  * `Command`: Command to run for the test. (__mandatory__)
  * `WorkingDirectory`: Directory to run the test.
+ * `PreCommand`: Command to run before the test
+ * `PostCommand`: Command to run after the test
  * `Run`: Enable this test.
 
 ### SourceRepository 
@@ -310,6 +331,40 @@ Fields:
 
 Supported VCS types are: darcs, git, svn, cvs, hg, bzr, arch, monotone.
 
+License
+-------
+
+We have adopted a [DEP-5][] license style description. 
+
+ [DEP-5]: http://dep.debian.net/deps/dep5/
+
+The reason of this format is to have machine-readable license description.
+Using this former work, we hope to be compatible with future standards of
+Debian.
+
+We have limited the number of license to:
+
+ * `PROP`: Proprietary license, all rights reserved
+ * `BSD3`: Berkeley software distribution license (3 clauses)
+ * `BSD4`: Berkeley software distribution license (3 clauses)
+ * `GPL`: GNU General Public License. (version 1.0, 2.0, 3.0)
+ * `LGPL`: GNU Lesser General Public License, (GNU Library General Public
+   License for versions lower than 2.1). (version 2.0, 2.1, 3.0)
+ * `QPL`: Q Public License. (version 1.0)
+ * or an URL describing the license
+
+And license exception to:
+
+ * `OCaml linking` compatible with LGPL
+ * or an URL describing the license exception
+
+You can specify a license version using a dash and only digits or dashes at the
+end of the license short name. 
+
+Examples :
+ * `LGPL-2.1 with OCaml linking exception`: LGPL v2.1 with OCaml linking exception
+ * `GPL-2+`: GPL v2 or later
+
 Data files
 ----------
 
@@ -332,7 +387,87 @@ from `_oasis` file, `ocamlc -config` output and configure tests. So environment
 variables depends of each project. You can have a precise idea of what variables
 is available looking at the file `setup.data`. 
 
-TODO: standard variables.
+Here is a list of standard variables:
+
+ * `ocamlfind`
+ * `ocamlc`
+ * `ocamlopt`
+ * `ocamlbuild`
+ * `pkg_name`: Package name
+ * `pkg_version`: Package version
+ * `os_type`
+ * `system`
+ * `architecture`
+ * `ccomp_type`
+ * `ocaml_version`
+ * `standard_library_default`
+ * `standard_library`
+ * `standard_runtime`
+ * `bytecomp_c_compiler`
+ * `native_c_compiler`
+ * `model`
+ * `ext_obj`
+ * `ext_asm`
+ * `ext_lib`
+ * `ext_dll`
+ * `default_executable_name`
+ * `systhread_supported`
+ * `prefix`: Install architecture-independent files dir
+ * `exec_prefix`: Install architecture-dependent files in dir
+ * `bindir`: User executables
+ * `sbindir`: System admin executables
+ * `libexecdir`: Program executables
+ * `sysconfdir`: Read-only single-machine data
+ * `sharedstatedir`: Modifiable architecture-independent data
+ * `localstatedir`: Modifiable single-machine data
+ * `libdir`: Object code libraries
+ * `datarootdir`: Read-only arch-independent data root
+ * `datadir`: Read-only architecture-independent data
+ * `infodir`: Info documentation
+ * `localedir`: Locale-dependent data
+ * `mandir`: Man documentation
+ * `docdir`: Documentation root
+ * `htmldir`: HTML documentation
+ * `dvidir`: DVI documentation
+ * `pdfdir`: PDF documentation
+ * `psdir`: PS documentation
+ * `destdir`: Prepend a path when installing package
+ * `findlib_version`
+ * `is_native`
+ * `suffix_program`
+ * `rm`: Remove a file.
+ * `rmdir`: Remove a directory.
+ * `ocaml_with_debug`: Compile with ocaml debug flag on.
+ * `ocaml_with_profile`: Compile with ocaml profile flag on.
+ * `ocamlbuildflags`: OCamlbuild additional flags
+
+Other variables are defined depending on your `_oasis` file:
+ * Variables from BuildDepends:  `pkg_`  and the name of the findlib package.
+   It points to the directory containing the package.
+   If there is a version constraint, it is also translated to a variable. It
+   contains a boolean value to know if the version is ok or not.
+   Internal findlib packages don't create variables.
+   Example: `BuildDepends: oUnit (>= 1.0.3)` becomes two variables 
+   `pkg_oUnit = /usr/lib/ocaml/ounit` and `pkg_oUnit_ge_1_0_3 = true`.
+ * Variables from external BuildTools: the variable is the name given
+   in the field and its value the filename of the executable. 
+   Example: `BuildTools: make` becomes `make = /usr/bin/make`.
+ * Dynamic variables from internal BuildTools: the variable is the name
+   of the Executable section and its value the filename of the executable.
+   Example: `Executable ocamlmod` becomes `ocamlmod =
+   _build/src/tools/ocamlmod`. These variables are set through `setup.log`
+   rather than `setup.data`. They are set only when the corresponding files
+   is built.
+
+
+It is also possible to apply transformation through functions. This is useful
+when you need to use properties that need to be determined at runtime:
+
+ * `utoh`: convert an Unix filename into a host filename (e.g. UNIX -> Win32
+    conversion).
+ * `ocaml_escaped`: call to `String.escaped`. 
+
+For example `$(utoh src/test.ml)` will be replaced by `src\test.ml` on Windows.
 
 Customization of generated files
 --------------------------------
@@ -355,6 +490,16 @@ Moreover it can be customized through hook in the code directly.
 
 TODO: explains hook.
 
+Using OASIS during software development
+---------------------------------------
+
+Since `_oasis` becomes a central place of information about the building
+process, it can be quite cumbersome to run again and again `OASIS`. You can 
+avoid it using the `-dev` flags when calling `OASIS` for the first time. This
+way it will rebuilt very dependents build files each time you call `ocaml
+setup.ml`. A `setup.ml` built this way, should not be distributed. This intended
+for development purpose only.
+
 Plugins 
 -------
 
@@ -373,7 +518,7 @@ There are 6 categories of plugin:
 ### Plugin Custom
 
 __Version__: 0.1.0<br/>
-__Type__: conf, build, doc, test, install
+__Types__: conf, build, doc, test, install
 
 This plugin allow to define a set of three commands to perform each steps,
 associated with the following fields:
@@ -402,7 +547,7 @@ Package fields:
  * `XCustomUninstallClean`: Run command to clean uninstall step.
  * `XCustomUninstallDistclean`: Run command to distclean uninstall step.
 
-Documentation fields:
+Document fields:
 
  * `XCustom`: Run command to build documentation. (__mandatory__)
  * `XCustomClean`: Run command to clean build documentation step.
@@ -413,17 +558,17 @@ Test fields:
  * `XCustomClean`: Run command to clean test step.
  * `XCustomDistclean`: Run command to distclean test step.
 
-### Plugin None 
+### Plugin None
 
 __Version__: 0.1.0<br/>
-__Type__: conf, build, doc, test, install
+__Types__: conf, build, doc, test, install
 
 This plugin basically does nothing. It helps to replace mandatory step by nothing.
 
-### Plugin OCamlbuild 
+### Plugin OCamlbuild
 
-__Version__: 0.1.0<br/> 
-__Type__: build, doc
+__Version__: 0.1.0<br/>
+__Types__: build, doc
 
 This plugin uses OCamlbuild to generate a build system. It is the default value
 for `BuildType`.
@@ -431,12 +576,8 @@ for `BuildType`.
 Library fields:
 
  * `XOCamlbuildAutoDoc`: Build documentation associated to the library.
- * `XOCamlbuildExtern`: By default we consider library to be external. This
-   allow to have very limited export. If set to false, the `_tags` file will
-   include all directories of the libraries. This can be a problem if there are
-   conflicting modules.
 
-Documentation fields:
+Document fields:
 
  * `XOCamlbuildPath`: Top level directory for building ocamldoc documentation
    (__mandatory__)
@@ -445,8 +586,8 @@ Documentation fields:
 
 ### Plugin Internal
 
-__Version__: 0.1.0<br/> 
-__Type__: conf, install
+__Version__: 0.1.0<br/>
+__Types__: conf, install
 
 This plugin is the default value for the `ConfType` and `InstallType`. It
 represents a default behavior for configuring and installing OCaml project.
@@ -465,7 +606,7 @@ using standard environment variable (`$bindir`, `$datadir` et al).
 ### Plugin META
 
 __Version__: 0.1.0<br/>
-__Type__: extra
+__Types__: extra
 
 This plugin is an helper to generate a `META` files that can be distributed and
 install with a library. It uses library name, version, synopsis and dependencies
@@ -480,8 +621,8 @@ Library fields:
 
 ### Plugin StdFiles
 
-__Version__: 0.1.0<br/> 
-__Type__: extra
+__Version__: 0.1.0<br/>
+__Types__: extra
 
 This plugin generates standard files like `README.txt`, `INSTALL.txt` and
 `AUTHORS.txt`. These files will summarize data contains in `_oasis`. 
@@ -501,7 +642,7 @@ Package fields:
 ### Plugin DevFiles
 
 __Version__: 0.1.0<br/>
-__Type__: extra
+__Types__: extra
 
 It helps to generate a toplevel `Makefile` and `configure` files which only
 invoke `setup.ml`. It aims to provide good old entry points.
@@ -597,22 +738,21 @@ with caution, it is reserved for internal use.
 
 `-debug`: Output debug message
 
-`--gettext-failsafe {ignore|inform-stderr|raise-exception}`: Choisir la façon
-de traiter les erreurs dans ocaml-gettext. Défaut : ignore.
+`--gettext-failsafe {ignore|inform-stderr|raise-exception}`: Choose how to
+handle failure in ocaml-gettext. Default: ignore.
 
-`--gettext-disable`: Désactive la traduction faite par ocaml-gettext. Défaut
-: active.
+`--gettext-disable`: Disable the translation perform by ocaml-gettext. Default:
+enable.
 
-`--gettext-domain-dir textdomain`: dir Défini un répertoire de recherche des
-fichiers ocaml-gettext pour le domaine de texte spécifié. Défaut : [  ].
+`--gettext-domain-dir textdomain`: dir Set a dir to search ocaml-gettext files
+for the specified domain. Default: [  ].
 
-`--gettext-dir dir`: Ajoute une répertoire de recherche pour les fichiers
-ocaml-gettext. Défaut : [ "/usr/share/locale"; "/usr/local/share/locale" ].
+`--gettext-dir dir`: Add a search dir for ocaml-gettext files. Default: [
+"/usr/share/locale"; "/usr/local/share/locale" ].
 
-`--gettext-language language`: Défini le langage par défaut pour
-ocaml-gettext. Défaut : (none).
+`--gettext-language language`: Set the default language for ocaml-gettext.
+Default: (none).
 
-`--gettext-codeset codeset`: Défini le jeux de caractères à utiliser pour
-écrire les traductions. Défaut : .
+`--gettext-codeset codeset`: Set the default codeset for outputting string with
+ocaml-gettext. Default: .
 
- vim:tw=80:

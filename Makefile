@@ -35,3 +35,6 @@ html/logo.png: INKSCAPEFLAGS=-w 160 -h 150
 
 sync: all
 	rsync -av -O --no-perms --delete html/ ssh.ocamlcore.org:/home/groups/oasis/htdocs/
+
+mkd/MANUAL.mkd: ../oasis/doc/MANUAL.mkd
+	cp $^ $@
