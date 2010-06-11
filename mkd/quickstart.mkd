@@ -1,5 +1,5 @@
-% OASIS Quickstart
-% Author Sylvain Le Gall
+%OASIS Quickstart
+%author Sylvain Le Gall
 
 This document shows you how to quickly start an OASIS project. We choose the most easy 
 way here but there are many more possible options that you can use. Read the

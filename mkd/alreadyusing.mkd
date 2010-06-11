@@ -1,6 +1,14 @@
-% Projects using OASIS
+%Projects using OASIS
 
 * [OCaml Fileutils](https://forge.ocamlcore.org/projects/ocaml-fileutils)
 * [OCaml Gettext](https://forge.ocamlcore.org/projects/ocaml-gettext)
-* [OCaml Data Notation](https://forge.ocamlcore.org/projects/odn)
-* [ocamlify](https://forge.ocamlcore.org/projects/ocamlify)
+* [OCaml Everio(TM) .moi file convert](https://forge.ocamlcore.org/projects/ocaml-moifile/): 
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-moifile;a=headblob;f=/_oasis)
+* OASIS itself:
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/_oasis)
+
+	
+To be added to this list, fill a bug with website as component, "project using
+oasis" as summary and tell us a few words about your project in the
+description, 
+[start here](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291)

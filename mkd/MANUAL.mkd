@@ -92,6 +92,7 @@ Section name can be : `Library`, `Executable`, `Document`, `Test` and
 begin.
 
 Example:
+    
     # Toplevel fields
     OASISFormat:  1.0
     
@@ -109,12 +110,14 @@ specified this way, only fields that have no good default values and that must
 be evaluated at runtime is defined.
 
 For example: 
+
  * Toplevel fields `Name` and `Version` cannot be conditional.
  * Library fields `Build` and `Install` can be conditional.
 
 A condition is defined using a `if ... else ...` construct.
 
 Example:
+    
     Library bar
       if os\_type(Win32) 
         Build: true
@@ -442,6 +445,7 @@ Here is a list of standard variables:
  * `ocamlbuildflags`: OCamlbuild additional flags
 
 Other variables are defined depending on your `_oasis` file:
+
  * Variables from BuildDepends:  `pkg_`  and the name of the findlib package.
    It points to the directory containing the package.
    If there is a version constraint, it is also translated to a variable. It

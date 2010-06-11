@@ -23,15 +23,12 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
       
       <h2>What is OASIS?</h2>
 
-      <p>OASIS can integrate configure, build and install systems in their projects. It helps to 
-      create standard entry points in the source code build system and allows external tools to analyse
-      projects easily.</p>
+			<p>OASIS is a tool to integrate a configure, build and install system in your OCaml 
+project. It helps to create standard entry points in your build system and 
+allows external tools to analyse your project easily.</p>
 
-      <p>It is inspired by <a href="http://www.haskell.org/cabal">Cabal</a> which is the same kind of tool for
-      <a href="http://www.haskell.org">Haskell</a>.</p>
-
-      <p>OASIS was created with <a href="http://brion.inria.fr/gallium/index.php/Ocamlbuild">OCamlbuild</a> in mind.
-      So there are probably some features/bugs that are the same.</p>
+			<p>OASIS first target is <a href="http://brion.inria.fr/gallium/index.php/Ocamlbuild">OCamlbuild</a>, 
+      but other build system support is planned.</p>
 
       <p>Features:</p>
 
@@ -48,6 +45,10 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
       <li><a href="http://omake.metaprl.org">OMake</a></li>
       <li>OCamlMakefile</li>
       </ul>
+
+			<p>OASIS takes most of his ideas from  <a 
+href="http://www.haskell.org/cabal">Cabal</a> which is the same kind of tool 
+for <a href="http://www.haskell.org">Haskell</a>.</p>
 
 <?php
   if($flux = simplexml_load_file('http://'.$domain.'/export/rss20_newreleases.php?group_id='.$group_id.'&limit=1'))

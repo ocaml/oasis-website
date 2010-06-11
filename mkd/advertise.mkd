@@ -1,5 +1,5 @@
-% Advertise for OASIS project
-% author Sylvain Le Gall
+%Advertise for OASIS project
+%author Sylvain Le Gall
 
 Websites related to OASIS or that use it are encouraged to add an OASIS logo in
 their page to indicate their support to the project. The logo should be linked 

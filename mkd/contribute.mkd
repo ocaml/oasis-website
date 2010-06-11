@@ -1,4 +1,4 @@
-% Contribute to OASIS project
+%Contribute to OASIS project
 
 ## Help spread the word
 
@@ -10,42 +10,24 @@ requirements to your projects as well.
 
 * [Try OASIS](quickstart.html) on your libraries/programs
 * If it doesn't work out of the box, 
-  [fix the generated files](MANUAL.html#customization-of-generated-files)
-* Once it works for your project, send 
+  [you can try to fix the generated files](MANUAL.html#customization-of-generated-files)
+* If you are able to solve the problme by yourself, send 
   [us your fix](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=293)
   for inclusion
-* You can also 
-  [advertise](advertise.html)
-  for the OASIS project on your project webpages.
-* Ask to be added to the [list of projects using OASIS](alreadyusing.html).
-  Fill a bug with website as component, "project using oasis" as summary" and
-  tell us a few words about your project in the description, 
-  [start here](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291)
+* If it doesn't work for you, you can ask for help:
+     - on the IRC channel #ocaml on freenode (nickname: gildor)
+     - on the caml-list mailing list with subject containing "OASIS help" (caml-list AT inria.fr)
+     - on the caml-beginner mailing list with subject containging "OASIS help" (ocaml\_beginners AT yahoogroups.com)
 
-We really appreciate to get your feedback, through 
+
+We really appreciate to get your feedback. Use 
 [bug reports](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291)
 or 
 [features requests](https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=add).
 
-## Write plugins and tools
-
-If your requirements cannot be fulfilled by the actual code, you can extend
-OASIS features through plugins. For now, plugins development need to be done
-with the OASIS source tree. 
-
-* Get a copy of the OASIS source tree (see next section)
-* Add a directory into `src/plugins/`
-* Add an "open" statement in `src/OASISBuiltinPlugins.ml`
-* Create a test into `test/data` and call it from within a test case (see
-  `test/TestFull.ml`)
-* Create your plugin
-
-Writing tools is not yet very easy. You need to depend only on the content of
-`src/oasis`, which should become a library soon. Theses files contain
-everything needed to parse and extract information from an `_oasis` file.
-You can also subscribe to the 
-[oasis-devel mailing list](https://lists.forge.ocamlcore.org/cgi-bin/listinfo/oasis-devel). 
-
+Once your project is OASIS enabled, you can [advertise](advertise.html)
+for the OASIS project on your project webpages. You can also ask to be added to
+the [list of projects using OASIS](alreadyusing.html).
 
 ## Get involved into development
 
@@ -100,3 +82,24 @@ and start translating.
 Once done, you can submit a bug report or send
 [us](mailto:oasis-devel@lists.forge.ocamlcore.org) an email so that we can
 include your work into the next version of OASIS. 
+
+## Write plugins and tools
+
+If your requirements cannot be fulfilled by the actual code, you can extend
+OASIS features through plugins. For now, plugins development need to be done
+with the OASIS source tree. 
+
+* Get a copy of the OASIS source tree (see next section)
+* Add a directory into `src/plugins/`
+* Add an "open" statement in `src/OASISBuiltinPlugins.ml`
+* Create a test into `test/data` and call it from within a test case (see
+  `test/TestFull.ml`)
+* Create your plugin
+
+Writing tools is not yet very easy. You need to depend only on the content of
+`src/oasis`, which should become a library soon. Theses files contain
+everything needed to parse and extract information from an `_oasis` file.
+You can also subscribe to the 
+[oasis-devel mailing list](https://lists.forge.ocamlcore.org/cgi-bin/listinfo/oasis-devel). 
+
+
