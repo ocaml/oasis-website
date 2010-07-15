@@ -23,7 +23,7 @@ requirements to your projects as well.
 We really appreciate to get your feedback. Use 
 [bug reports](https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291)
 or 
-[features requests](https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=add).
+[feature requests](https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=add).
 
 Once your project is OASIS enabled, you can [advertise](advertise.html)
 for the OASIS project on your project webpages. You can also ask to be added to
@@ -40,7 +40,7 @@ You can browse the source code of the [project][] and of its [website][].
 
 To get a copy of the source tree, you must use darcs anonymously: 
 
-    $> darcs get http://darcs.ocamlcore.org/repos/oasis
+    $> darcs get http://darcs.ocamlcore.org/repos/oasis/oasis
 
 or if you have write access to the project: 
 

@@ -1,0 +1,38 @@
+.topArrow{
+	background:url(../images/tooltipTopArrow.gif) no-repeat  15px top;
+	height:17px;
+	margin:0px; padding:0px;
+}
+.wrap{
+	float:left;
+	z-index:10;
+	
+}
+
+.box {
+	background: #EBEBEB url(../images/left-bottom.gif)  no-repeat left bottom;
+}
+
+.box-outer {
+	background: url(../images/right-bottom.gif) no-repeat right bottom;
+	padding-bottom:5px;
+}
+.box-inner {
+	background: url(../images/left-top.gif) no-repeat left top;
+	margin:0px; padding:0px;
+}
+.box h6 {
+	background:url(../images/right-top.gif) no-repeat right top;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	clear:both;
+	height:10px;
+}
+.box h6, .box p {
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top:0px;
+	padding-bottom:0px;
+	font: normal 12px  "Trebuchet MS", Georgia, "Times New Roman";
+	margin:0px;
+}

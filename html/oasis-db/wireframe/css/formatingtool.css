@@ -1,0 +1,50 @@
+/* CSS Document */
+.formatingToolbar{
+	position:absolute;
+	border:1px solid #CAC6BF;
+}
+.formatIconsDiv{
+	float:left;
+	margin:0px; padding:0px;
+}
+.formatingToolbar a{
+	float:left;
+	width:20px; height:20px;
+	background:url(../images/buttons.gif) no-repeat left;
+	text-decoration:none;
+	margin-top:1px;
+	margin-left:1px;
+	border:1px solid #F0F0EE !important;
+
+}
+.formatingToolbar a:hover{
+	background:url(../images/buttons_hover.gif) no-repeat left;
+}
+.formatingToolbar a#bold{left:0px;}
+.formatingToolbar a#bold:hover{left:0px;}
+.formatingToolbar a#italic{ background-position:30%}
+.formatingToolbar a#italic:hover{background-position:30%}
+.formatingToolbar a#underline{ background-position:70%}
+.formatingToolbar a#underline:hover{background-position:70%}
+.formatingToolbar a#unorderedList{ background-position:10%}
+.formatingToolbar a#unorderedList:hover{background-position:10%}
+.formatingToolbar a#orderedList{ background-position:41%}
+.formatingToolbar a#orderedList:hover{background-position:41%}
+.formatingToolbar a#redo{ background-position:50%}
+.formatingToolbar a#redo:hover{background-position:50%}
+.formatingToolbar a#undo{ background-position:80%}
+.formatingToolbar a#undo:hover{background-position:80%}
+.formatingToolbar a#image{ background-position:89%}
+.formatingToolbar a#image:hover{background-position:89%}
+.formatingToolbar a#smiley{ background-position:100%}
+.formatingToolbar a#smiley:hover{background-position:100%}
+.formatCombo{
+	width:82px;
+	height:19px;
+	border:1px solid #DDDDDD;
+	padding:0px 0px 0px 0px;
+	margin:2px 0px 0px 4px;
+}
+
+
+

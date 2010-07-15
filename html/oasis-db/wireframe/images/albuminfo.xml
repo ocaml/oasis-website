@@ -1,0 +1,52 @@
+<artworkinfo>
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.google.com</artistLink>
+		<albumLink>http://www.yahoo.com</albumLink>
+	</albuminfo>
+
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.weberdesignlabs.com</artistLink>
+		<albumLink>http://www.freelanceswitch.com</albumLink>
+	</albuminfo>
+	
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.kanyewest.com</artistLink>
+		<albumLink></albumLink>
+	</albuminfo>
+
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.google.com</artistLink>
+		<albumLink>http://www.yahoo.com</albumLink>
+	</albuminfo>
+
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.google.com</artistLink>
+		<albumLink>http://www.yahoo.com</albumLink>
+	</albuminfo>
+
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.google.com</artistLink>
+		<albumLink>http://www.yahoo.com</albumLink>
+	</albuminfo>
+
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.google.com</artistLink>
+		<albumLink>http://www.yahoo.com</albumLink>
+	</albuminfo>
+
+	<albuminfo>
+		<artLocation>../images/album/album1.png</artLocation>
+		<artistLink>http://www.google.com</artistLink>
+		<albumLink>http://www.yahoo.com</albumLink>
+	</albuminfo>
+
+
+
+</artworkinfo>

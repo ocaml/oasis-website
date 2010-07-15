@@ -21,10 +21,14 @@ h3 { color: #555; font-size; medium;}
 #content h3 a { color: #555; font-size; medium;}
 
 /* Header */
+
+h1.title 
+{ 
+  display: none;
+}
+
 #header
 {
-  clear: both;
-  position: relative;
   height: 217px;
   background: url(banner.jpg);
 }

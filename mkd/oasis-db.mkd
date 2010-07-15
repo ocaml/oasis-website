@@ -1,0 +1,140 @@
+%OASIS-DB sub-project
+%author Sylvain Le Gall
+
+## What is OASIS-DB ##
+
+This sub-project aims to create a [CPAN][] for OCaml in OCaml. It relies on the
+metadata contained in the `_oasis` files that must be contained in the tarball
+of a project.
+
+ [CPAN]: http://cpan.org
+
+The project manages packages, which are sets of versioned tarballs of the same
+project. For example, the package `ounit` is the set of tarballs
+`ounit-1.0.1.tar.gz`, `ounit-1.0.2.tar.gz` and `ounit-1.0.3.tar.gz`. Each
+tarball must contain a `_oasis` file which describes its content. 
+
+You can upload a tarball for a package directly on our website (*soon to
+come*). It is then checked for a valid `_oasis` file and published. 
+
+Once uploaded, a notification is sent through the website RSS feed. You can
+download the new tarball using a command line tool or directly from the website.
+If build dependencies are also published on the website, you have a direct link 
+to it on the package's web page and can download it as well.
+
+For now this sub-project is at the early development stage. You can get the
+[technical specifications][] to see what is planned. You can also look at our 
+[website prototype][].
+
+  [technical specifications]: https://forge.ocamlcore.org/docman/view.php/54/123/Technical+specification.pdf
+  [website prototype]: oasis-db/wireframe/html/index.html
+
+
+This project is a joint effort of [Jane Street][] and [OCamlCore][].
+
+  [Jane Street]: http://janestreet.com
+  [OCamlCore]: http://www.ocamlcore.com
+
+## Features ##
+
+ * __Reduce the paperwork to publish a new version of your package.__
+
+   Just upload a tarball to the website. OASIS-DB creates a web page, provide a
+   download link and publish an RSS feed aggregated on [OCaml planet][]. 
+
+ * __Integrated library dependencies management.__
+ 
+   OASIS-DB package's web page links to other published projects which are
+   required to compile. We also use this feature to create "bundled" tarball
+   that can integrate your project, its build dependencies and a script to
+   compile everything.
+
+ * __Backup website for package's tarball.__
+
+   If possible the download link on the package's web page points to a place of
+   your choice, but we also provide a backup of this tarball.
+
+ * __Integration with [OCaml forge][].__
+ 
+   If you publish a new version of your project in the forge with a `_oasis`
+   file, it is automatically published through OASIS-DB. The login/password
+   information of OASIS-DB website are shared with the forge.
+
+ * __Integration with GODI and a [cabal-install][] like system.__
+ 
+   To ease the publication of your project, OASIS-DB translates
+   `_oasis` files into a GODI alternate repository. Since we also follow
+   the track of [Cabal][], we provide a tool similar to [cabal-install][] as 
+   a proof of concept .
+
+ * __Integration with LinkDB, The Hump.__
+ 
+   We will cooperate with these OCaml search engines, by publishing data in a
+   format that allows them to easily reuse new version notification.
+
+ * __Automatic tracking of off-site packages.__
+
+   We use [uscan][] and [DEHS][] ideas to get your package directly from your
+   website. If you are already hosted on github, Google Code or SourceForge, you 
+   can create an action that will check for new upstream releases directly on these
+   website and publish them automatically on OASIS-DB.
+
+ * __Interaction through an API and a command line tools.__
+
+  OASIS-DB is a website and a sub-system of OASIS. The website provide an API to 
+  manage packages. This API is used by the command line interface to publish and
+  download packages from the website.
+ 
+
+ [Cabal]: http://haskell.org/cabal/
+ [HackageDB]: http://hackage.haskell.org
+ [cabal-install]: http://www.haskell.org/haskellwiki/Cabal-Install
+ [OCaml planet]: http://planet.ocamlcore.org
+ [OCaml forge]: http://forge.ocamlcore.org
+ [uscan]: http://manpages.debian.net/cgi-bin/man.cgi?query=uscan
+ [DEHS]: http://dehs.alioth.debian.org/
+
+
+## Technical details ##
+
+When we built OASIS, we choose to copy the architecture of [Cabal][]. Cabal is
+the foundation of [HackageDB][] which is a kind of CPAN for Haskell. This
+sub-project will follow the same path, we will copy what has been done with
+[HackageDB][].
+
+Moreover, we use this project as a demonstration of other important OCaml
+projects:
+
+ * The website is an [Ocsigen][] application
+ * We use [sexplib][] to serialize plugin's data
+ * We use OASIS to provide information about packages
+
+ [Ocsigen]: http://ocsigen.org
+ [sexplib]: http://www.ocaml.info/home/ocaml_sources.html#toc10
+
+
+## Contribute ##
+
+You can submit [bugs][] and [feature requests][]. Just use the OASIS-DB
+product for your submission.
+
+   [bugs]: https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291
+   [feature requests]: https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=add
+
+We use darcs to manage our source code. You can 
+[browse it online](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis-db;a=summary).
+
+To get a copy of the source tree: 
+
+    $> darcs get http://darcs.ocamlcore.org/repos/oasis/oasis-db
+
+To send back patches using darcs:
+
+    $> darcs send --to oasis-devel@lists.forge.ocamlcore.org 
+
+To update the source code with the latest available version:
+
+    $> darcs pull http://darcs.ocamlcore.org/repos/oasis-db
+
+Further documentation about darcs on [darcs.net](http://darcs.net/manual/).
+

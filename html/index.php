@@ -68,10 +68,11 @@ for <a href="http://www.haskell.org">Haskell</a>.</p>
     echo 'Cannot determine latest version';
 ?>
 
+<!--
       <div id="news">
         <h2>News</h2>
 <?php
-
+/*
   if($flux = simplexml_load_file('http://forge.ocamlcore.org/export/rss20_news.php?group_id='.$group_id))
   {
     $donnee = $flux->channel;
@@ -90,7 +91,17 @@ for <a href="http://www.haskell.org">Haskell</a>.</p>
   }
   else 
     echo 'Cannot read news feed';
+ */
 ?>
+      </div>
+
+-->
+      <div id="sub-projects">
+        <h2>Sub-projects</h2>
+
+        <ul>
+          <li><a href="oasis-db.html">OASIS-DB</a>: a CPAN for OCaml</li>
+        </ul>
       </div>
 
 <?php include "part-after-body.html"; ?>
