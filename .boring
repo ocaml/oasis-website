@@ -6,7 +6,6 @@
 \.hi-boot$
 \.o-boot$
 # object files
-\.o$
 \.o\.cmd$
 # profiling haskell
 \.p_hi$
