@@ -36,11 +36,11 @@ You can browse the source code of the [project][] and of its [website][].
 
   [project on forge.ocamlcore.org]: http://forge.ocamlcore.org/projects/oasis
   [project]: http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=summary
-  [website]: http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=website;a=summary
+  [website]: http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis-website;a=summary
 
 To get a copy of the source tree, you must use darcs anonymously: 
 
-    $> darcs get http://darcs.ocamlcore.org/repos/oasis/oasis
+    $> darcs get http://darcs.ocamlcore.org/repos/oasis
 
 or if you have write access to the project: 
 

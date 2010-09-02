@@ -126,7 +126,7 @@ We use darcs to manage our source code. You can
 
 To get a copy of the source tree: 
 
-    $> darcs get http://darcs.ocamlcore.org/repos/oasis/oasis-db
+    $> darcs get http://darcs.ocamlcore.org/repos/oasis-db
 
 To send back patches using darcs:
 
