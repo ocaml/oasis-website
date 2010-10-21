@@ -92,7 +92,6 @@ Section name can be : `Library`, `Executable`, `Document`, `Test` and
 begin.
 
 Example:
-    
     # Toplevel fields
     OASISFormat:  1.0
     
@@ -110,16 +109,14 @@ specified this way, only fields that have no good default values and that must
 be evaluated at runtime is defined.
 
 For example: 
-
  * Toplevel fields `Name` and `Version` cannot be conditional.
  * Library fields `Build` and `Install` can be conditional.
 
 A condition is defined using a `if ... else ...` construct.
 
 Example:
-    
     Library bar
-      if os\_type(Win32) 
+      if os_type(Win32)
         Build: true
       else 
         Build: false
@@ -161,11 +158,12 @@ Fields:
  * `Synopsis`: Short description of the purpose of this package.
    (__mandatory__)
  * `Description`: Long description of the package purpose.
- * `LicenseFile`: File containing license.
  * `Authors`: Real people that had contributed to the package. (__mandatory__)
  * `Copyrights`: Copyright owners.
  * `Maintainers`: Current maintainers of the package.
- * `License`: License type of the package. (__mandatory__)
+ * `LicenseFile`: File containing the license.
+ * `License`: DEP-5 license of the package (See
+   [DEP-5](http://dep.debian.net/deps/dep5/#index6h3)). (__mandatory__)
  * `OCamlVersion`: Version constraint on OCaml.
  * `FindlibVersion`: Version constraint on Finblib.
  * `ConfType`: Configuration system.
@@ -347,24 +345,59 @@ Debian.
 
 We have limited the number of license to:
 
- * `PROP`: Proprietary license, all rights reserved
+ * `Apache`: Apache license (versions 1.0, 1.1, 2.0)
+ * `Artistic`: Artistic license (versions 1.0, 2.0)
  * `BSD3`: Berkeley software distribution license (3 clauses)
- * `BSD4`: Berkeley software distribution license (3 clauses)
- * `GPL`: GNU General Public License. (version 1.0, 2.0, 3.0)
- * `LGPL`: GNU Lesser General Public License, (GNU Library General Public
-   License for versions lower than 2.1). (version 2.0, 2.1, 3.0)
- * `QPL`: Q Public License. (version 1.0)
+ * `BSD4`: Berkeley software distribution license (4 clauses)
+ * `CC-BY`: Creative Commons Attribution license
+ * `CC-BY-NC`: Creative Commons Attribution Non-Commercial
+ * `CC-BY-NC-ND`: Creative Commons Attribution Non-Commercial No Derivatives
+ * `CC-BY-NC-SA`: Creative Commons Attribution Non-Commercial Share Alike
+ * `CC-BY-ND`: Creative Commons Attribution No Derivatives
+ * `CC-BY-SA`: Creative Commons Attribution Share Alike license
+ * `CC0`: Creative Commons Universal waiver
+ * `CDDL`: Common Development and Distribution License
+ * `CeCILL`: CEA-CNRS-INRIA Logiciel Libre. GPL like. (versions 1, 2)
+ * `CeCILL-B`: CEA-CNRS-INRIA Logiciel Libre, BSD-like
+ * `CeCILL-C`: CEA-CNRS-INRIA Logiciel Libre, LGPL-like
+ * `CPL`: IBM Common Public License (version 1.0)
+ * `Eiffel`: The Eiffel Forum License (version 2)
+ * `Expat`: The Expat license
+ * `FreeBSD`: FreeBSD Project license
+ * `GFDL`: GNU Free Documentation License (versions 1.1, 1.2, 1.3)
+ * `GFDL-NIV`: GNU Free Documentation License, with no invariant
+   sections (versions 1.1, 1.2, 1.3)
+ * `GPL`: GNU General Public License (versions 1.0, 2.0, 3.0)
+ * `ISC`: Internet Software Consortium's license. Sometimes also known as the
+   OpenBSD License.
+ * `LGPL`: GNU Lesser General Public License. GNU Library General Public
+   License for versions lower than 2.1 (versions 2.0, 2.1, 3.0)
+ * `LPPL`: LaTeX Project Public License (version 1.3c)
+ * `MIT`: MIT License
+ * `MPL`: Mozilla Public License (versions 1.0, 1.1)
+ * `PD`: Public domain. This is not a true license.
+ * `Perl`: Perl license. Equates to GPL-1+ or Artistic-1.
+ * `PROP`: Proprietary license, all rights reserved
+ * `PSF`: Python Software Foundation license (version 2)
+ * `QPL`: Q Public License (version 1.0)
+ * `W3C-Software`: W3C Software License (version 20021231)
+ * `ZLIB`: zlib/libpng license (version 1.2.2)
+ * `Zope`: Zope Public License (versions 1.0, 2.0, 2.1)
  * or an URL describing the license
 
 And license exception to:
 
- * `OCaml linking` compatible with LGPL
+ * `OCaml linking` compatible with LGPL: Add an exception to allow static
+   compilation without license propagation. Without this clause, compiling
+   against an OCaml library force license propagation. The LGPL is equal to GPL
+   without this exception.
  * or an URL describing the license exception
 
 You can specify a license version using a dash and only digits or dashes at the
 end of the license short name. 
 
 Examples :
+
  * `LGPL-2.1 with OCaml linking exception`: LGPL v2.1 with OCaml linking exception
  * `GPL-2+`: GPL v2 or later
 
@@ -392,6 +425,8 @@ is available looking at the file `setup.data`.
 
 Here is a list of standard variables:
 
+I: Running command '/usr/bin/ocamlc.opt -config > '/tmp/oasis-b3b412.txt''
+I: Running command '/usr/bin/ocamlfind query -format %v findlib > '/tmp/oasis-a150d1.txt''
  * `ocamlfind`
  * `ocamlc`
  * `ocamlopt`
@@ -440,8 +475,8 @@ Here is a list of standard variables:
  * `suffix_program`
  * `rm`: Remove a file.
  * `rmdir`: Remove a directory.
- * `ocaml_with_debug`: Compile with ocaml debug flag on.
- * `ocaml_with_profile`: Compile with ocaml profile flag on.
+ * `debug`: Compile with ocaml debug flag on.
+ * `profile`: Compile with ocaml profile flag on.
  * `ocamlbuildflags`: OCamlbuild additional flags
 
 Other variables are defined depending on your `_oasis` file:
@@ -498,8 +533,8 @@ Using OASIS during software development
 ---------------------------------------
 
 Since `_oasis` becomes a central place of information about the building
-process, it can be quite cumbersome to run again and again `OASIS`. You can 
-avoid it using the `-dev` flags when calling `OASIS` for the first time. This
+process, it can be quite cumbersome to run again and again `oasis`. You can 
+avoid it using the `-dev` flags when calling `oasis` for the first time. This
 way it will rebuilt very dependents build files each time you call `ocaml
 setup.ml`. A `setup.ml` built this way, should not be distributed. This intended
 for development purpose only.
@@ -512,17 +547,16 @@ specific behavior for generating files and including their own code in `setup.ml
 
 There are 6 categories of plugin:
  
- * Conf: apply to configure step
- * Build: apply to build step
- * Test: apply to test sections
- * Doc: apply to documentation sections
- * Install: apply to install and uninstall steps
- * Extra: everything else
+ * __Conf__: apply to configure step, used in the field `ConfType`
+ * __Build__: apply to build stepi, used in the field `BuildType`
+ * __Test__: apply to test sections, used in the field `Type` of a test
+ * __Doc__: apply to documentation sections, used in the field `Type` of a document
+ * __Install__: apply to install and uninstall steps, used in the field `DocType`
+ * __Extra__: everything else, used in the field `Plugins`
 
-### Plugin Custom
+### Plugin Custom (doc, conf, test, install, build)
 
-__Version__: 0.1.0<br/>
-__Types__: conf, build, doc, test, install
+__Version__: 0.2<br/>
 
 This plugin allow to define a set of three commands to perform each steps,
 associated with the following fields:
@@ -562,36 +596,35 @@ Test fields:
  * `XCustomClean`: Run command to clean test step.
  * `XCustomDistclean`: Run command to distclean test step.
 
-### Plugin None
+### Plugin None (install, test, build, doc, conf)
 
-__Version__: 0.1.0<br/>
-__Types__: conf, build, doc, test, install
+__Version__: 0.2<br/>
 
 This plugin basically does nothing. It helps to replace mandatory step by nothing.
 
-### Plugin OCamlbuild
+### Plugin OCamlbuild (build, doc)
 
-__Version__: 0.1.0<br/>
-__Types__: build, doc
+__Version__: 0.2<br/>
 
 This plugin uses OCamlbuild to generate a build system. It is the default value
 for `BuildType`.
 
-Library fields:
 
- * `XOCamlbuildAutoDoc`: Build documentation associated to the library.
+It is also possible to use this plugin for `Document`. In this case, OCamlbuild
+will also be involved in the generation of a particular document.
 
 Document fields:
 
  * `XOCamlbuildPath`: Top level directory for building ocamldoc documentation
    (__mandatory__)
  * `XOCamlbuildModules`: List of OCaml modules used to generate ocamldoc
-   documentation (__mandatory__)
+   documentation
+ * `XOCamlbuildLibraries`: Findlib names of internal libraries used to generate
+   the ocamldoc documentation
 
-### Plugin Internal
+### Plugin Internal (conf, install)
 
-__Version__: 0.1.0<br/>
-__Types__: conf, install
+__Version__: 0.2<br/>
 
 This plugin is the default value for the `ConfType` and `InstallType`. It
 represents a default behavior for configuring and installing OCaml project.
@@ -607,10 +640,9 @@ using standard environment variable (`$bindir`, `$datadir` et al).
 
 
 
-### Plugin META
+### Plugin META (extra)
 
-__Version__: 0.1.0<br/>
-__Types__: extra
+__Version__: 0.2<br/>
 
 This plugin is an helper to generate a `META` files that can be distributed and
 install with a library. It uses library name, version, synopsis and dependencies
@@ -623,10 +655,9 @@ Library fields:
  * `XMETAType`: Type of META package, set default predicates for archive
  * `XMETARequires`: Requires field for META package
 
-### Plugin StdFiles
+### Plugin StdFiles (extra)
 
-__Version__: 0.1.0<br/>
-__Types__: extra
+__Version__: 0.2<br/>
 
 This plugin generates standard files like `README.txt`, `INSTALL.txt` and
 `AUTHORS.txt`. These files will summarize data contains in `_oasis`. 
@@ -636,20 +667,25 @@ and other system that look for extension to determine file type.
 
 Package fields:
 
- * `XStdFilesREADMEFilename`: Real filename to use for file README.
  * `XStdFilesREADME`: Enable README file generation.
- * `XStdFilesINSTALLFilename`: Real filename to use for file INSTALL.
+ * `XStdFilesREADMEFilename`: Real filename to use for file README.
  * `XStdFilesINSTALL`: Enable INSTALL file generation.
- * `XStdFilesAUTHORSFilename`: Real filename to use for file AUTHORS.
+ * `XStdFilesINSTALLFilename`: Real filename to use for file INSTALL.
  * `XStdFilesAUTHORS`: Enable AUTHORS file generation.
+ * `XStdFilesAUTHORSFilename`: Real filename to use for file AUTHORS.
 
-### Plugin DevFiles
+### Plugin DevFiles (extra)
 
-__Version__: 0.1.0<br/>
-__Types__: extra
+__Version__: 0.2<br/>
 
 It helps to generate a toplevel `Makefile` and `configure` files which only
 invoke `setup.ml`. It aims to provide good old entry points.
+
+Package fields:
+
+ * `XDevFilesMakefileNoTargets`: Targets to disable when generating Makefile
+ * `XDevFilesEnableMakefile`: Generate Makefile
+ * `XDevFilesEnableConfigure`: Generate configure script
 
 
 Building and installing
@@ -705,6 +741,11 @@ ocaml setup.ml -uninstall
 
 This step is optional. Remove files and libraries installed. 
 
+ocaml setup.ml -reinstall
+-------------------------
+
+This step is optional. Perform an uninstall and then an install step.
+
 ocaml setup.ml -clean
 ---------------------
 
@@ -715,48 +756,244 @@ ocaml setup.ml -distclean
 
 This step is optional. Try to go back to pristine source state.
 
+ocaml setup.ml -all
+-------------------
+
+This step is optional. Run configure, build, test and doc step in one run.
+
 OASIS usage
 ===================
 
 Command line
 ------------
 
-OASIS [options] -action [action-options]
+OASIS (C) 2009-2010 OCamlCore SARL
 
-`-C dir`: Change directory before running.
+oasis [global-options*] subcommand [subcommand-options*]
 
-`-quickstart`: Launch an helper to write `_oasis` file.
+Global options:
 
-`-quickstart-level {beginner|intermediate|expert}`: Quickstart level, skip
-questions according to this level.
+This program allows to manipulate OASIS enabled package, i.e. package that
+contains an `_oasis` file. It is made of several subcommands that provide
+features around this file. Some subcommands require the installation of
+third party plugins.
 
-`-documentation`: Display extended help
+You need to specify a subcommand as defined in the following above.
 
-`-dev`: Create a developper mode setup.ml. It will be automatically updated at
-each run.
+`-C dir`
+:   Change directory before running.
 
-`-setup-fn fn`: Change the default name of setup.ml. This option should be used
-with caution, it is reserved for internal use.
+`-quiet`
+:   Run quietly
 
-`-quiet`: Run quietly
+`-debug`
+:   Output debug message
 
-`-debug`: Output debug message
+`-help|--help`
+:   Display this list of options
 
-`--gettext-failsafe {ignore|inform-stderr|raise-exception}`: Choose how to
-handle failure in ocaml-gettext. Default: ignore.
+Available subcommands:
 
-`--gettext-disable`: Disable the translation perform by ocaml-gettext. Default:
-enable.
+`check`
+:   Check an _oasis file
 
-`--gettext-domain-dir textdomain`: dir Set a dir to search ocaml-gettext files
-for the specified domain. Default: [  ].
+`help`
+:   Display help for a subcommand
 
-`--gettext-dir dir`: Add a search dir for ocaml-gettext files. Default: [
-"/usr/share/locale"; "/usr/local/share/locale" ].
+`manual`
+:   Display user manual
 
-`--gettext-language language`: Set the default language for ocaml-gettext.
-Default: (none).
+`query`
+:   Query an _oasis file
 
-`--gettext-codeset codeset`: Set the default codeset for outputting string with
-ocaml-gettext. Default: .
+`quickstart`
+:   Launch an helper to write `_oasis` file
+
+`setup`
+:   Translate _oasis into a build system
+
+`setup-clean`
+:   Clean all template files from their content
+
+`setup-dev`
+:   Translate _oasis into a build system that auto-update
+
+Subcommand check
+----------------
+
+This subcommand load an `_oasis` file and apply standard checks. 
+
+Usage: oasis [global-options*] check [options*]
+
+Options: 
+
+`-ignore-plugins`
+:   Ignore plugin's field.
+
+`-oasis fn`
+:   _oasis file to use.
+
+Subcommand help
+---------------
+
+This subcommand display help of other subcommands or of all subcommands.
+
+Usage: oasis [global-options*] help [subcommand|all]
+
+Subcommand manual
+-----------------
+
+This subcommand print the manual of OASIS. It uses the [markdown][] syntax to
+print it and more precisely the [pandoc][] extension of this syntax. 
+
+  [markdown]: http://daringfireball.net/projects/markdown/
+  [pandoc]: http://johnmacfarlane.net/pandoc/
+
+This manual describes the command line tool `oasis`, the `_oasis` file format 
+and the generated `setup.ml` file.
+
+Usage: oasis [global-options*] manual 
+
+Options: 
+
+`-o fn`
+:   Output manual to filename.
+
+Subcommand query
+----------------
+
+This subcommand load an `_oasis` file and search its content for information.
+
+The query string follow this convention:
+
+* `ListSections`: return all the section found
+* `ListFields`: return all the fields, it recurses through sections
+* field: search for this field in the toplevel
+* section.field: search for this field in the section
+
+Query examples:
+
+* version: return the version
+* executable("test").install: return the field "install" of the executable
+  "test".
+
+You can use multiple queries, they will be executed in order.
+
+Usage: oasis [global-options*] query [options*] query*
+
+Options: 
+
+`-separator str`
+:   String to add between answers.
+
+`-oasis fn`
+:   _oasis file to use.
+
+`-ignore-plugins`
+:   Ignore plugin's field.
+
+Subcommand quickstart
+---------------------
+
+This subcommand is an helper to write `_oasis` file. It asks a serie of
+questions to create an initial `_oasis` file. The questions depend on the
+level of the user, you can set this level with the `-level` command line
+option. 
+
+At the end of the process, you have the possibility to edit, to display or
+to write the generated file.
+
+Usage: oasis [global-options*] quickstart [options*]
+
+Options: 
+
+`-level {beginner|intermediate|expert}`
+:   Quickstart level, skip questions according to this level.
+
+`-machine`
+:   Computer readable questions for automatic completion.
+
+`-real-oasis`
+:   Use the real 'oasis' executable filename when generating developper mode
+    setup.ml.
+
+`-run`
+:   Run a command after generating files, this is the mode used by setup.ml in
+    developper mode. Don't use it directly.
+
+`-only-setup`
+:   When generating the build system, keep only setup.ml and delete other
+    generated files.
+
+`-oasis fn`
+:   _oasis file to use.
+
+Subcommand setup
+----------------
+
+This is the main subcommand of `oasis`, it compiles the `_oasis` file into a
+self contained `setup.ml`. The generated file handle the various step to
+configure, build and install your project.
+
+Usage: oasis [global-options*] setup 
+
+Options: 
+
+`-oasis fn`
+:   _oasis file to use.
+
+Subcommand setup-clean
+----------------------
+
+This subcommand go through every generated files and remove the replaceable
+part in it. It also tries to clean backup files made by a failed SetupDev
+subcommand invocation.
+
+The replaceable part of a generated file is everything between `OASIS_START`
+and `OASIS_STOP`.
+
+Usage: oasis [global-options*] setup-clean [options*]
+
+Options: 
+
+`-replace-sections Empty`
+:   replace section in generated files (i.e. remove content between OASIS_START
+    and OASIS_STOP).
+
+Subcommand setup-dev
+--------------------
+
+This subcommand is the developper counterpart of the Setup subcommand. It
+acts the same way but it produces a `setup.ml` that still requires the 
+executable `oasis` in order to recompile the `_oasis` file at each invocation.
+
+The big advantage to create a `setup.ml` this way is that you don't have
+to call `oasis setup` each time you update the `_oasis` file. The other
+advantage is that it keeps clean your build system, i.e. it generates a file,
+use it and reset it to its pristine state, which helps to maintain the changes 
+in this file to the bare minimum. 
+
+This subcommand is suited for developpers, but you should use the Setup
+subcommand when you want to distribute your work.
+
+Usage: oasis [global-options*] setup-dev [options*]
+
+Options: 
+
+`-real-oasis`
+:   Use the real 'oasis' executable filename when generating developper mode
+    setup.ml.
+
+`-run`
+:   Run a command after generating files, this is the mode used by setup.ml in
+    developper mode. Don't use it directly.
+
+`-only-setup`
+:   When generating the build system, keep only setup.ml and delete other
+    generated files.
+
+`-oasis fn`
+:   _oasis file to use.
+
+
 

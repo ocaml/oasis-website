@@ -1,0 +1,1139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="OASISMessage.html">
+<link rel="next" href="OASISParse.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
+<link title="PropList" rel="Chapter" href="PropList.html">
+<link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
+<link title="OASISUnixPath" rel="Chapter" href="OASISUnixPath.html">
+<link title="OASISContext" rel="Chapter" href="OASISContext.html">
+<link title="OASISGettext" rel="Chapter" href="OASISGettext.html">
+<link title="OASISMessage" rel="Chapter" href="OASISMessage.html">
+<link title="OASISTypes" rel="Chapter" href="OASISTypes.html">
+<link title="OASISParse" rel="Chapter" href="OASISParse.html">
+<link title="OASISValues" rel="Chapter" href="OASISValues.html">
+<link title="OASISExpr" rel="Chapter" href="OASISExpr.html">
+<link title="OASISVersion" rel="Chapter" href="OASISVersion.html">
+<link title="OASISLicense" rel="Chapter" href="OASISLicense.html">
+<link title="OASISFileTemplate" rel="Chapter" href="OASISFileTemplate.html">
+<link title="OASISBuildSection" rel="Chapter" href="OASISBuildSection.html">
+<link title="OASISDocument" rel="Chapter" href="OASISDocument.html">
+<link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
+<link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
+<link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
+<link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
+<link title="OASISTest" rel="Chapter" href="OASISTest.html">
+<link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
+<link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
+<link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
+<link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
+<link title="BaseData" rel="Chapter" href="BaseData.html">
+<link title="BaseDev" rel="Chapter" href="BaseDev.html">
+<link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
+<link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
+<link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
+<link title="BaseExec" rel="Chapter" href="BaseExec.html">
+<link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
+<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
+<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
+<link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
+<link title="BaseLog" rel="Chapter" href="BaseLog.html">
+<link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
+<link title="BaseSetup" rel="Chapter" href="BaseSetup.html">
+<link title="BaseStandardVar" rel="Chapter" href="BaseStandardVar.html">
+<link title="BaseTest" rel="Chapter" href="BaseTest.html">
+<link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
+<link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
+<link title="BaseContext" rel="Chapter" href="BaseContext.html">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="Aliases" rel="Section" href="#2_Aliases">
+<link title="OASIS package definition" rel="Section" href="#2_OASISpackagedefinition">
+<link title="Quickstart questions " rel="Section" href="#2_Quickstartquestions">
+<link title="ODN functions" rel="Section" href="#2_ODNfunctions">
+<title>OASISTypes</title>
+</head>
+<body>
+<div class="navbar"><a href="OASISMessage.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="OASISParse.html">Next</a>
+</div>
+<center><h1>Module <a href="type_OASISTypes.html">OASISTypes</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> OASISTypes: <code class="code">sig</code> <a href="OASISTypes.html">..</a> <code class="code">end</code></pre>Package definition
+<p>
+
+    This module contains all the types used to build an OASIS package. 
+    A package is described by an '_oasis' file.<br>
+<b>Author(s):</b> Sylvain Le Gall<br>
+<hr width="100%">
+<br>
+<a name="2_Aliases"></a>
+<h2>Aliases</h2><br>
+<pre><span class="keyword">type</span> <a name="TYPEname"></a><code class="type"></code>name = <code class="type">string</code> </pre>
+<div class="info">
+Standard name.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEpackage_name"></a><code class="type"></code>package_name = <code class="type">string</code> </pre>
+<div class="info">
+Name of a package, see <a href="OASISTypes.html#TYPEpackage"><code class="code">OASISTypes.package</code></a>.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEurl"></a><code class="type"></code>url = <code class="type">string</code> </pre>
+<div class="info">
+Standard URL.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEunix_dirname"></a><code class="type"></code>unix_dirname = <code class="type">string</code> </pre>
+<div class="info">
+UNIX directory name.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEunix_filename"></a><code class="type"></code>unix_filename = <code class="type">string</code> </pre>
+<div class="info">
+UNIX file name.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEhost_dirname"></a><code class="type"></code>host_dirname = <code class="type">string</code> </pre>
+<div class="info">
+Host directory name.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEhost_filename"></a><code class="type"></code>host_filename = <code class="type">string</code> </pre>
+<div class="info">
+Host file name.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEprog"></a><code class="type"></code>prog = <code class="type">string</code> </pre>
+<div class="info">
+Program.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEarg"></a><code class="type"></code>arg = <code class="type">string</code> </pre>
+<div class="info">
+Command line argument.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEargs"></a><code class="type"></code>args = <code class="type"><a href="OASISTypes.html#TYPEarg">arg</a> list</code> </pre>
+<div class="info">
+Command line arguments.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEcommand_line"></a><code class="type"></code>command_line = <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> * <a href="OASISTypes.html#TYPEargs">args</a></code> </pre>
+<div class="info">
+Command line.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEfindlib_name"></a><code class="type"></code>findlib_name = <code class="type">string</code> </pre>
+<div class="info">
+Package name for findlib, doesn't contain '.'.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEfindlib_full"></a><code class="type"></code>findlib_full = <code class="type">string</code> </pre>
+<div class="info">
+Package name + path for findlib, made of several findlib name concatenated with '.'.<br>
+</div>
+
+<br>
+<a name="2_OASISpackagedefinition"></a>
+<h2>OASIS package definition</h2><br>
+<br><code><span class="keyword">type</span> <a name="TYPEcompiled_object"></a><code class="type"></code>compiled_object = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Byte</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Always use byte code.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Native</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Always use native code.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Best</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Use either byte or native, depending ocamlopt availability.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Compilation type.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEdependency"></a><code class="type"></code>dependency = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">FindlibPackage</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEfindlib_full">findlib_full</a> * <a href="OASISVersion.html#TYPEcomparator">OASISVersion.comparator</a> option</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >External findlib package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">InternalLibrary</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEname">name</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Section library of the given name.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Package dependency.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEtool"></a><code class="type"></code>tool = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">ExternalTool</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEname">name</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >External tool.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">InternalExecutable</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEname">name</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Section executable of the given name.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Tool dependency.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEvcs"></a><code class="type"></code>vcs = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Darcs</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Darcs</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Git</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Git</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Svn</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Subversion</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Cvs</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >CVS</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Hg</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Mercurial</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Bzr</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Bazaar</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Arch</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >GNU arch</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Monotone</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Monotone</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">OtherVCS</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEurl">url</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Anything else, follow URL for description.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Possible VCS.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEconditional"></a><code class="type">'a</code> conditional = <code class="type">'a <a href="OASISExpr.html#TYPEchoices">OASISExpr.choices</a></code> </pre>
+<div class="info">
+Conditional value, last expression that evaluate to true define
+    the value.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEplugin_kind"></a><code class="type"></code>plugin_kind = <code class="type">[ `Build | `Configure | `Doc | `Extra | `Install | `Test ]</code> </pre>
+<div class="info">
+Plugin kind.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEplugin_data_purpose"></a><code class="type"></code>plugin_data_purpose = <code class="type">[ `Build<br>       | `Clean<br>       | `Configure<br>       | `Distclean<br>       | `Doc<br>       | `Extra<br>       | `Install<br>       | `Other of string<br>       | `Test<br>       | `Uninstall ]</code> </pre>
+<div class="info">
+Additional data to allow registration of more than
+    one data property per plugin. See <a href="OASISPlugin.html#VALdata_new_property"><code class="code">OASISPlugin.data_new_property</code></a><br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEplugin"></a><code class="type">'a</code> plugin = <code class="type">'a * <a href="OASISTypes.html#TYPEname">name</a> * <a href="OASISVersion.html#TYPEt">OASISVersion.t</a> option</code> </pre>
+<div class="info">
+Plugin definition, plugin type depends on which fields this
+    types is used for.<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPEall_plugin"></a><code class="type"></code>all_plugin = <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">plugin</a></code> </pre>
+
+<pre><span class="keyword">type</span> <a name="TYPEplugin_data"></a><code class="type"></code>plugin_data = <code class="type">(<a href="OASISTypes.html#TYPEall_plugin">all_plugin</a> * <a href="OASISTypes.html#TYPEplugin_data_purpose">plugin_data_purpose</a> * (unit -> unit))<br>       list</code> </pre>
+<div class="info">
+Property list storage for plugin data<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEcustom"></a><code class="type"></code>custom = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>pre_command&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcommand_line">command_line</a> option <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Run before.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>post_command&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcommand_line">command_line</a> option <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Run after.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Set of command lines to run before and after a step.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEcommon_section"></a><code class="type"></code>common_section = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>cs_name&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEname">name</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Name of the section.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>cs_data&nbsp;: <code class="type"><a href="PropList.Data.html#TYPEt">PropList.Data.t</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>cs_plugin_data&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEplugin_data">plugin_data</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Property list attached to the section.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Common attributes for sections.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEbuild_section"></a><code class="type"></code>build_section = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_build&nbsp;: <code class="type">bool <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Build this section.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_install&nbsp;: <code class="type">bool <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Install this section.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_path&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_dirname">unix_dirname</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Top level location of the sources.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_compiled_object&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcompiled_object">compiled_object</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >What kind of compilation.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_build_depends&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEdependency">dependency</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >List of dependencies.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_build_tools&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEtool">tool</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >List of build tools.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_c_sources&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >C sources, relative to <code class="code">bs_path</code>.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_data_files&nbsp;: <code class="type">(<a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> * <a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> option) list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Data files and their install location, relative to <code class="code">bs_path</code>.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_ccopt&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Options for -ccopt.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_cclib&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Options for -cclib.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_dlllib&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Options for -dllib.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_dllpath&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Options for -dllpath.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_byteopt&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Option to pass to ocamlc.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>bs_nativeopt&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Option to pass to ocamlopt.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Common attributes for Executable and Library sections.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPElibrary"></a><code class="type"></code>library = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>lib_modules&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >List of modules exported by the library.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>lib_internal_modules&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >List of modules not-exported by the library, but compiled along.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>lib_findlib_parent&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Name of the findlib parent, if any.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>lib_findlib_name&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Findlib name of this library, this name is used to refer to this 
+          library in build dependencies.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>lib_findlib_containers&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Name of virtual containes (empty findlib package) between findlib
+          parent and findlib name</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Library definition.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEexecutable"></a><code class="type"></code>executable = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>exec_custom&nbsp;: <code class="type">bool</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Use -custom ocamlc option.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>exec_main_is&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Main file to compile, dependencies should be guessed
+          by build system.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Executable definition.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEflag"></a><code class="type"></code>flag = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>flag_description&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Short description.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>flag_default&nbsp;: <code class="type">bool <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Default value.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Command line flag definition.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEsource_repository"></a><code class="type"></code>source_repository = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>src_repo_type&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEvcs">vcs</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Repository type.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>src_repo_location&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEurl">url</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Where to fetch the source, using appropriate VCS tool.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>src_repo_browser&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEurl">url</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Where to browse the source, using web browser.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>src_repo_module&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Depending on VCS, which module (e.g. CVS).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>src_repo_branch&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Depending on VCS, which branch (e.g. git).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>src_repo_tag&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Depending on VCS, which tag (e.g. tag for darcs, git or svn).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>src_repo_subdir&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Depending on VCS, which sub directory (e.g. svn).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Source repository definition.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEtest"></a><code class="type"></code>test = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>test_type&nbsp;: <code class="type">[ `Test ] <a href="OASISTypes.html#TYPEplugin">plugin</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Plugin to run the test, default custom.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>test_command&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcommand_line">command_line</a> <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Command to run the test, may depend on the plugin meaning.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>test_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Custom command lines to run before and after.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>test_working_directory&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Which working directorty to chdir in.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>test_run&nbsp;: <code class="type">bool <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Should we run the test.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>test_tools&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEtool">tool</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Tools required for this test.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Test definition.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEdoc_format"></a><code class="type"></code>doc_format = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">HTML</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >HTML files and their main entry point 
+                              (e.g. <code class="code">HTML "index.html"</code>)</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">DocText</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Plain text.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">PDF</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Portable document format.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">PostScript</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Info</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Info files and their main entry point.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">DVI</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">OtherDoc</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Anything else.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Document formats.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEdoc"></a><code class="type"></code>doc = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_type&nbsp;: <code class="type">[ `Doc ] <a href="OASISTypes.html#TYPEplugin">plugin</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Plugin to build this document, default none.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Custom command lines ommand to before and after.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_build&nbsp;: <code class="type">bool <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Build this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_install&nbsp;: <code class="type">bool <a href="OASISTypes.html#TYPEconditional">conditional</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Install this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_install_dir&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Where to install this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_title&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >What is the title of this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_authors&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Who are the authors of this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_abstract&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Abstract of this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_format&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEdoc_format">doc_format</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Format of this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_data_files&nbsp;: <code class="type">(<a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> * <a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> option) list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >All data files and where they should be install, by default
+          to doc_install_dir</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>doc_build_tools&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEtool">tool</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Tools required to generate this document.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Document definition.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEsection"></a><code class="type"></code>section = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Library</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEbuild_section">build_section</a> * <a href="OASISTypes.html#TYPElibrary">library</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Executable</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEbuild_section">build_section</a> * <a href="OASISTypes.html#TYPEexecutable">executable</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Flag</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEflag">flag</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">SrcRepo</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEsource_repository">source_repository</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Test</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEtest">test</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Doc</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEdoc">doc</a></code></code></td>
+
+</tr></table>
+
+<div class="info">
+All sections and their attributes.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEpackage"></a><code class="type"></code>package = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>oasis_version&nbsp;: <code class="type"><a href="OASISVersion.html#TYPEt">OASISVersion.t</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >OASIS version used to write this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>ocaml_version&nbsp;: <code class="type"><a href="OASISVersion.html#TYPEcomparator">OASISVersion.comparator</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >OCaml version required for this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>findlib_version&nbsp;: <code class="type"><a href="OASISVersion.html#TYPEcomparator">OASISVersion.comparator</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Findlib version required for this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>name&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEpackage_name">package_name</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Name of this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>version&nbsp;: <code class="type"><a href="OASISVersion.html#TYPEt">OASISVersion.t</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Version of this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>license&nbsp;: <code class="type"><a href="OASISLicense.html#TYPEt">OASISLicense.t</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >License of this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>license_file&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >File containing the license of this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>copyrights&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Copyright holders (e.g. companies or people).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>maintainers&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >People actually taking care of this package (e.g. subset of copyright
+          holders)</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>authors&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Real people who wrote this package, not their companies.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>homepage&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEurl">url</a> option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Location of the package homepage.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>synopsis&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Short description of the package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>description&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Long description of the package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>categories&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEurl">url</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >List of categories that the package belong to.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>conf_type&nbsp;: <code class="type">[ `Configure ] <a href="OASISTypes.html#TYPEplugin">plugin</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Plugin to configure, default internal.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>conf_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Actions around configure step.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>build_type&nbsp;: <code class="type">[ `Build ] <a href="OASISTypes.html#TYPEplugin">plugin</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Plugin to build, default ocamlbuild.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>build_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Actions around build step.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>install_type&nbsp;: <code class="type">[ `Install ] <a href="OASISTypes.html#TYPEplugin">plugin</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Plugin to install/uninstall, default internal.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>install_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Actions around install step.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>uninstall_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Actions around uninstall step.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>clean_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Actions around clean step.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>distclean_custom&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEcustom">custom</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Actions aroudn distclean step.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>files_ab&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Files to generate by replacing token in it after configure step.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>sections&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEsection">section</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >All sections (libraries, executables, tests...).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>plugins&nbsp;: <code class="type">[ `Extra ] <a href="OASISTypes.html#TYPEplugin">plugin</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Extra plugins applied.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>schema_data&nbsp;: <code class="type"><a href="PropList.Data.html#TYPEt">PropList.Data.t</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>plugin_data&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEplugin_data">plugin_data</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Property list attached to this package.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+OASIS package, what an '_oasis' file contains.<br>
+</div>
+
+<br>
+<a name="2_Quickstartquestions"></a>
+<h2>Quickstart questions </h2><br>
+<br><code><span class="keyword">type</span> <a name="TYPEquickstart_level"></a><code class="type">'a</code> quickstart_level = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">NoChoice</span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Don't ask question, use provided value.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Beginner</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Ask the question to an OASIS beginner and above.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Intermediate</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Ask the question to an intermediate OASIS user and above.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Expert</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Ask the question to an OASIS expert.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Quickstart level. <b>Not exported</b>.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEquickstart_question"></a><code class="type">'a</code> quickstart_question = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Field</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Short text.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Text</span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Long text, may use editor for it.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Choices</span> <span class="keyword">of</span> <code class="type">'a list</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Multiple choices in a list.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">ExclusiveChoices</span> <span class="keyword">of</span> <code class="type">'a list</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Pick a single choice in the list.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Howto ask questions in quickstart. <b>Not exported</b>.<br>
+</div>
+
+<br>
+<a name="2_ODNfunctions"></a>
+<h2>ODN functions</h2> 
+<p>
+
+    These functions allow to generate setup.ml standalone code, by serializing
+    OCaml data using OCaml notation. They are <b>not exported</b>.
+<p>
+
+    See <a href="http://forge.ocamlcore.org/projects/odn"> the OCaml data notation project</a><br>
+<pre><span class="keyword">val</span> <a name="VALodn_of_name"></a>odn_of_name : <code class="type"><a href="OASISTypes.html#TYPEname">name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_package_name"></a>odn_of_package_name : <code class="type"><a href="OASISTypes.html#TYPEpackage_name">package_name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_url"></a>odn_of_url : <code class="type"><a href="OASISTypes.html#TYPEurl">url</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_unix_dirname"></a>odn_of_unix_dirname : <code class="type"><a href="OASISTypes.html#TYPEunix_dirname">unix_dirname</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_unix_filename"></a>odn_of_unix_filename : <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_prog"></a>odn_of_prog : <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_arg"></a>odn_of_arg : <code class="type"><a href="OASISTypes.html#TYPEarg">arg</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_args"></a>odn_of_args : <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_command_line"></a>odn_of_command_line : <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> * <a href="OASISTypes.html#TYPEargs">args</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_findlib_name"></a>odn_of_findlib_name : <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_findlib_full"></a>odn_of_findlib_full : <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_conditional"></a>odn_of_conditional : <code class="type">('a -> ODN.t) -> 'a <a href="OASISExpr.html#TYPEchoices">OASISExpr.choices</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_package"></a>odn_of_package : <code class="type"><a href="OASISTypes.html#TYPEpackage">package</a> -> ODN.t</code></pre></body></html>

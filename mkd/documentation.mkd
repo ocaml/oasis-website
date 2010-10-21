@@ -3,9 +3,11 @@
 
 This section provides information you need to get started. 
 
-Begin with the [OASIS Quickstart](quickstart.html) which show you how to set up
-OASIS for a single executable and library. You can then move on to the 
-[OASIS User manual](MANUAL.html) to go in depth.
+* [OASIS Quickstart](quickstart.html) which show you how to set up
+ OASIS for a single executable and library. 
+* [OASIS User manual](MANUAL.html) the definitive guide
+* [OASIS API](api-oasis/index.html) OCamldoc generated documentation to use OASIS
+  as a library.
 
 Extra documentation can be found in the forge.ocamlcore.org project
 documentation [section](https://forge.ocamlcore.org/docman/?group_id=54). In
@@ -39,3 +41,34 @@ Featured projects that use \_oasis:
   the [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocamlify;a=headblob;f=/_oasis) is very simple and only provide one library
 * [browse other projects](alreadyusing.html) that use \_oasis
 
+<a title="View OCaml Meeting 2010 OASIS Slides on Scribd" 
+   href="http://www.scribd.com/doc/39582083/OCaml-Meeting-2010-OASIS-Slides" 
+   style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; 
+          font-style: normal; font-variant: normal; font-weight: normal; 
+          font-size: 14px; line-height: normal; font-size-adjust: none; 
+          font-stretch: normal; -x-system-font: none; display: 
+          block; text-decoration: underline;">OCaml Meeting 2010 OASIS Slides</a> 
+<object id="doc_313966474258373" 
+        name="doc_313966474258373" 
+        height="600" width="100%" 
+        type="application/x-shockwave-flash" 
+        data="http://d1.scribdassets.com/ScribdViewer.swf" 
+        style="outline:none;" >
+<param name="movie" value="http://d1.scribdassets.com/ScribdViewer.swf">
+<param name="wmode" value="opaque">
+<param name="bgcolor" value="#ffffff">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<param name="FlashVars" value="document_id=39582083&access_key=key-glzevf6euwjjx11r5gr&page=1&viewMode=slideshow">
+<embed id="doc_313966474258373" 
+      name="doc_313966474258373" 
+      src="http://d1.scribdassets.com/ScribdViewer.swf?document_id=39582083&access_key=key-glzevf6euwjjx11r5gr&page=1&viewMode=list" 
+      type="application/x-shockwave-flash" 
+      allowscriptaccess="always" 
+      allowfullscreen="true" 
+      height="600" 
+      width="100%" 
+      wmode="opaque" 
+      bgcolor="#ffffff">
+</embed>
+</object>

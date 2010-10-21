@@ -1,0 +1,254 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
+<link title="PropList" rel="Chapter" href="PropList.html">
+<link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
+<link title="OASISUnixPath" rel="Chapter" href="OASISUnixPath.html">
+<link title="OASISContext" rel="Chapter" href="OASISContext.html">
+<link title="OASISGettext" rel="Chapter" href="OASISGettext.html">
+<link title="OASISMessage" rel="Chapter" href="OASISMessage.html">
+<link title="OASISTypes" rel="Chapter" href="OASISTypes.html">
+<link title="OASISParse" rel="Chapter" href="OASISParse.html">
+<link title="OASISValues" rel="Chapter" href="OASISValues.html">
+<link title="OASISExpr" rel="Chapter" href="OASISExpr.html">
+<link title="OASISVersion" rel="Chapter" href="OASISVersion.html">
+<link title="OASISLicense" rel="Chapter" href="OASISLicense.html">
+<link title="OASISFileTemplate" rel="Chapter" href="OASISFileTemplate.html">
+<link title="OASISBuildSection" rel="Chapter" href="OASISBuildSection.html">
+<link title="OASISDocument" rel="Chapter" href="OASISDocument.html">
+<link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
+<link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
+<link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
+<link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
+<link title="OASISTest" rel="Chapter" href="OASISTest.html">
+<link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
+<link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
+<link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
+<link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
+<link title="BaseData" rel="Chapter" href="BaseData.html">
+<link title="BaseDev" rel="Chapter" href="BaseDev.html">
+<link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
+<link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
+<link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
+<link title="BaseExec" rel="Chapter" href="BaseExec.html">
+<link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
+<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
+<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
+<link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
+<link title="BaseLog" rel="Chapter" href="BaseLog.html">
+<link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
+<link title="BaseSetup" rel="Chapter" href="BaseSetup.html">
+<link title="BaseStandardVar" rel="Chapter" href="BaseStandardVar.html">
+<link title="BaseTest" rel="Chapter" href="BaseTest.html">
+<link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
+<link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
+<link title="BaseContext" rel="Chapter" href="BaseContext.html">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>OASISTypes</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;name&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;package_name&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;url&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;unix_dirname&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;unix_filename&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;host_dirname&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;host_filename&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;prog&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;arg&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;args&nbsp;=&nbsp;<span class="constructor">OASISTypes</span>.arg&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;command_line&nbsp;=&nbsp;<span class="constructor">OASISTypes</span>.prog&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.args<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;findlib_name&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;findlib_full&nbsp;=&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;compiled_object&nbsp;=&nbsp;<span class="constructor">Byte</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Native</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Best</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;dependency&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">FindlibPackage</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.findlib_full&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">OASISVersion</span>.comparator&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">InternalLibrary</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.name<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;tool&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">ExternalTool</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">InternalExecutable</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.name<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;vcs&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Darcs</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Git</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Svn</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Cvs</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Hg</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Bzr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Arch</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Monotone</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">OtherVCS</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.url<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;conditional&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">OASISExpr</span>.choices<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;plugin_kind&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Build</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Configure</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Doc</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Extra</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Install</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Test</span>&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;plugin_data_purpose&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Build</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Clean</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Configure</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Distclean</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Doc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Extra</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Install</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Other</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Test</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Uninstall</span>&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;plugin&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.name&nbsp;*&nbsp;<span class="constructor">OASISVersion</span>.t&nbsp;option<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;all_plugin&nbsp;=&nbsp;<span class="constructor">OASISTypes</span>.plugin_kind&nbsp;<span class="constructor">OASISTypes</span>.plugin<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;plugin_data&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">OASISTypes</span>.all_plugin&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.plugin_data_purpose&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;custom&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pre_command&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.command_line&nbsp;option&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;post_command&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.command_line&nbsp;option&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;common_section&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cs_name&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.name;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cs_data&nbsp;:&nbsp;<span class="constructor">PropList</span>.<span class="constructor">Data</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cs_plugin_data&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.plugin_data;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;build_section&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_build&nbsp;:&nbsp;bool&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_install&nbsp;:&nbsp;bool&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_path&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_dirname;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_compiled_object&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.compiled_object;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_build_depends&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.dependency&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_build_tools&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.tool&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_c_sources&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_data_files&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">OASISTypes</span>.unix_filename&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;option)&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_ccopt&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_cclib&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_dlllib&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_dllpath&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_byteopt&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bs_nativeopt&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;library&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lib_modules&nbsp;:&nbsp;string&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lib_internal_modules&nbsp;:&nbsp;string&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lib_findlib_parent&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.findlib_name&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lib_findlib_name&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.findlib_name&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lib_findlib_containers&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.findlib_name&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;executable&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exec_custom&nbsp;:&nbsp;bool;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exec_main_is&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;flag&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;flag_description&nbsp;:&nbsp;string&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;flag_default&nbsp;:&nbsp;bool&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;source_repository&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_repo_type&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.vcs;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_repo_location&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.url;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_repo_browser&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.url&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_repo_module&nbsp;:&nbsp;string&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_repo_branch&nbsp;:&nbsp;string&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_repo_tag&nbsp;:&nbsp;string&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_repo_subdir&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;option;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;test&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_type&nbsp;:&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Test</span>&nbsp;]&nbsp;<span class="constructor">OASISTypes</span>.plugin;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_command&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.command_line&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_working_directory&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_run&nbsp;:&nbsp;bool&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_tools&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.tool&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;doc_format&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">HTML</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.unix_filename<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DocText</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">PDF</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">PostScript</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Info</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.unix_filename<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DVI</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">OtherDoc</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;doc&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_type&nbsp;:&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Doc</span>&nbsp;]&nbsp;<span class="constructor">OASISTypes</span>.plugin;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_build&nbsp;:&nbsp;bool&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_install&nbsp;:&nbsp;bool&nbsp;<span class="constructor">OASISTypes</span>.conditional;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_install_dir&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_title&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_authors&nbsp;:&nbsp;string&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_abstract&nbsp;:&nbsp;string&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_format&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.doc_format;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_data_files&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">OASISTypes</span>.unix_filename&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;option)&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc_build_tools&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.tool&nbsp;list;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;section&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Library</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.common_section&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.build_section&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">OASISTypes</span>.library<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Executable</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.common_section&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.build_section&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">OASISTypes</span>.executable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Flag</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.common_section&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.flag<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">SrcRepo</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.common_section&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.source_repository<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Test</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.common_section&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Doc</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">OASISTypes</span>.common_section&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.doc<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;package&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;oasis_version&nbsp;:&nbsp;<span class="constructor">OASISVersion</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ocaml_version&nbsp;:&nbsp;<span class="constructor">OASISVersion</span>.comparator&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;findlib_version&nbsp;:&nbsp;<span class="constructor">OASISVersion</span>.comparator&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.package_name;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;version&nbsp;:&nbsp;<span class="constructor">OASISVersion</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;license&nbsp;:&nbsp;<span class="constructor">OASISLicense</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;license_file&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copyrights&nbsp;:&nbsp;string&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;maintainers&nbsp;:&nbsp;string&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;authors&nbsp;:&nbsp;string&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;homepage&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.url&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;synopsis&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;:&nbsp;string&nbsp;option;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;categories&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.url&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;conf_type&nbsp;:&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Configure</span>&nbsp;]&nbsp;<span class="constructor">OASISTypes</span>.plugin;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;conf_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;build_type&nbsp;:&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Build</span>&nbsp;]&nbsp;<span class="constructor">OASISTypes</span>.plugin;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;build_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;install_type&nbsp;:&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Install</span>&nbsp;]&nbsp;<span class="constructor">OASISTypes</span>.plugin;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;install_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;uninstall_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clean_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;distclean_custom&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.custom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;files_ab&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sections&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.section&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;plugins&nbsp;:&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Extra</span>&nbsp;]&nbsp;<span class="constructor">OASISTypes</span>.plugin&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;schema_data&nbsp;:&nbsp;<span class="constructor">PropList</span>.<span class="constructor">Data</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;plugin_data&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.plugin_data;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;quickstart_level&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">NoChoice</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Beginner</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Intermediate</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Expert</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;quickstart_question&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Field</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Text</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Choices</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ExclusiveChoices</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_name&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.name&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_package_name&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.package_name&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_url&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.url&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_unix_dirname&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_dirname&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_unix_filename&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.unix_filename&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_prog&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.prog&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_arg&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.arg&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_args&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_command_line&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.prog&nbsp;*&nbsp;<span class="constructor">OASISTypes</span>.args&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_findlib_name&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.findlib_name&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_findlib_full&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.findlib_name&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_conditional&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">OASISExpr</span>.choices&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;odn_of_package&nbsp;:&nbsp;<span class="constructor">OASISTypes</span>.package&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">ODN</span>.t<br>
+<span class="keyword">end</span></code></body></html>

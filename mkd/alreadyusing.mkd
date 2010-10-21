@@ -4,10 +4,26 @@
 * [OCaml Gettext](https://forge.ocamlcore.org/projects/ocaml-gettext)
 * [OCaml Everio(TM) .moi file convert](https://forge.ocamlcore.org/projects/ocaml-moifile/): 
   [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-moifile;a=headblob;f=/_oasis)
-* OASIS itself:
-  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/_oasis)
+* [camera-rescue](https://forge.ocamlcore.org/projects/camera-rescue):
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=camera-rescue;a=headblob;f=/_oasis)
+* [cryptokit](https://forge.ocamlcore.org/projects/cryptokit):
+  [\_oasis](https://forge.ocamlcore.org/scm/viewvc.php/trunk/_oasis?view=markup&root=cryptokit)
+* [extunix](https://forge.ocamlcore.org/projects/extunix):
+  [\_oasis](http://git.ocamlcore.org/cgi-bin/gitweb.cgi?p=extunix/extunix.git;a=blob;f=_oasis)
+* [ocaml-data-notation](https://forge.ocamlcore.org/projects/odn):
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-data-notation;a=headblob;f=/_oasis)
+* [ocaml-expect](https://forge.ocamlcore.org/projects/ocaml-expect):
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-expect;a=headblob;f=/_oasis)
+* [ocamlify](https://forge.ocamlcore.org/projects/ocamlify):
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocamlify;a=headblob;f=/_oasis)
+* [ocaml-lua](https://forge.ocamlcore.org/projects/ocaml-lua):
+  [\_oasis](http://git.ocamlcore.org/cgi-bin/gitweb.cgi?p=ocaml-lua/ocaml-lua.git;a=blob;f=_oasis)
+* [ounit](https://forge.ocamlcore.org/projects/ounit):
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ounit;a=headblob;f=/_oasis)
+* [xenops](http://github.com/xen-org/xenops):
+  [\_oasis](http://github.com/xen-org/xenops/blob/master/_oasis)
 
-	
+
 To be added to this list, fill a bug with website as component, "project using
 oasis" as summary and tell us a few words about your project in the
 description, 

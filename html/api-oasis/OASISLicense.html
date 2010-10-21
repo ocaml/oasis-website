@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="OASISVersion.html">
+<link rel="next" href="OASISFileTemplate.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
+<link title="PropList" rel="Chapter" href="PropList.html">
+<link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
+<link title="OASISUnixPath" rel="Chapter" href="OASISUnixPath.html">
+<link title="OASISContext" rel="Chapter" href="OASISContext.html">
+<link title="OASISGettext" rel="Chapter" href="OASISGettext.html">
+<link title="OASISMessage" rel="Chapter" href="OASISMessage.html">
+<link title="OASISTypes" rel="Chapter" href="OASISTypes.html">
+<link title="OASISParse" rel="Chapter" href="OASISParse.html">
+<link title="OASISValues" rel="Chapter" href="OASISValues.html">
+<link title="OASISExpr" rel="Chapter" href="OASISExpr.html">
+<link title="OASISVersion" rel="Chapter" href="OASISVersion.html">
+<link title="OASISLicense" rel="Chapter" href="OASISLicense.html">
+<link title="OASISFileTemplate" rel="Chapter" href="OASISFileTemplate.html">
+<link title="OASISBuildSection" rel="Chapter" href="OASISBuildSection.html">
+<link title="OASISDocument" rel="Chapter" href="OASISDocument.html">
+<link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
+<link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
+<link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
+<link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
+<link title="OASISTest" rel="Chapter" href="OASISTest.html">
+<link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
+<link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
+<link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
+<link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
+<link title="BaseData" rel="Chapter" href="BaseData.html">
+<link title="BaseDev" rel="Chapter" href="BaseDev.html">
+<link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
+<link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
+<link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
+<link title="BaseExec" rel="Chapter" href="BaseExec.html">
+<link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
+<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
+<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
+<link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
+<link title="BaseLog" rel="Chapter" href="BaseLog.html">
+<link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
+<link title="BaseSetup" rel="Chapter" href="BaseSetup.html">
+<link title="BaseStandardVar" rel="Chapter" href="BaseStandardVar.html">
+<link title="BaseTest" rel="Chapter" href="BaseTest.html">
+<link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
+<link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
+<link title="BaseContext" rel="Chapter" href="BaseContext.html">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="License definitions" rel="Section" href="#2_Licensedefinitions">
+<title>OASISLicense</title>
+</head>
+<body>
+<div class="navbar"><a href="OASISVersion.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="OASISFileTemplate.html">Next</a>
+</div>
+<center><h1>Module <a href="type_OASISLicense.html">OASISLicense</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> OASISLicense: <code class="code">sig</code> <a href="OASISLicense.html">..</a> <code class="code">end</code></pre>License definition
+<p>
+
+    This module allows to manipulate DEP-5 style license.<br>
+<b>Author(s):</b> Sylvain Le Gall<br>
+<b>See also</b> <a href="http://dep.debian.net/deps/dep5/">DEP-5</a><br>
+<hr width="100%">
+<pre><span class="keyword">type</span> <a name="TYPElicense"></a><code class="type"></code>license </pre>
+<div class="info">
+Valid licenses<br>
+</div>
+
+<pre><span class="keyword">type</span> <a name="TYPElicense_exception"></a><code class="type"></code>license_exception </pre>
+<div class="info">
+Valid license exceptions.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPElicense_version"></a><code class="type"></code>license_version = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Version</span> <span class="keyword">of</span> <code class="type"><a href="OASISVersion.html#TYPEt">OASISVersion.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">VersionOrLater</span> <span class="keyword">of</span> <code class="type"><a href="OASISVersion.html#TYPEt">OASISVersion.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">NoVersion</span></code></td>
+
+</tr></table>
+
+<div class="info">
+License version.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPElicense_dep_5"></a><code class="type"></code>license_dep_5 = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>license&nbsp;: <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>exceptions&nbsp;: <code class="type"><a href="OASISLicense.html#TYPElicense_exception">license_exception</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>version&nbsp;: <code class="type"><a href="OASISLicense.html#TYPElicense_version">license_version</a></code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info">
+DEP-5 license.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">DEP5License</span> <span class="keyword">of</span> <code class="type"><a href="OASISLicense.html#TYPElicense_dep_5">license_dep_5</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">OtherLicense</span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr></table>
+
+<div class="info">
+Extended DEP-5 license.<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPElicense_data"></a><code class="type"></code>license_data = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>long_name&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Expanded name of the license.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>versions&nbsp;: <code class="type"><a href="OASISVersion.html#TYPEt">OASISVersion.t</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Standard versions of the license.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>note&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Extra information about the license.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Extra data about license <b>Not exported</b><br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPElicense_exception_data"></a><code class="type"></code>license_exception_data = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>explanation&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Purpose of the exception.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>licenses&nbsp;: <code class="type"><a href="OASISLicense.html#TYPElicense">license</a> list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Compatible licenses with the exception.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Extra data about license exception <b>Not exported</b><br>
+</div>
+
+<pre><span class="keyword">val</span> <a name="VALto_string"></a>to_string : <code class="type"><a href="OASISLicense.html#TYPEt">t</a> -> string</code></pre><div class="info">
+Convert a DEP-5 license to string. <b>Not exported</b>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALstring_of_license"></a>string_of_license : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a> -> string</code></pre><div class="info">
+Convert a license to string. <b>Not exported</b>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALstring_of_license_exception"></a>string_of_license_exception : <code class="type"><a href="OASISLicense.html#TYPElicense_exception">license_exception</a> -> string</code></pre><div class="info">
+Convert a license exception to string. <b>Not exported</b>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALvalue"></a>value : <code class="type"><a href="OASISLicense.html#TYPEt">t</a> <a href="OASISValues.html#TYPEt">OASISValues.t</a></code></pre><div class="info">
+License value. <b>Not exported</b>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALchoices"></a>choices : <code class="type">unit -> <a href="OASISLicense.html#TYPEt">t</a> list</code></pre><div class="info">
+Choices for quickstart question. <b>Not exported</b>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALlicense_data"></a>license_data : <code class="type">unit -> (<a href="OASISLicense.html#TYPElicense">license</a> * <a href="OASISLicense.html#TYPElicense_data">license_data</a>) list</code></pre><div class="info">
+All available license, their short name, their long name, and compatible 
+    versions. <b>Not exported</b>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALlicense_exception_data"></a>license_exception_data : <code class="type">unit -><br>       (<a href="OASISLicense.html#TYPElicense_exception">license_exception</a> * <a href="OASISLicense.html#TYPElicense_exception_data">license_exception_data</a>) list</code></pre><div class="info">
+All available license exception, their name, and compatible license.
+  <b>Not exported</b>.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALodn_of_t"></a>odn_of_t : <code class="type"><a href="OASISLicense.html#TYPEt">t</a> -> ODN.t</code></pre><div class="info">
+Dump <code class="code">ODN.t</code>. <b>Not exported</b>.<br>
+</div>
+<br>
+<a name="2_Licensedefinitions"></a>
+<h2>License definitions</h2>
+<p>
+
+    <b>No licenses are exported.</b><br>
+<pre><span class="keyword">val</span> <a name="VALproprietary"></a>proprietary : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALapache"></a>apache : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALartistic"></a>artistic : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALbsd3"></a>bsd3 : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALbsd4"></a>bsd4 : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcecill"></a>cecill : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcecillb"></a>cecillb : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcecillc"></a>cecillc : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALfreebsd"></a>freebsd : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALisc"></a>isc : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcc_by"></a>cc_by : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcc_by_sa"></a>cc_by_sa : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcc_by_nd"></a>cc_by_nd : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcc_by_nc"></a>cc_by_nc : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcc_by_nc_sa"></a>cc_by_nc_sa : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcc_by_nc_nd"></a>cc_by_nc_nd : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcc0"></a>cc0 : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcddl"></a>cddl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALcpl"></a>cpl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALeiffel"></a>eiffel : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALexpat"></a>expat : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALgpl"></a>gpl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALlgpl"></a>lgpl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALgfdl"></a>gfdl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALgfdl_niv"></a>gfdl_niv : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALlppl"></a>lppl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALmpl"></a>mpl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALperl"></a>perl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALpsf"></a>psf : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALqpl"></a>qpl : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALw3c_software"></a>w3c_software : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALzlib"></a>zlib : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALzope"></a>zope : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALmit"></a>mit : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALpublic_domain"></a>public_domain : <code class="type"><a href="OASISLicense.html#TYPElicense">license</a></code></pre><pre><span class="keyword">val</span> <a name="VALocaml_linking_exception"></a>ocaml_linking_exception : <code class="type"><a href="OASISLicense.html#TYPElicense_exception">license_exception</a></code></pre></body></html>
