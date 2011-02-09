@@ -425,8 +425,6 @@ is available looking at the file `setup.data`.
 
 Here is a list of standard variables:
 
-I: Running command '/usr/bin/ocamlc.opt -config > '/tmp/oasis-b3b412.txt''
-I: Running command '/usr/bin/ocamlfind query -format %v findlib > '/tmp/oasis-a150d1.txt''
  * `ocamlfind`
  * `ocamlc`
  * `ocamlopt`
