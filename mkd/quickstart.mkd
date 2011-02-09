@@ -25,7 +25,7 @@ The central point of OASIS is the `_oasis` file that should be placed in the top
 directory of your project. 
 
 This file can be created by hand, but OASIS provide a simple generator for it. Use the 
-command `oasis -quickstart` to launch it. The questions are localized, maybe the output
+command `oasis quickstart` to launch it. The questions are localized, maybe the output
 of the program will be in your language. 
 
 Answer each question and end your input with the `enter` key. If you have a problem
