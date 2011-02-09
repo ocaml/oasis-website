@@ -22,6 +22,16 @@
   [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ounit;a=headblob;f=/_oasis)
 * [xenops](http://github.com/xen-org/xenops):
   [\_oasis](http://github.com/xen-org/xenops/blob/master/_oasis)
+* [ocaml-text] (https://forge.ocamlcore.org/project/ocaml-text):
+  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-text;a=headblob;f=/_oasis)
+* [ocaml-sqlexpr](http://github.com/mfp/ocaml-sqlexpr): 
+  [\_oasis](http://github.com/mfp/ocaml-sqlexpr/blob/master/_oasis)
+* [activity-reporter](http://github.com/celtic/activity-reporter):
+  [\_oasis](http://github.com/celtic/activity-reporter/blob/master/_oasis)
+* [ocaml-sphinx](http://sphinx.forge.ocamlcore.org/):
+  [\_oasis](http://git.ocamlcore.org/cgi-bin/gitweb.cgi?p=sphinx/sphinx.git;a=blob;f=_oasis)
+* [lwt](http://ocsigen.org/lwt/):
+  [\_oasis](http://ocsigen.org/lwt/sources/_oasis?view=content)
 
 
 To be added to this list, fill a bug with website as component, "project using
