@@ -32,6 +32,14 @@
   [\_oasis](http://git.ocamlcore.org/cgi-bin/gitweb.cgi?p=sphinx/sphinx.git;a=blob;f=_oasis)
 * [lwt](http://ocsigen.org/lwt/):
   [\_oasis](http://ocsigen.org/lwt/sources/_oasis?view=content)
+* [ANSITerminal](https://forge.ocamlcore.org/projects/ansiterminal/):
+  [VCS](https://forge.ocamlcore.org/scm/browser.php?group_id=187)
+* [Sexplib](http://ocaml.janestreet.com/?q=node/13)
+* [Jane Street Core](http://ocaml.janestreet.com/?q=node/13)
+* [Jane Street Core Extended](http://ocaml.janestreet.com/?q=node/13)
+* [Bin_prot](http://ocaml.janestreet.com/?q=node/13)
+* [Fieldslib](http://ocaml.janestreet.com/?q=node/13)
+* [Type-conv](http://ocaml.janestreet.com/?q=node/13)
 
 
 To be added to this list, fill a bug with website as component, "project using
