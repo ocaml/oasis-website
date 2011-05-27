@@ -33,9 +33,9 @@ allows external tools to analyse your project easily.</p>
       <p>Features:</p>
 
       <ul>
-      <li>OCamlbuild support (<a href="MANUAL.html#plugin-ocamlbuild">see here</a>)</li>
-      <li>Standard files auto-generation (see here <a href="MANUAL.html#plugin-devfiles">1</a>,
-      <a href="MANUAL.html#plugin-meta">2</a>, <a href="MANUAL.html#plugin-stdfiles">3</a>)</li>
+      <li>OCamlbuild support (<a href="MANUAL.html#plugin-ocamlbuild-build-doc">see here</a>)</li>
+      <li>Standard files auto-generation (see here <a href="MANUAL.html#plugin-devfiles-extra">1</a>,
+      <a href="MANUAL.html#plugin-meta-extra">2</a>, <a href="MANUAL.html#plugin-stdfiles-extra">3</a>)</li>
       </ul>
 
       <p>Planned features:</p>
