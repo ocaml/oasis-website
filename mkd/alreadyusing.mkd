@@ -22,7 +22,7 @@
   [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ounit;a=headblob;f=/_oasis)
 * [xenops](http://github.com/xen-org/xenops):
   [\_oasis](http://github.com/xen-org/xenops/blob/master/_oasis)
-* [ocaml-text] (https://forge.ocamlcore.org/project/ocaml-text):
+* [ocaml-text](https://forge.ocamlcore.org/project/ocaml-text):
   [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-text;a=headblob;f=/_oasis)
 * [ocaml-sqlexpr](http://github.com/mfp/ocaml-sqlexpr): 
   [\_oasis](http://github.com/mfp/ocaml-sqlexpr/blob/master/_oasis)
