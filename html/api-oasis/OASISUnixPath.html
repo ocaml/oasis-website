@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>OASISUnixPath</title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>OASISUnixPath</title>
 </head>
 <body>
 <div class="navbar"><a href="OASISUtils.html">Previous</a>
@@ -76,35 +84,68 @@
   system.<br>
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEunix_filename"></a><code class="type"></code>unix_filename = <code class="type">string</code> </pre>
+<pre><span id="TYPEunix_filename"><span class="keyword">type</span> <code class="type"></code>unix_filename</span> = <code class="type">string</code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEunix_dirname"></a><code class="type"></code>unix_dirname = <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code> </pre>
+<pre><span id="TYPEunix_dirname"><span class="keyword">type</span> <code class="type"></code>unix_dirname</span> = <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEhost_filename"></a><code class="type"></code>host_filename = <code class="type">string</code> </pre>
+<pre><span id="TYPEhost_filename"><span class="keyword">type</span> <code class="type"></code>host_filename</span> = <code class="type">string</code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEhost_dirname"></a><code class="type"></code>host_dirname = <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">host_filename</a></code> </pre>
+<pre><span id="TYPEhost_dirname"><span class="keyword">type</span> <code class="type"></code>host_dirname</span> = <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">host_filename</a></code> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALcurrent_dir_name"></a>current_dir_name : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<pre><span id="VALcurrent_dir_name"><span class="keyword">val</span> current_dir_name</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
 '.' on Unix.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALparent_dir_name"></a>parent_dir_name : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<pre><span id="VALis_current_dir"><span class="keyword">val</span> is_current_dir</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> bool</code></pre><div class="info">
+Test if the filename is current dir (either '.' or '') on Unix.<br>
+</div>
+<pre><span id="VALparent_dir_name"><span class="keyword">val</span> parent_dir_name</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
 '..' on Unix.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALconcat"></a>concat : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -><br>       <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -><br>       <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
 <code class="code">concat fn1 fn2</code> Concatenate fn1 and fn2, i.e. <code class="code">fn1^'/'^fn2</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> list -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> list -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
 <code class="code">make lst</code> Concatenate all filename components of <code class="code">lst</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdirname"></a>dirname : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<pre><span id="VALdirname"><span class="keyword">val</span> dirname</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
 <code class="code">dirname fn</code> Return directory name of <code class="code">fn</code> or <code class="code">current_dir_name</code> if no
     directory name is defined.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALbasename"></a>basename : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<pre><span id="VALbasename"><span class="keyword">val</span> basename</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
 <code class="code">basename fn</code> Return filename without its directory name.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALchop_extension"></a>chop_extension : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<pre><span id="VALchop_extension"><span class="keyword">val</span> chop_extension</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
 <code class="code">chop_extension fn</code> Remove the last part of the filename, after a '.',
     return <code class="code">fn</code> if there is no extension.<br>
+</div>
+<pre><span id="VALcheck_extension"><span class="keyword">val</span> check_extension</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> string -> bool</code></pre><div class="info">
+<code class="code">check_extension fn ext</code> Check that the filen <code class="code">fn</code> has the extension <code class="code">ext</code>.
+    <b>Not exported</b><br>
+</div>
+<pre><span id="VALadd_extension"><span class="keyword">val</span> add_extension</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> string -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<code class="code">add_extension fn ext</code> Add the extension <code class="code">ext</code> to the filename <code class="code">fn</code>.
+    <b>Not exported</b><br>
+</div>
+<pre><span id="VALreplace_extension"><span class="keyword">val</span> replace_extension</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> string -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<code class="code">replace_extension fn ext</code> Add the extension <code class="code">ext</code> to the filename <code class="code">fn</code>.
+    <b>Not exported</b><br>
+</div>
+<pre><span id="VALcapitalize_file"><span class="keyword">val</span> capitalize_file</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<code class="code">capitalize_file fn</code> Return filename capitalized.<br>
+</div>
+<pre><span id="VALuncapitalize_file"><span class="keyword">val</span> uncapitalize_file</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<code class="code">uncapitalize_file fn</code> Return filename uncapitalized.<br>
+</div>
+<pre><span id="VALreduce"><span class="keyword">val</span> reduce</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+Try to compress the filename by removing '.' and collapsing '..'.
+    <b>Not exported</b><br>
+</div>
+<pre><span id="VALmake_relative"><span class="keyword">val</span> make_relative</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -><br>       <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> <a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a></code></pre><div class="info">
+<code class="code">make_relative fn_root fn</code> Make <code class="code">fn</code> relative to <code class="code">fn_root</code>.
+    <b>Not exported</b><br>
+</div>
+<pre><span id="VALis_current"><span class="keyword">val</span> is_current</span> : <code class="type"><a href="OASISUnixPath.html#TYPEunix_filename">unix_filename</a> -> bool</code></pre><div class="info">
+Test if the filename is the current directory.
+    <b>Not exported</b><br>
 </div>
 </body></html>

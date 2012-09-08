@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="Types and exceptions" rel="Section" href="#2_Typesandexceptions">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><link title="Types and exceptions" rel="Section" href="#2_Typesandexceptions">
 <link title="Modules" rel="Section" href="#2_Modules">
 <title>PropList</title>
 </head>
@@ -74,30 +82,24 @@
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
 <br>
-<a name="2_Typesandexceptions"></a>
-<h2>Types and exceptions</h2><br>
-<pre><span class="keyword">type</span> <a name="TYPEname"></a><code class="type"></code>name = <code class="type">string</code> </pre>
+<span id="2_Typesandexceptions"><h2>Types and exceptions</h2></span><br>
+<pre><span id="TYPEname"><span class="keyword">type</span> <code class="type"></code>name</span> = <code class="type">string</code> </pre>
 
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONNot_set"></a>Not_set <span class="keyword">of</span> <code class="type"><a href="PropList.html#TYPEname">name</a> * string option</code></pre>
+<pre><span id="EXCEPTIONNot_set"><span class="keyword">exception</span> Not_set</span> <span class="keyword">of</span> <code class="type"><a href="PropList.html#TYPEname">name</a> * string option</code></pre>
 <div class="info">
 The field of <code class="code">name</code> is not set with optional explanation.<br>
 </div>
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONNo_printer"></a>No_printer <span class="keyword">of</span> <code class="type"><a href="PropList.html#TYPEname">name</a></code></pre>
+<pre><span id="EXCEPTIONNo_printer"><span class="keyword">exception</span> No_printer</span> <span class="keyword">of</span> <code class="type"><a href="PropList.html#TYPEname">name</a></code></pre>
 <div class="info">
 Can retrieve the field value, but no printer can convert.
     it to string.<br>
 </div>
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONUnknown_field"></a>Unknown_field <span class="keyword">of</span> <code class="type"><a href="PropList.html#TYPEname">name</a> * <a href="PropList.html#TYPEname">name</a></code></pre>
+<pre><span id="EXCEPTIONUnknown_field"><span class="keyword">exception</span> Unknown_field</span> <span class="keyword">of</span> <code class="type"><a href="PropList.html#TYPEname">name</a> * <a href="PropList.html#TYPEname">name</a></code></pre>
 <div class="info">
 <code class="code">Unknown_field (fld, schm)</code> Unknown field <code class="code">fld</code> in schema <code class="code">schm</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALstring_of_exception"></a>string_of_exception : <code class="type">exn -> string</code></pre><div class="info">
-Convert an exception in string. Re-raise the exception if cannot
-    convert.<br>
-</div>
 <br>
-<a name="2_Modules"></a>
-<h2>Modules</h2><br>
+<span id="2_Modules"><h2>Modules</h2></span><br>
 <pre><span class="keyword">module</span> <a href="PropList.Data.html">Data</a>: <code class="code">sig</code> <a href="PropList.Data.html">..</a> <code class="code">end</code></pre><div class="info">
 This module stores heterogeneous data defined in Schema and Field.
 </div>

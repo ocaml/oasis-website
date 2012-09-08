@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>BaseSetup</title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>BaseSetup</title>
 </head>
 <body>
 <div class="navbar"><a href="BaseOCamlcConfig.html">Previous</a>
@@ -71,11 +79,11 @@
 <pre><span class="keyword">module</span> BaseSetup: <code class="code">sig</code> <a href="BaseSetup.html">..</a> <code class="code">end</code></pre>Entry points for 'setup.ml'<br>
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEstd_args_fun"></a><code class="type"></code>std_args_fun = <code class="type"><a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code> </pre>
+<pre><span id="TYPEstd_args_fun"><span class="keyword">type</span> <code class="type"></code>std_args_fun</span> = <code class="type"><a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEsection_args_fun"></a><code class="type">('a, 'b)</code> section_args_fun = <code class="type"><a href="OASISTypes.html#TYPEname">OASISTypes.name</a> *<br>       (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -><br>        <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> 'b)</code> </pre>
+<pre><span id="TYPEsection_args_fun"><span class="keyword">type</span> <code class="type">('a, 'b)</code> section_args_fun</span> = <code class="type"><a href="OASISTypes.html#TYPEname">OASISTypes.name</a> *<br>       (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -><br>        <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> 'b)</code> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t = {</code><table class="typetable">
+<br><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -171,57 +179,92 @@
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code>version&nbsp;: <code class="type">string</code>;</code></td>
-
+<code>oasis_fn&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Filename of _oasis that matches the package field.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>oasis_version&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >OASIS version that has generated this structure.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>oasis_digest&nbsp;: <code class="type">Digest.t option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Digest of _oasis that matches the package field.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>oasis_exec&nbsp;: <code class="type">string option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Name of oasis executable to use, only for testing.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>oasis_setup_args&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Args to use when updating the setup.ml.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>setup_update&nbsp;: <code class="type">bool</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Are we allowed to update the setup.ml (eq. of -setup-update weak).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALconfigure"></a>configure : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALconfigure"><span class="keyword">val</span> configure</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the configure step.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALbuild"></a>build : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALbuild"><span class="keyword">val</span> build</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the build step.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdoc"></a>doc : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALdoc"><span class="keyword">val</span> doc</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the doc step: build all documents.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALtest"></a>test : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALtest"><span class="keyword">val</span> test</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the test step: run all tests.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALinstall"></a>install : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALinstall"><span class="keyword">val</span> install</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the install step.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALuninstall"></a>uninstall : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALuninstall"><span class="keyword">val</span> uninstall</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the uninstall step.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALclean"></a>clean : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALclean"><span class="keyword">val</span> clean</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the clean step.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdistclean"></a>distclean : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALdistclean"><span class="keyword">val</span> distclean</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the distclean step.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALreinstall"></a>reinstall : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALreinstall"><span class="keyword">val</span> reinstall</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run the reinstall step: deinstall and install.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALall"></a>all : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALall"><span class="keyword">val</span> all</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Run all steps: configure, build, doc, test and install.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALversion"></a>version : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
+<pre><span id="VALversion"><span class="keyword">val</span> version</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> <a href="OASISTypes.html#TYPEarg">OASISTypes.arg</a> array -> unit</code></pre><div class="info">
 Display OASIS version used to generate this setup.ml<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALsetup"></a>setup : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALsetup"><span class="keyword">val</span> setup</span> : <code class="type"><a href="BaseSetup.html#TYPEt">t</a> -> unit</code></pre><div class="info">
 The first function called when running 'setup.ml'.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdefault_filename"></a>default_filename : <code class="type"><a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
+<pre><span id="VALdefault_filename"><span class="keyword">val</span> default_filename</span> : <code class="type"><a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
 Default filename for 'setup.ml'. <b>Not exported</b><br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfind"></a>find : <code class="type"><a href="OASISPlugin.html#TYPEcontext_act">OASISPlugin.context_act</a> -> <a href="OASISFileTemplate.html#TYPEtemplate">OASISFileTemplate.template</a></code></pre><div class="info">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="OASISPlugin.html#TYPEcontext_act">OASISPlugin.context_act</a> -> <a href="OASISFileTemplate.html#TYPEtemplate">OASISFileTemplate.template</a></code></pre><div class="info">
 Get template 'setup.ml' file out of the plugin context. 
     <b>Not exported</b>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALof_package"></a>of_package : <code class="type"><a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISPlugin.html#TYPEcontext_act">OASISPlugin.context_act</a> * <a href="BaseSetup.html#TYPEt">t</a></code></pre><div class="info">
-Create <code class="code">t</code> and plugin context from an OASIS package.
-    <b>Not exported</b>.<br>
+<pre><span id="VALof_package"><span class="keyword">val</span> of_package</span> : <code class="type">?oasis_fn:<a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a> -><br>       ?oasis_exec:<a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a> -><br>       ?oasis_setup_args:string list -><br>       setup_update:bool -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISPlugin.html#TYPEcontext_act">OASISPlugin.context_act</a> * <a href="BaseSetup.html#TYPEt">t</a></code></pre><div class="info">
+Create <code class="code">t</code> and plugin context from an OASIS package and the
+    matching _oasis. <b>Not exported</b>.<br>
 </div>
 </body></html>

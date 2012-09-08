@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="Types and exception" rel="Section" href="#2_Typesandexception">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><link title="Types and exception" rel="Section" href="#2_Typesandexception">
 <link title="Basic values and combinators" rel="Section" href="#2_Basicvaluesandcombinators">
 <link title="Standard values" rel="Section" href="#2_Standardvalues">
 <title>OASISValues</title>
@@ -82,9 +90,8 @@
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
 <br>
-<a name="2_Typesandexception"></a>
-<h2>Types and exception</h2><br>
-<br><code><span class="keyword">type</span> <a name="TYPEt"></a><code class="type">'a</code> t = {</code><table class="typetable">
+<span id="2_Typesandexception"><h2>Types and exception</h2></span><br>
+<br><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -112,105 +119,107 @@
 Definition of a value.<br>
 </div>
 
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONNot_printable"></a>Not_printable</pre>
+<pre><span id="EXCEPTIONNot_printable"><span class="keyword">exception</span> Not_printable</span></pre>
 <div class="info">
 The value exist but there is no easy way to represent it.<br>
 </div>
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONNot_combinable"></a>Not_combinable</pre>
+<pre><span id="EXCEPTIONNot_combinable"><span class="keyword">exception</span> Not_combinable</span></pre>
 <div class="info">
 It is not possible to combine values.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALupdate_fail"></a>update_fail : <code class="type">'a -> 'b -> 'c</code></pre><div class="info">
+<pre><span id="VALupdate_fail"><span class="keyword">val</span> update_fail</span> : <code class="type">'a -> 'b -> 'c</code></pre><div class="info">
 Always raise <a href="OASISValues.html#EXCEPTIONNot_combinable"><code class="code">OASISValues.Not_combinable</code></a>.<br>
 </div>
 <br>
-<a name="2_Basicvaluesandcombinators"></a>
-<h2>Basic values and combinators</h2><br>
-<pre><span class="keyword">val</span> <a name="VALblackbox"></a>blackbox : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<span id="2_Basicvaluesandcombinators"><h2>Basic values and combinators</h2></span><br>
+<pre><span id="VALblackbox"><span class="keyword">val</span> blackbox</span> : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Hidden value to build phantom data storage, cannot set/get
     it using string.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALstring"></a>string : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALstring"><span class="keyword">val</span> string</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 String value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALstring_not_empty"></a>string_not_empty : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALstring_not_empty"><span class="keyword">val</span> string_not_empty</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 String value, must not be "".<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALboolean"></a>boolean : <code class="type">bool <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALboolean"><span class="keyword">val</span> boolean</span> : <code class="type">bool <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Boolean value, use <code class="code">bool_of_string</code> to parse.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALexpandable"></a>expandable : <code class="type">string <a href="OASISValues.html#TYPEt">t</a> -> string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALexpandable"><span class="keyword">val</span> expandable</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a> -> string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Extra check to see if the string value, can be expanded
     using <code class="code">Buffer.add_substitute</code> rules.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdot_separated"></a>dot_separated : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'a list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALdot_separated"><span class="keyword">val</span> dot_separated</span> : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'a list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">dot_separated v</code> When parsing split the input string using '.' separator
     and apply <code class="code">v.parse</code>. Merge by concatenate two values, and print by joining
     <code class="code">v.print</code> generated strings using a '.' separator. Don't strip whitespaces.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcomma_separated"></a>comma_separated : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'a list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALcomma_separated"><span class="keyword">val</span> comma_separated</span> : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'a list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Same as <a href="OASISValues.html#VALdot_separated"><code class="code">OASISValues.dot_separated</code></a> using ',' as separator. Strip whitespaces before
     and after the input string.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALspace_separated"></a>space_separated : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALnewline_separated"><span class="keyword">val</span> newline_separated</span> : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'a list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+Same <a href="OASISValues.html#VALdot_separated"><code class="code">OASISValues.dot_separated</code></a> using '\n' as separator. Strip whitespaces before and
+    after the input string.<br>
+</div>
+<pre><span id="VALspace_separated"><span class="keyword">val</span> space_separated</span> : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Same as <a href="OASISValues.html#VALdot_separated"><code class="code">OASISValues.dot_separated</code></a> using blanks as separator.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALwith_optional_parentheses"></a>with_optional_parentheses : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'b <a href="OASISValues.html#TYPEt">t</a> -> ('a * 'b option) <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALwith_optional_parentheses"><span class="keyword">val</span> with_optional_parentheses</span> : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'b <a href="OASISValues.html#TYPEt">t</a> -> ('a * 'b option) <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">with_optional_parentheses v_main v_opt</code> Combine two values. The input
     string <code class="code">"abcd (defg)"</code> is split between the part not between parentheses
     and the one between. <code class="code">v_main</code> is applied to the first one and <code class="code">v_opt</code> to
     the latter. If no parentheses is found, only apply <code class="code">v_main</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALopt"></a>opt : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'a option <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALopt"><span class="keyword">val</span> opt</span> : <code class="type">'a <a href="OASISValues.html#TYPEt">t</a> -> 'a option <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Optional value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALchoices"></a>choices : <code class="type">(unit -> string) -> (string * 'a) list -> 'a <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALchoices"><span class="keyword">val</span> choices</span> : <code class="type">(unit -> string) -> (string * 'a) list -> 'a <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">choices nm lst</code> Value that must be in a list of predefined choices.
     Find the right association in <code class="code">lst</code>, comparison is case insensitive.
     If something failed output a message using <code class="code">nm</code> as the name of the 
     value represented.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALregexp"></a>regexp : <code class="type">Pcre.regexp -> (unit -> string) -> string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
-<code class="code">regexp r nm</code> Check that input string match <code class="code">r</code>. If not use <code class="code">nm</code> as the 
-    name of the value represented.<br>
-</div>
 <br>
-<a name="2_Standardvalues"></a>
-<h2>Standard values</h2><br>
-<pre><span class="keyword">val</span> <a name="VALurl"></a>url : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<span id="2_Standardvalues"><h2>Standard values</h2></span><br>
+<pre><span id="VALurl"><span class="keyword">val</span> url</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 URL value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcopyright"></a>copyright : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALcopyright"><span class="keyword">val</span> copyright</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Copyright value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfile"></a>file : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALfile"><span class="keyword">val</span> file</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 File value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfiles"></a>files : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALfiles"><span class="keyword">val</span> files</span> : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 File list value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfile_glob"></a>file_glob : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALfile_glob"><span class="keyword">val</span> file_glob</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 File with glob value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdirectory"></a>directory : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALdirectory"><span class="keyword">val</span> directory</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Directory value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmodules"></a>modules : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALmodules"><span class="keyword">val</span> modules</span> : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Module list value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcategories"></a>categories : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALcategories"><span class="keyword">val</span> categories</span> : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Category list value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfindlib_name"></a>findlib_name : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALfindlib_name"><span class="keyword">val</span> findlib_name</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Findlib package name value, without its path.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfindlib_full"></a>findlib_full : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALfindlib_full"><span class="keyword">val</span> findlib_full</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Findlib package name with path value, e.g. oasis.base.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALinternal_library"></a>internal_library : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALinternal_library"><span class="keyword">val</span> internal_library</span> : <code class="type">string <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Internal library.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcommand_line"></a>command_line : <code class="type">(string * string list) <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALcommand_line"><span class="keyword">val</span> command_line</span> : <code class="type">(string * string list) <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
 Command line.<br>
+</div>
+<pre><span id="VALcommand_line_options"><span class="keyword">val</span> command_line_options</span> : <code class="type">string list <a href="OASISValues.html#TYPEt">t</a></code></pre><div class="info">
+Arguments of command line programs.  See <code class="code">OASISUtils.POSIX.split</code>
+    for more information.<br>
 </div>
 </body></html>

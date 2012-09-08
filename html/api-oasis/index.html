@@ -10,6 +10,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -29,24 +30,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -56,7 +62,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title></title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title></title>
 </head>
 <body>
 <center><h1></h1></center>
@@ -69,6 +77,10 @@
 <table class="indextable">
 <tr><td><a href="FormatExt.html">FormatExt</a></td><td><div class="info">
 Extra functions for Format
+</div>
+</td></tr>
+<tr><td><a href="FormatMarkdown.html">FormatMarkdown</a></td><td><div class="info">
+Markdown formatter
 </div>
 </td></tr>
 <tr><td><a href="ODNFunc.html">ODNFunc</a></td><td><div class="info">
@@ -144,7 +156,12 @@ Flag section
 </div>
 </td></tr>
 <tr><td><a href="OASISLibrary.html">OASISLibrary</a></td><td><div class="info">
-SourceRepository section
+Library section
+</div>
+</td></tr>
+<tr><td><a href="OASISObject.html">OASISObject</a></td><td><div class="info">
+<code class="code">source_unix_files (cs, bs, obj) source_file_exists</code> Source files for this
+    object.
 </div>
 </td></tr>
 <tr><td><a href="OASISPackage.html">OASISPackage</a></td><td><div class="info">
@@ -163,10 +180,43 @@ Test section
 Plugins creation and management
 </div>
 </td></tr>
+<tr><td><a href="OASISFindlib.html">OASISFindlib</a></td><td><div class="info">
+Library groups are organized in trees.
+</div>
+</td></tr>
 <tr><td><a href="OASISSchema.html">OASISSchema</a></td><td><div class="info">
 Add fields to _oasis for plugin
 </div>
 </td></tr>
+<tr><td><a href="OASISSection.html">OASISSection</a></td><td><div class="info">
+Manipulate sections.
+</div>
+</td></tr>
+<tr><td><a href="OASISData.html">OASISData</a></td><td><div class="info">
+Various string utilities.\n\
+  \     \n\
+  \      Mostly inspired by extlib and batteries ExtString and BatString libraries.\n\
+  \n\
+  \
+</div>
+</td></tr>
+<tr><td><a href="OASISString.html">OASISString</a></td><td><div class="info">
+Various string utilities.
+</div>
+</td></tr>
+<tr><td><a href="OASISExec.html">OASISExec</a></td><td><div class="info">
+Running commands
+</div>
+</td></tr>
+<tr><td><a href="OASISFileUtil.html">OASISFileUtil</a></td><td><div class="info">
+File operations
+</div>
+</td></tr>
+<tr><td><a href="OASISHostPath.html">OASISHostPath</a></td><td><div class="info">
+Manipulate host filenames
+</div>
+</td></tr>
+<tr><td><a href="OASISGraph.html">OASISGraph</a></td><td></td></tr>
 <tr><td><a href="BaseArgExt.html">BaseArgExt</a></td><td><div class="info">
 Handle command line argument
 </div>
@@ -187,10 +237,6 @@ Run custom command for pre/post hook
 Exported modules for embedding 
 </div>
 </td></tr>
-<tr><td><a href="BaseDev.html">BaseDev</a></td><td><div class="info">
-Entry points for 'setup.ml' in dev mode
-</div>
-</td></tr>
 <tr><td><a href="BaseDoc.html">BaseDoc</a></td><td><div class="info">
 Build documentation
 </div>
@@ -203,20 +249,8 @@ Read-only access to 'setup.data'
 Read-write access to 'setup.data'
 </div>
 </td></tr>
-<tr><td><a href="BaseExec.html">BaseExec</a></td><td><div class="info">
-Running commands
-</div>
-</td></tr>
 <tr><td><a href="BaseFileAB.html">BaseFileAB</a></td><td><div class="info">
 File generated using environment variables
-</div>
-</td></tr>
-<tr><td><a href="BaseFilePath.html">BaseFilePath</a></td><td><div class="info">
-Manipulate host filenames
-</div>
-</td></tr>
-<tr><td><a href="BaseFileUtil.html">BaseFileUtil</a></td><td><div class="info">
-File operations
 </div>
 </td></tr>
 <tr><td><a href="BaseGenerate.html">BaseGenerate</a></td><td><div class="info">
@@ -257,6 +291,14 @@ Global context for messages and i18n
 </td></tr>
 <tr><td><a href="SubCommand.html">SubCommand</a></td><td><div class="info">
 SubCommand definition
+</div>
+</td></tr>
+<tr><td><a href="ArgExt.html">ArgExt</a></td><td><div class="info">
+Parsing of command line arguments
+</div>
+</td></tr>
+<tr><td><a href="Pager.html">Pager</a></td><td><div class="info">
+Handle 'pager' command
 </div>
 </td></tr>
 </table>

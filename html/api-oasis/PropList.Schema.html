@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>PropList.Schema</title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>PropList.Schema</title>
 </head>
 <body>
 <div class="navbar"><a href="PropList.Data.html">Previous</a>
@@ -73,38 +81,38 @@
     as string only. However, the value itself is stored in its native 
     type.<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEvalue"></a><code class="type">('a, 'b)</code> value </pre>
+<pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type">('a, 'b)</code> value</span> </pre>
 <div class="info">
 A value.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type">('a, 'b)</code> t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b)</code> t</span> </pre>
 <div class="info">
 A schema.<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALcreate"></a>create : <code class="type">?case_insensitive:bool -> <a href="PropList.html#TYPEname">PropList.name</a> -> ('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?case_insensitive:bool -> <a href="PropList.html#TYPEname">PropList.name</a> -> ('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a></code></pre><div class="info">
 Create a schema.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmem"></a>mem : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> <a href="PropList.html#TYPEname">PropList.name</a> -> bool</code></pre><div class="info">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> <a href="PropList.html#TYPEname">PropList.name</a> -> bool</code></pre><div class="info">
 Check that the given field name exists.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALget"></a>get : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> <a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> <a href="PropList.html#TYPEname">PropList.name</a> -> string</code></pre><div class="info">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> <a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> <a href="PropList.html#TYPEname">PropList.name</a> -> string</code></pre><div class="info">
 <code class="code">get t data nm</code> Retrieve the string value of field <code class="code">nm</code> from schema <code class="code">t</code>
         stores in <code class="code">data</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALset"></a>set : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -><br>       <a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> <a href="PropList.html#TYPEname">PropList.name</a> -> ?context:'a -> string -> unit</code></pre><div class="info">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -><br>       <a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> <a href="PropList.html#TYPEname">PropList.name</a> -> ?context:'a -> string -> unit</code></pre><div class="info">
 <code class="code">set t data nm ~context str</code> Parse string value <code class="code">str</code> in <code class="code">~context</code> and
         stores it in <code class="code">data</code> for field <code class="code">nm</code> of schema <code class="code">t</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfold"></a>fold : <code class="type">('a -> <a href="PropList.html#TYPEname">PropList.name</a> -> 'b -> (unit -> string) option -> 'a) -><br>       'a -> ('c, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> <a href="PropList.html#TYPEname">PropList.name</a> -> 'b -> (unit -> string) option -> 'a) -><br>       'a -> ('c, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
 <code class="code">fold f acc t</code> Apply <code class="code">f acc field_name field_extra field_help</code> in turn
         to all fields of schema <code class="code">t</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALiter"></a>iter : <code class="type">(<a href="PropList.html#TYPEname">PropList.name</a> -> 'a -> (unit -> string) option -> unit) -><br>       ('b, 'a) <a href="PropList.Schema.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="PropList.html#TYPEname">PropList.name</a> -> 'a -> (unit -> string) option -> unit) -><br>       ('b, 'a) <a href="PropList.Schema.html#TYPEt">t</a> -> unit</code></pre><div class="info">
 Same as <a href="PropList.Schema.html#VALfold"><code class="code">PropList.Schema.fold</code></a> except no accumulator are involved.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> <a href="PropList.html#TYPEname">PropList.name</a></code></pre><div class="info">
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">('a, 'b) <a href="PropList.Schema.html#TYPEt">t</a> -> <a href="PropList.html#TYPEname">PropList.name</a></code></pre><div class="info">
 Get the name of the schema.<br>
 </div>
 </body></html>

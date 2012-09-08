@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="Comments" rel="Section" href="#2_Comments">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><link title="Comments" rel="Section" href="#2_Comments">
 <link title="Template" rel="Section" href="#2_Template">
 <link title="File generation" rel="Section" href="#2_Filegeneration">
 <link title="Multiple templates management " rel="Section" href="#2_Multipletemplatesmanagement">
@@ -76,7 +84,7 @@
 <p>
 
     This module allow to generate files using template. Each template files
-    is split into three parts: an header, a body and a footer. We target at 
+    is split into three parts: an header, a body and a footer. We target at
     changing the body part. If target file already exists, we load the header
     and the footer from it. We merge the three parts and repalce the target
     files.
@@ -85,7 +93,7 @@
     There are some safety limits:<ul>
 <li>embed a digest to check nothing has changed in the body</li>
 <li>if digest of the body has changed, create a backup</li>
-<li>if we cannot find OASIS_START/OASIS_STOP body section, leave the 
+<li>if we cannot find OASIS_START/OASIS_STOP body section, leave the
       file untouched</li>
 </ul>
 
@@ -93,37 +101,35 @@
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
 <br>
-<a name="2_Comments"></a>
-<h2>Comments</h2><br>
-<pre><span class="keyword">type</span> <a name="TYPEcomment"></a><code class="type"></code>comment </pre>
+<span id="2_Comments"><h2>Comments</h2></span><br>
+<pre><span id="TYPEcomment"><span class="keyword">type</span> <code class="type"></code>comment</span> </pre>
 <div class="info">
 Comment definition.<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALcomment_ml"></a>comment_ml : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
+<pre><span id="VALcomment_ml"><span class="keyword">val</span> comment_ml</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
 .ml comments.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcomment_sh"></a>comment_sh : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
+<pre><span id="VALcomment_sh"><span class="keyword">val</span> comment_sh</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
 Shell comments.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcomment_makefile"></a>comment_makefile : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
+<pre><span id="VALcomment_makefile"><span class="keyword">val</span> comment_makefile</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
 Makefile comments.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcomment_ocamlbuild"></a>comment_ocamlbuild : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
+<pre><span id="VALcomment_ocamlbuild"><span class="keyword">val</span> comment_ocamlbuild</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
 OCamlbuild comments.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcomment_bat"></a>comment_bat : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
+<pre><span id="VALcomment_bat"><span class="keyword">val</span> comment_bat</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
 .bat file comments.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcomment_meta"></a>comment_meta : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
+<pre><span id="VALcomment_meta"><span class="keyword">val</span> comment_meta</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEcomment">comment</a></code></pre><div class="info">
 META file comments.<br>
 </div>
 <br>
-<a name="2_Template"></a>
-<h2>Template</h2><br>
-<pre><span class="keyword">type</span> <a name="TYPEline"></a><code class="type"></code>line = <code class="type">string</code> </pre>
+<span id="2_Template"><h2>Template</h2></span><br>
+<pre><span id="TYPEline"><span class="keyword">type</span> <code class="type"></code>line</span> = <code class="type">string</code> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEbody"></a><code class="type"></code>body = </code><table class="typetable">
+<br><code><span id="TYPEbody"><span class="keyword">type</span> <code class="type"></code>body</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -147,7 +153,7 @@ META file comments.<br>
 </tr></table>
 
 
-<br><code><span class="keyword">type</span> <a name="TYPEtemplate"></a><code class="type"></code>template = {</code><table class="typetable">
+<br><code><span id="TYPEtemplate"><span class="keyword">type</span> <code class="type"></code>template</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -193,24 +199,24 @@ META file comments.<br>
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALtemplate_make"></a>template_make : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEcomment">comment</a> -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
-<code class="code">template_make fn cmt header body footer</code> Create a template for which 
+<pre><span id="VALtemplate_make"><span class="keyword">val</span> template_make</span> : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEcomment">comment</a> -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
+<code class="code">template_make fn cmt header body footer</code> Create a template for which
     target file is <code class="code">fn</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALtemplate_of_string_list"></a>template_of_string_list : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -><br>       template:bool -><br>       <a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEcomment">comment</a> -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
-<code class="code">template_of_string_list ~ctxt ~template fn cmt lst</code> Split a the list <code class="code">lst</code> of 
-    into an header, a body and a footer, using comment <code class="code">cmt</code> to determine each
-    part. Set <code class="code">~template</code> if this is an embedded template (i.e. not a file loaded
-    from disk). See <a href="OASISFileTemplate.html#VALtemplate_make"><code class="code">OASISFileTemplate.template_make</code></a> for other options.<br>
+<pre><span id="VALtemplate_of_string_list"><span class="keyword">val</span> template_of_string_list</span> : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -><br>       template:bool -><br>       <a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEcomment">comment</a> -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
+<code class="code">template_of_string_list ~ctxt ~template fn cmt lst</code> Split a the
+    list <code class="code">lst</code> of into an header, a body and a footer, using comment
+    <code class="code">cmt</code> to determine each part. Set <code class="code">~template</code> if this is an
+    embedded template (i.e. not a file loaded from disk). See
+    <a href="OASISFileTemplate.html#VALtemplate_make"><code class="code">OASISFileTemplate.template_make</code></a> for other options.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALtemplate_of_mlfile"></a>template_of_mlfile : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
+<pre><span id="VALtemplate_of_mlfile"><span class="keyword">val</span> template_of_mlfile</span> : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -><br>       <a href="OASISFileTemplate.html#TYPEline">line</a> list -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
 <code class="code">template_of_ml_file fn</code> Create an OCaml file template taking into account
     subtleties, like line modifier. See <a href="OASISFileTemplate.html#VALtemplate_make"><code class="code">OASISFileTemplate.template_make</code></a> for other options.<br>
 </div>
 <br>
-<a name="2_Filegeneration"></a>
-<h2>File generation</h2><br>
-<br><code><span class="keyword">type</span> <a name="TYPEfile_generate_change"></a><code class="type"></code>file_generate_change = </code><table class="typetable">
+<span id="2_Filegeneration"><h2>File generation</h2></span><br>
+<br><code><span id="TYPEfile_generate_change"><span class="keyword">type</span> <code class="type"></code>file_generate_change</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -223,7 +229,8 @@ META file comments.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span class="constructor">Change</span> <span class="keyword">of</span> <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> * <a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> option</code></code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><code class="code">Change (fn, bak)</code>, <code class="code">bak</code> is the backup file, an existing file has been changed</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><code class="code">Change (fn, bak)</code>, <code class="code">bak</code> is the backup file, an existing file
+      has been changed.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -237,42 +244,41 @@ META file comments.<br>
 Describe what has been done to generate a file out of a template.<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALfile_rollback"></a>file_rollback : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> <a href="OASISFileTemplate.html#TYPEfile_generate_change">file_generate_change</a> -> unit</code></pre><div class="info">
+<pre><span id="VALfile_rollback"><span class="keyword">val</span> file_rollback</span> : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> <a href="OASISFileTemplate.html#TYPEfile_generate_change">file_generate_change</a> -> unit</code></pre><div class="info">
 Reset to pristine a generated file.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfile_generate"></a>file_generate : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -><br>       backup:bool -><br>       <a href="OASISFileTemplate.html#TYPEtemplate">template</a> -> <a href="OASISFileTemplate.html#TYPEfile_generate_change">file_generate_change</a></code></pre><div class="info">
-Generate a file using a template. Only the part between OASIS_START and 
+<pre><span id="VALfile_generate"><span class="keyword">val</span> file_generate</span> : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -><br>       backup:bool -><br>       <a href="OASISFileTemplate.html#TYPEtemplate">template</a> -> <a href="OASISFileTemplate.html#TYPEfile_generate_change">file_generate_change</a></code></pre><div class="info">
+Generate a file using a template. Only the part between OASIS_START and
     OASIS_STOP will be really replaced if the file exists. If the file doesn't
     exist use the whole template.<br>
 </div>
 <br>
-<a name="2_Multipletemplatesmanagement"></a>
-<h2>Multiple templates management </h2><br>
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONAlreadyExists"></a>AlreadyExists <span class="keyword">of</span> <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a></code></pre>
+<span id="2_Multipletemplatesmanagement"><h2>Multiple templates management </h2></span><br>
+<pre><span id="EXCEPTIONAlreadyExists"><span class="keyword">exception</span> AlreadyExists</span> <span class="keyword">of</span> <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a></code></pre>
 <div class="info">
 Try to add a file that is already in the set<br>
 </div>
-<pre><span class="keyword">type</span> <a name="TYPEtemplates"></a><code class="type"></code>templates </pre>
+<pre><span id="TYPEtemplates"><span class="keyword">type</span> <code class="type"></code>templates</span> </pre>
 <div class="info">
 Set of templates.<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALempty"></a>empty : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
 No generated template files.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfind"></a>find : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplate">template</a></code></pre><div class="info">
 Find a generated template file.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALadd"></a>add : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplate">template</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplate">template</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
 Add a generated template file.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALremove"></a>remove : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="OASISUnixPath.html#TYPEhost_filename">OASISUnixPath.host_filename</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
 Remove a generated template file.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALreplace"></a>replace : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplate">template</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
+<pre><span id="VALreplace"><span class="keyword">val</span> replace</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplate">template</a> -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> <a href="OASISFileTemplate.html#TYPEtemplates">templates</a></code></pre><div class="info">
 Add or replace a generated template file.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfold"></a>fold : <code class="type">(<a href="OASISFileTemplate.html#TYPEtemplate">template</a> -> 'a -> 'a) -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> 'a -> 'a</code></pre><div class="info">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">(<a href="OASISFileTemplate.html#TYPEtemplate">template</a> -> 'a -> 'a) -><br>       <a href="OASISFileTemplate.html#TYPEtemplates">templates</a> -> 'a -> 'a</code></pre><div class="info">
 Fold over generated template files.<br>
 </div>
 </body></html>

@@ -31,3 +31,4 @@ tr { background-color : White }
 td.typefieldcomment { background-color : #FFFFFF ; font-size: smaller ;}
 pre { margin-bottom: 4px }
 div.sig_block {margin-left: 2em}
+*:target { background: yellow; } 

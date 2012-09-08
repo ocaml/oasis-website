@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="OASISTest.html">
-<link rel="next" href="OASISSchema.html">
+<link rel="next" href="OASISFindlib.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="Types" rel="Section" href="#2_Types">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><link title="Types" rel="Section" href="#2_Types">
 <link title="Modules for plugin type" rel="Section" href="#2_Modulesforplugintype">
 <link title="General plugin functions" rel="Section" href="#2_Generalpluginfunctions">
 <title>OASISPlugin</title>
@@ -67,7 +75,7 @@
 <body>
 <div class="navbar"><a href="OASISTest.html">Previous</a>
 &nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="OASISSchema.html">Next</a>
+&nbsp;<a href="OASISFindlib.html">Next</a>
 </div>
 <center><h1>Module <a href="type_OASISPlugin.html">OASISPlugin</a></h1></center>
 <br>
@@ -78,20 +86,19 @@
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
 <br>
-<a name="2_Types"></a>
-<h2>Types</h2><br>
-<pre><span class="keyword">module</span> <a href="OASISPlugin.MapPlugin.html">MapPlugin</a>: <code class="type">Map.S</code><code class="type">  with type key = plugin_kind plugin</code></pre><pre><span class="keyword">module</span> <a href="OASISPlugin.SetPlugin.html">SetPlugin</a>: <code class="type">Set.S</code><code class="type">  with type elt = plugin_kind plugin</code></pre><pre><span class="keyword">type</span> <a name="TYPEsetter"></a><code class="type">'a</code> setter = <code class="type"><a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref -> 'a -> unit</code> </pre>
+<span id="2_Types"><h2>Types</h2></span><br>
+<pre><span class="keyword">module</span> <a href="OASISPlugin.MapPlugin.html">MapPlugin</a>: <code class="type">Map.S</code><code class="type">  with type key = plugin_kind plugin</code></pre><pre><span class="keyword">module</span> <a href="OASISPlugin.SetPlugin.html">SetPlugin</a>: <code class="type">Set.S</code><code class="type">  with type elt = plugin_kind plugin</code></pre><pre><span id="TYPEsetter"><span class="keyword">type</span> <code class="type">'a</code> setter</span> = <code class="type"><a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref -> 'a -> unit</code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEgetter"></a><code class="type">'a</code> getter = <code class="type"><a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref -> 'a</code> </pre>
+<pre><span id="TYPEgetter"><span class="keyword">type</span> <code class="type">'a</code> getter</span> = <code class="type"><a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref -> 'a</code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEprop"></a><code class="type">'a</code> prop = <code class="type">'a <a href="OASISPlugin.html#TYPEsetter">setter</a> * 'a <a href="OASISPlugin.html#TYPEgetter">getter</a></code> </pre>
+<pre><span id="TYPEprop"><span class="keyword">type</span> <code class="type">'a</code> prop</span> = <code class="type">'a <a href="OASISPlugin.html#TYPEsetter">setter</a> * 'a <a href="OASISPlugin.html#TYPEgetter">getter</a></code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEmodul"></a><code class="type"></code>modul = <code class="type">string</code> </pre>
+<pre><span id="TYPEmodul"><span class="keyword">type</span> <code class="type"></code>modul</span> = <code class="type">string</code> </pre>
 <div class="info">
 OCaml module embedded code.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEsetup_changes"></a><code class="type">('a, 'b)</code> setup_changes = {</code><table class="typetable">
+<br><code><span id="TYPEsetup_changes"><span class="keyword">type</span> <code class="type">('a, 'b)</code> setup_changes</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -127,7 +134,7 @@ OCaml module embedded code.<br>
 Describe setup file changes.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEcontext_act"></a><code class="type"></code>context_act = {</code><table class="typetable">
+<br><code><span id="TYPEcontext_act"><span class="keyword">type</span> <code class="type"></code>context_act</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -162,42 +169,48 @@ Describe setup file changes.<br>
 Describe context when applying a plugin.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEsection_act"></a><code class="type">('a, 'b)</code> section_act = <code class="type"><a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -><br>       <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -><br>       <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> *<br>       (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -> string array -> 'b,<br>        <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -> string array -> unit)<br>       <a href="OASISPlugin.html#TYPEsetup_changes">setup_changes</a></code> </pre>
+<pre><span id="TYPEsection_act"><span class="keyword">type</span> <code class="type">('a, 'b)</code> section_act</span> = <code class="type"><a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -><br>       <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -><br>       <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> *<br>       (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -> string array -> 'b,<br>        <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEcommon_section">OASISTypes.common_section</a> * 'a -> string array -> unit)<br>       <a href="OASISPlugin.html#TYPEsetup_changes">setup_changes</a></code> </pre>
 <div class="info">
 Generator for sections (document, test).<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEpackage_act"></a><code class="type"></code>package_act = <code class="type"><a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -><br>       <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> *<br>       (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> string array -> unit,<br>        <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> string array -> unit)<br>       <a href="OASISPlugin.html#TYPEsetup_changes">setup_changes</a></code> </pre>
+<pre><span id="TYPEpackage_act"><span class="keyword">type</span> <code class="type"></code>package_act</span> = <code class="type"><a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -><br>       <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> *<br>       (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> string array -> unit,<br>        <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> string array -> unit)<br>       <a href="OASISPlugin.html#TYPEsetup_changes">setup_changes</a></code> </pre>
 <div class="info">
 Generator with a package argument only (build, install).<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type">'a</code> t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info">
 Base types to build plugin: register fields, action, generators...<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEall_t"></a><code class="type"></code>all_t = <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISPlugin.html#TYPEt">t</a></code> </pre>
+<pre><span id="TYPEall_t"><span class="keyword">type</span> <code class="type"></code>all_t</span> = <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISPlugin.html#TYPEt">t</a></code> </pre>
 <div class="info">
 Base types for all plugins<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALregister_quickstart_completion"></a>register_quickstart_completion : <code class="type"><a href="OASISPlugin.html#TYPEall_t">all_t</a> -> (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a>) -> unit</code></pre><div class="info">
+<pre><span id="VALregister_quickstart_completion"><span class="keyword">val</span> register_quickstart_completion</span> : <code class="type"><a href="OASISPlugin.html#TYPEall_t">all_t</a> -> (<a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a>) -> unit</code></pre><div class="info">
 Register a quickstart completion for this plugin<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALquickstart_completion"></a>quickstart_completion : <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a></code></pre><div class="info">
+<pre><span id="VALquickstart_completion"><span class="keyword">val</span> quickstart_completion</span> : <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a></code></pre><div class="info">
 Get quickstart completion<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALregister_generator_package"></a>register_generator_package : <code class="type"><a href="OASISPlugin.html#TYPEall_t">all_t</a> -> 'a <a href="OASISPlugin.html#TYPEprop">prop</a> -> (<a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> 'a) -> unit</code></pre><div class="info">
+<pre><span id="VALregister_generator_package"><span class="keyword">val</span> register_generator_package</span> : <code class="type"><a href="OASISPlugin.html#TYPEall_t">all_t</a> -> 'a <a href="OASISPlugin.html#TYPEprop">prop</a> -> (<a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> 'a) -> unit</code></pre><div class="info">
 Register a generator for package, to store data of a plugin<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALgenerator_package"></a>generator_package : <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -><br>       <a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref -> <a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALgenerator_package"><span class="keyword">val</span> generator_package</span> : <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -><br>       <a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref -> <a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> unit</code></pre><div class="info">
 Call generator for provided plugin<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALls"></a>ls : <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> -> <a href="OASISTypes.html#TYPEname">OASISTypes.name</a> list</code></pre><div class="info">
+<pre><span id="VALregister_generator_section"><span class="keyword">val</span> register_generator_section</span> : <code class="type"><a href="OASISTypes.html#TYPEsection_kind">OASISTypes.section_kind</a> -><br>       <a href="OASISPlugin.html#TYPEall_t">all_t</a> -> 'a <a href="OASISPlugin.html#TYPEprop">prop</a> -> (<a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> 'a) -> unit</code></pre><div class="info">
+Register a generator for a section, to store data of a plugin<br>
+</div>
+<pre><span id="VALgenerator_section"><span class="keyword">val</span> generator_section</span> : <code class="type"><a href="OASISTypes.html#TYPEsection_kind">OASISTypes.section_kind</a> -><br>       <a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -><br>       <a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref -> <a href="PropList.Data.html#TYPEt">PropList.Data.t</a> -> unit</code></pre><div class="info">
+Call generator for provided plugin on a section<br>
+</div>
+<pre><span id="VALls"><span class="keyword">val</span> ls</span> : <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> -> <a href="OASISTypes.html#TYPEname">OASISTypes.name</a> list</code></pre><div class="info">
 List available plugins.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALall_plugins"></a>all_plugins : <code class="type">unit -> <a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> list</code></pre><br><code><span class="keyword">type</span> <a name="TYPEhelp"></a><code class="type"></code>help = {</code><table class="typetable">
+<pre><span id="VALall_plugins"><span class="keyword">val</span> all_plugins</span> : <code class="type">unit -> <a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> list</code></pre><br><code><span id="TYPEhelp"><span class="keyword">type</span> <code class="type"></code>help</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -215,22 +228,21 @@ List available plugins.<br>
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALhelp_default"></a>help_default : <code class="type">string list -> <a href="OASISPlugin.html#TYPEhelp">help</a></code></pre><pre><span class="keyword">val</span> <a name="VALregister_help"></a>register_help : <code class="type">[ `All | `Build | `Configure | `Doc | `Extra | `Install | `Test ]<br>       <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> <a href="OASISPlugin.html#TYPEhelp">help</a> -> unit</code></pre><div class="info">
+<pre><span id="VALhelp_default"><span class="keyword">val</span> help_default</span> : <code class="type">string list -> <a href="OASISPlugin.html#TYPEhelp">help</a></code></pre><pre><span id="VALregister_help"><span class="keyword">val</span> register_help</span> : <code class="type">[ `All | `Build | `Configure | `Doc | `Extra | `Install | `Test ]<br>       <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> <a href="OASISPlugin.html#TYPEhelp">help</a> -> unit</code></pre><div class="info">
 Register general help. We only rely on plugin name and version. The
     replacement field will be computed using the kind of the plugin.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALhelp"></a>help : <code class="type">[ `All ] <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> <a href="OASISPlugin.html#TYPEhelp">help</a></code></pre><div class="info">
+<pre><span id="VALhelp"><span class="keyword">val</span> help</span> : <code class="type">[ `All ] <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> <a href="OASISPlugin.html#TYPEhelp">help</a></code></pre><div class="info">
 Get general help text<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALto_plugin"></a>to_plugin : <code class="type">'a <a href="OASISPlugin.html#TYPEt">t</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code></pre><div class="info">
+<pre><span id="VALto_plugin"><span class="keyword">val</span> to_plugin</span> : <code class="type">'a <a href="OASISPlugin.html#TYPEt">t</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code></pre><div class="info">
 Convert back to plugin<br>
 </div>
 <pre><span class="keyword">module type</span> <a href="OASISPlugin.PLUGINS.html">PLUGINS</a> = <code class="code">sig</code> <a href="OASISPlugin.PLUGINS.html">..</a> <code class="code">end</code></pre><div class="info">
 Module to manage a set of plugins, of the same type.
 </div>
 <br>
-<a name="2_Modulesforplugintype"></a>
-<h2>Modules for plugin type</h2><br>
+<span id="2_Modulesforplugintype"><h2>Modules for plugin type</h2></span><br>
 <pre><span class="keyword">module</span> <a href="OASISPlugin.Configure.html">Configure</a>: <code class="type"><a href="OASISPlugin.PLUGINS.html">PLUGINS</a></code><code class="type">  with 
   type act = package_act 
   and type data = package
@@ -268,42 +280,41 @@ This module manage plugin that can handle install/uninstall steps.
 This module manage plugin that can handle configure step.
 </div>
 <br>
-<a name="2_Generalpluginfunctions"></a>
-<h2>General plugin functions</h2><br>
-<pre><span class="keyword">val</span> <a name="VALtest_field_name"></a>test_field_name : <code class="type">string -> bool</code></pre><div class="info">
+<span id="2_Generalpluginfunctions"><h2>General plugin functions</h2></span><br>
+<pre><span id="VALtest_field_name"><span class="keyword">val</span> test_field_name</span> : <code class="type">string -> bool</code></pre><div class="info">
 Check that a field name has the form to match a plugin. Don't check that the 
     plugin exists. This functions help to ignore plugin fields.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALbuiltin"></a>builtin : <code class="type">'a -> <a href="OASISTypes.html#TYPEname">OASISTypes.name</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code></pre><div class="info">
+<pre><span id="VALbuiltin"><span class="keyword">val</span> builtin</span> : <code class="type">'a -> <a href="OASISTypes.html#TYPEname">OASISTypes.name</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code></pre><div class="info">
 Use a builtin plugin (i.e. version = OASIS version).<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALadd_file"></a>add_file : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplate">OASISFileTemplate.template</a> -><br>       <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -> <a href="OASISPlugin.html#TYPEcontext_act">context_act</a></code></pre><div class="info">
+<pre><span id="VALadd_file"><span class="keyword">val</span> add_file</span> : <code class="type"><a href="OASISFileTemplate.html#TYPEtemplate">OASISFileTemplate.template</a> -><br>       <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -> <a href="OASISPlugin.html#TYPEcontext_act">context_act</a></code></pre><div class="info">
 Add a template to context<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALset_error"></a>set_error : <code class="type">bool -> string -> <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -> <a href="OASISPlugin.html#TYPEcontext_act">context_act</a></code></pre><div class="info">
+<pre><span id="VALset_error"><span class="keyword">val</span> set_error</span> : <code class="type">bool -> string -> <a href="OASISPlugin.html#TYPEcontext_act">context_act</a> -> <a href="OASISPlugin.html#TYPEcontext_act">context_act</a></code></pre><div class="info">
 Define an error in context. It doesn't stop processing, it just sets the
      value.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALplugin_of_string"></a>plugin_of_string : <code class="type">'a -> string -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code></pre><div class="info">
+<pre><span id="VALplugin_of_string"><span class="keyword">val</span> plugin_of_string</span> : <code class="type">'a -> string -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code></pre><div class="info">
 Get a plugin from a string<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALplugins_of_string"></a>plugins_of_string : <code class="type">'a -> string -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> list</code></pre><div class="info">
+<pre><span id="VALplugins_of_string"><span class="keyword">val</span> plugins_of_string</span> : <code class="type">'a -> string -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> list</code></pre><div class="info">
 Get a list of plugins from a string<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALstring_of_plugin"></a>string_of_plugin : <code class="type">'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> string</code></pre><div class="info">
+<pre><span id="VALstring_of_plugin"><span class="keyword">val</span> string_of_plugin</span> : <code class="type">'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> string</code></pre><div class="info">
 Get a list of plugins from a string<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALplugin_compare"></a>plugin_compare : <code class="type">'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> int</code></pre><div class="info">
+<pre><span id="VALplugin_compare"><span class="keyword">val</span> plugin_compare</span> : <code class="type">'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> int</code></pre><div class="info">
 Compare plugin, caseless for name and don't take into account version
     if one is not set.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALplugin_equal"></a>plugin_equal : <code class="type">'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> bool</code></pre><div class="info">
+<pre><span id="VALplugin_equal"><span class="keyword">val</span> plugin_equal</span> : <code class="type">'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> 'a <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> bool</code></pre><div class="info">
 Test equality for plugins, a special case of <a href="OASISPlugin.html#VALplugin_compare"><code class="code">OASISPlugin.plugin_compare</code></a>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdata_create"></a>data_create : <code class="type">unit -> <a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref</code></pre><div class="info">
+<pre><span id="VALdata_create"><span class="keyword">val</span> data_create</span> : <code class="type">unit -> <a href="OASISTypes.html#TYPEplugin_data">OASISTypes.plugin_data</a> Pervasives.ref</code></pre><div class="info">
 Create storage for plugin data.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdata_new_property"></a>data_new_property : <code class="type">?purpose:<a href="OASISTypes.html#TYPEplugin_data_purpose">OASISTypes.plugin_data_purpose</a> -><br>       <a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> 'a <a href="OASISPlugin.html#TYPEprop">prop</a></code></pre><div class="info">
+<pre><span id="VALdata_new_property"><span class="keyword">val</span> data_new_property</span> : <code class="type">?purpose:<a href="OASISTypes.html#TYPEplugin_data_purpose">OASISTypes.plugin_data_purpose</a> -><br>       <a href="OASISTypes.html#TYPEplugin_kind">OASISTypes.plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a> -> 'a <a href="OASISPlugin.html#TYPEprop">prop</a></code></pre><div class="info">
 <code class="code">data_new_property plg</code> Create a property that can store plugin data. Beware
     that the the couple <code class="code">(plg, purpose)</code> must be unique.<br>
 </div>

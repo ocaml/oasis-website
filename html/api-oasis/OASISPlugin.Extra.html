@@ -12,6 +12,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -31,24 +32,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -58,7 +64,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>OASISPlugin.Extra</title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>OASISPlugin.Extra</title>
 </head>
 <body>
 <div class="navbar"><a href="OASISPlugin.Install.html">Previous</a>
@@ -71,26 +79,26 @@
   and type data = package
   and type kind = [`Extra]</code></pre>This module manage plugin that can handle configure step.<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEdata"></a><code class="type"></code>data </pre>
+<pre><span id="TYPEdata"><span class="keyword">type</span> <code class="type"></code>data</span> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEact"></a><code class="type"></code>act </pre>
+<pre><span id="TYPEact"><span class="keyword">type</span> <code class="type"></code>act</span> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind </pre>
+<pre><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEself_t"></a><code class="type"></code>self_t = <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEkind">kind</a> <a href="OASISPlugin.html#TYPEt">OASISPlugin.t</a></code> </pre>
+<pre><span id="TYPEself_t"><span class="keyword">type</span> <code class="type"></code>self_t</span> = <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEkind">kind</a> <a href="OASISPlugin.html#TYPEt">OASISPlugin.t</a></code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEself_plugin"></a><code class="type"></code>self_plugin = <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEkind">kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code> </pre>
+<pre><span id="TYPEself_plugin"><span class="keyword">type</span> <code class="type"></code>self_plugin</span> = <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEkind">kind</a> <a href="OASISTypes.html#TYPEplugin">OASISTypes.plugin</a></code> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALcreate"></a>create : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> -><br>       <a href="OASISPlugin.PLUGINS.html#TYPEself_t">self_t</a> * <a href="OASISPlugin.html#TYPEall_t">OASISPlugin.all_t</a></code></pre><pre><span class="keyword">val</span> <a name="VALregister_act"></a>register_act : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_t">self_t</a> -> <a href="OASISPlugin.PLUGINS.html#TYPEact">act</a> -> unit</code></pre><div class="info">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> -><br>       <a href="OASISPlugin.PLUGINS.html#TYPEself_t">self_t</a> * <a href="OASISPlugin.html#TYPEall_t">OASISPlugin.all_t</a></code></pre><pre><span id="VALregister_act"><span class="keyword">val</span> register_act</span> : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_t">self_t</a> -> <a href="OASISPlugin.PLUGINS.html#TYPEact">act</a> -> unit</code></pre><div class="info">
 Register the <code class="code">section_act</code> or <code class="code">package_act</code> datastructure.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALact"></a>act : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> -> <a href="OASISPlugin.PLUGINS.html#TYPEact">act</a></code></pre><div class="info">
+<pre><span id="VALact"><span class="keyword">val</span> act</span> : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> -> <a href="OASISPlugin.PLUGINS.html#TYPEact">act</a></code></pre><div class="info">
 Get action.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALquickstart_question"></a>quickstart_question : <code class="type">unit -> <a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> <a href="OASISTypes.html#TYPEquickstart_question">OASISTypes.quickstart_question</a></code></pre><div class="info">
+<pre><span id="VALquickstart_question"><span class="keyword">val</span> quickstart_question</span> : <code class="type">unit -> <a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> <a href="OASISTypes.html#TYPEquickstart_question">OASISTypes.quickstart_question</a></code></pre><div class="info">
 Quickstart question<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALvalue"></a>value : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> <a href="OASISValues.html#TYPEt">OASISValues.t</a></code></pre><div class="info">
+<pre><span id="VALvalue"><span class="keyword">val</span> value</span> : <code class="type"><a href="OASISPlugin.PLUGINS.html#TYPEself_plugin">self_plugin</a> <a href="OASISValues.html#TYPEt">OASISValues.t</a></code></pre><div class="info">
 Parse a plugin field<br>
 </div>
 </body></html>

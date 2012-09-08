@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>BaseCheck</title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>BaseCheck</title>
 </head>
 <body>
 <div class="navbar"><a href="BaseBuilt.html">Previous</a>
@@ -71,30 +79,30 @@
 <pre><span class="keyword">module</span> BaseCheck: <code class="code">sig</code> <a href="BaseCheck.html">..</a> <code class="code">end</code></pre>Check host system features<br>
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
-<pre><span class="keyword">val</span> <a name="VALprog_best"></a>prog_best : <code class="type"><a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> -> <a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> list -> unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
+<pre><span id="VALprog_best"><span class="keyword">val</span> prog_best</span> : <code class="type"><a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> -> <a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> list -> unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
 Look for a program among a list of alternative program
   * the first found is returned.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALprog"></a>prog : <code class="type"><a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> -> unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
+<pre><span id="VALprog"><span class="keyword">val</span> prog</span> : <code class="type"><a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> -> unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
 Check the presence of a particular program.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALprog_opt"></a>prog_opt : <code class="type"><a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> -> unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
+<pre><span id="VALprog_opt"><span class="keyword">val</span> prog_opt</span> : <code class="type"><a href="OASISTypes.html#TYPEprog">OASISTypes.prog</a> -> unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
 Check the presence of a program or its native version.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALocamlfind"></a>ocamlfind : <code class="type">unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
+<pre><span id="VALocamlfind"><span class="keyword">val</span> ocamlfind</span> : <code class="type">unit -> <a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a></code></pre><div class="info">
 The ocamlfind command line tool, used to query version of package.
     Use <a href="BaseStandardVar.html#VALocamlfind"><code class="code">BaseStandardVar.ocamlfind</code></a> variable if you want a safe
     way to access this variable.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALversion"></a>version : <code class="type">string -><br>       <a href="OASISVersion.html#TYPEcomparator">OASISVersion.comparator</a> -> (unit -> <a href="OASISVersion.html#TYPEs">OASISVersion.s</a>) -> unit -> <a href="OASISVersion.html#TYPEs">OASISVersion.s</a></code></pre><div class="info">
+<pre><span id="VALversion"><span class="keyword">val</span> version</span> : <code class="type">string -><br>       <a href="OASISVersion.html#TYPEcomparator">OASISVersion.comparator</a> -> (unit -> <a href="OASISVersion.html#TYPEs">OASISVersion.s</a>) -> unit -> <a href="OASISVersion.html#TYPEs">OASISVersion.s</a></code></pre><div class="info">
 <code class="code">version var_pref cmp ver ()</code> Check version <code class="code">ver ()</code>, using <code class="code">cmp</code> and
     <a href="OASISVersion.html#VALcomparator_apply"><code class="code">OASISVersion.comparator_apply</code></a>. Generate a variable prefixed 
     by <code class="code">var_pref</code> and using <code class="code">OASISVersion.varname_of_comparator</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALpackage_version"></a>package_version : <code class="type"><a href="OASISTypes.html#TYPEfindlib_full">OASISTypes.findlib_full</a> -> <a href="OASISVersion.html#TYPEs">OASISVersion.s</a></code></pre><div class="info">
+<pre><span id="VALpackage_version"><span class="keyword">val</span> package_version</span> : <code class="type"><a href="OASISTypes.html#TYPEfindlib_full">OASISTypes.findlib_full</a> -> <a href="OASISVersion.html#TYPEs">OASISVersion.s</a></code></pre><div class="info">
 Get findlib package version .<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALpackage"></a>package : <code class="type">?version_comparator:<a href="OASISVersion.html#TYPEcomparator">OASISVersion.comparator</a> -><br>       <a href="OASISTypes.html#TYPEfindlib_full">OASISTypes.findlib_full</a> -> unit -> <a href="OASISTypes.html#TYPEhost_dirname">OASISTypes.host_dirname</a></code></pre><div class="info">
+<pre><span id="VALpackage"><span class="keyword">val</span> package</span> : <code class="type">?version_comparator:<a href="OASISVersion.html#TYPEcomparator">OASISVersion.comparator</a> -><br>       <a href="OASISTypes.html#TYPEfindlib_full">OASISTypes.findlib_full</a> -> unit -> <a href="OASISTypes.html#TYPEhost_dirname">OASISTypes.host_dirname</a></code></pre><div class="info">
 Check for findlib package and version. Return install directory.<br>
 </div>
 </body></html>

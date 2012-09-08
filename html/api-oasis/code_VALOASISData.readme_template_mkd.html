@@ -1,0 +1,548 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
+<link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
+<link title="PropList" rel="Chapter" href="PropList.html">
+<link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
+<link title="OASISUnixPath" rel="Chapter" href="OASISUnixPath.html">
+<link title="OASISContext" rel="Chapter" href="OASISContext.html">
+<link title="OASISGettext" rel="Chapter" href="OASISGettext.html">
+<link title="OASISMessage" rel="Chapter" href="OASISMessage.html">
+<link title="OASISTypes" rel="Chapter" href="OASISTypes.html">
+<link title="OASISParse" rel="Chapter" href="OASISParse.html">
+<link title="OASISValues" rel="Chapter" href="OASISValues.html">
+<link title="OASISExpr" rel="Chapter" href="OASISExpr.html">
+<link title="OASISVersion" rel="Chapter" href="OASISVersion.html">
+<link title="OASISLicense" rel="Chapter" href="OASISLicense.html">
+<link title="OASISFileTemplate" rel="Chapter" href="OASISFileTemplate.html">
+<link title="OASISBuildSection" rel="Chapter" href="OASISBuildSection.html">
+<link title="OASISDocument" rel="Chapter" href="OASISDocument.html">
+<link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
+<link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
+<link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
+<link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
+<link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
+<link title="OASISTest" rel="Chapter" href="OASISTest.html">
+<link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
+<link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
+<link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
+<link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
+<link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
+<link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
+<link title="BaseData" rel="Chapter" href="BaseData.html">
+<link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
+<link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
+<link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
+<link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
+<link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
+<link title="BaseLog" rel="Chapter" href="BaseLog.html">
+<link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
+<link title="BaseSetup" rel="Chapter" href="BaseSetup.html">
+<link title="BaseStandardVar" rel="Chapter" href="BaseStandardVar.html">
+<link title="BaseTest" rel="Chapter" href="BaseTest.html">
+<link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
+<link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
+<link title="BaseContext" rel="Chapter" href="BaseContext.html">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>OASISData.readme_template_mkd</title>
+</head>
+<body>
+<code class="code"><span class="keyword">let</span>&nbsp;readme_template_mkd&nbsp;=&nbsp;<br>
+&nbsp;&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"%&nbsp;OASIS&nbsp;User&nbsp;Manual&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"%&nbsp;author&nbsp;Sylvain&nbsp;Le&nbsp;Gall&nbsp;and&nbsp;others"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Introduction"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"============"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"OASIS&nbsp;is&nbsp;a&nbsp;tool&nbsp;to&nbsp;help&nbsp;OCaml&nbsp;developers&nbsp;to&nbsp;integrate&nbsp;configure,&nbsp;build&nbsp;and"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"install&nbsp;systems&nbsp;in&nbsp;their&nbsp;projects.&nbsp;It&nbsp;should&nbsp;help&nbsp;to&nbsp;create&nbsp;standard&nbsp;entry"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"points&nbsp;in&nbsp;the&nbsp;source&nbsp;code&nbsp;build&nbsp;system,&nbsp;allowing&nbsp;external&nbsp;tools&nbsp;to&nbsp;analyse"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"projects&nbsp;easily."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;tool&nbsp;is&nbsp;freely&nbsp;inspired&nbsp;by&nbsp;[Cabal][]&nbsp;which&nbsp;is&nbsp;the&nbsp;same&nbsp;kind&nbsp;of&nbsp;tool&nbsp;for"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"[Haskell][]."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;[Cabal]:&nbsp;http://www.haskell.org/cabal"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;[Haskell]:&nbsp;http://www.haskell.org"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Everything&nbsp;starts&nbsp;with&nbsp;a&nbsp;single&nbsp;text&nbsp;file,&nbsp;named&nbsp;`_oasis`,&nbsp;at&nbsp;the&nbsp;root&nbsp;of&nbsp;the"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"project&nbsp;source&nbsp;directory.&nbsp;It&nbsp;contains&nbsp;semi-colon&nbsp;separated&nbsp;fields&nbsp;and&nbsp;sections"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"that&nbsp;describe&nbsp;what&nbsp;is&nbsp;contained&nbsp;in&nbsp;the&nbsp;project&nbsp;and&nbsp;what&nbsp;to&nbsp;do&nbsp;with&nbsp;it."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;file&nbsp;is&nbsp;used&nbsp;to&nbsp;generate&nbsp;a&nbsp;skeleton&nbsp;for&nbsp;build,&nbsp;configure&nbsp;and&nbsp;install"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"systems.&nbsp;Generation&nbsp;can&nbsp;be&nbsp;customized&nbsp;through&nbsp;extra&nbsp;fields&nbsp;or&nbsp;directly&nbsp;inside"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"generated&nbsp;files."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;main&nbsp;entry&nbsp;point&nbsp;is&nbsp;an&nbsp;OCaml&nbsp;script&nbsp;`setup.ml`.&nbsp;It&nbsp;is&nbsp;self&nbsp;contained.&nbsp;Once"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"generated&nbsp;there&nbsp;is&nbsp;no&nbsp;additional&nbsp;dependencies&nbsp;(just&nbsp;like&nbsp;an&nbsp;autoconf"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`configure`&nbsp;script)."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"OASIS&nbsp;has&nbsp;been&nbsp;created&nbsp;with&nbsp;[OCamlbuild][]&nbsp;in&nbsp;mind.&nbsp;So&nbsp;there&nbsp;is&nbsp;probably&nbsp;some"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"features/bugs&nbsp;that&nbsp;are&nbsp;oriented&nbsp;toward&nbsp;this&nbsp;build&nbsp;system."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;[OCamlbuild]:&nbsp;http://brion.inria.fr/gallium/index.php/Ocamlbuild"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Features:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;OCamlbuild&nbsp;support&nbsp;([see&nbsp;here](#plugin-ocamlbuild))"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Standard&nbsp;files&nbsp;auto-generation&nbsp;(see&nbsp;here&nbsp;[1](#plugin-devfiles),"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;[2](#plugin-meta),&nbsp;[3](#plugin-stdfiles))"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Generic&nbsp;support&nbsp;for&nbsp;all&nbsp;step&nbsp;([see&nbsp;here](#plugin-custom))"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Internal&nbsp;configure/install&nbsp;([see&nbsp;here](#plugin-internal))"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Planned&nbsp;features:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;[OCaml&nbsp;autoconf](http://ocaml-autoconf.forge.ocamlcore.org)"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;[OCamlMakefile](http://ocaml.info/home/ocaml_sources.html)"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;[OMake](http://omake.metaprl.org)"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Writing&nbsp;`_oasis`&nbsp;file"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"====================="</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Syntax"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;`_oasis`&nbsp;must&nbsp;be&nbsp;a&nbsp;valid&nbsp;UTF-8&nbsp;text&nbsp;file.&nbsp;This&nbsp;file&nbsp;identify&nbsp;the&nbsp;toplevel"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"directory&nbsp;of&nbsp;the&nbsp;project."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Identifiers&nbsp;are&nbsp;just&nbsp;like&nbsp;variable&nbsp;names&nbsp;in&nbsp;OCaml,&nbsp;it&nbsp;cannot&nbsp;contains&nbsp;\"-\"&nbsp;or"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"numbers&nbsp;at&nbsp;the&nbsp;beginning.&nbsp;Strings&nbsp;follow&nbsp;OCaml&nbsp;convention.&nbsp;For&nbsp;extra"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"information&nbsp;on&nbsp;the&nbsp;parser/lexer&nbsp;see&nbsp;[Genlex][]."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;[Genlex]:&nbsp;http://caml.inria.fr/pub/docs/manual-ocaml/libref/Genlex.html"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"A&nbsp;line&nbsp;beginning&nbsp;by&nbsp;`#`&nbsp;is&nbsp;a&nbsp;comment&nbsp;and&nbsp;is&nbsp;ignored.&nbsp;Blank&nbsp;line&nbsp;are&nbsp;ignored."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;file&nbsp;contains&nbsp;semi-colon&nbsp;fields&nbsp;and&nbsp;sections."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Fields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields&nbsp;are&nbsp;defined&nbsp;as&nbsp;`field_name:&nbsp;field_value`:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Field&nbsp;name&nbsp;is&nbsp;an&nbsp;identifier,&nbsp;it&nbsp;contains&nbsp;only&nbsp;alphanumeric&nbsp;chars."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Field&nbsp;name&nbsp;is&nbsp;case&nbsp;insensitive."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Field&nbsp;value&nbsp;follow&nbsp;OCaml&nbsp;string&nbsp;convention,&nbsp;expect&nbsp;you&nbsp;don't&nbsp;need&nbsp;'\"'&nbsp;around&nbsp;it."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Leading&nbsp;and&nbsp;trailing&nbsp;blanks&nbsp;of&nbsp;field&nbsp;value&nbsp;are&nbsp;removed."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;A&nbsp;field&nbsp;value&nbsp;can&nbsp;continue&nbsp;on&nbsp;several&nbsp;lines,&nbsp;in&nbsp;this&nbsp;case&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;value"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;must&nbsp;be&nbsp;indented&nbsp;one&nbsp;level&nbsp;more&nbsp;then&nbsp;the&nbsp;field&nbsp;name.&nbsp;In&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;value&nbsp;a&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;blank&nbsp;line&nbsp;is&nbsp;represented&nbsp;by&nbsp;`.`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;If&nbsp;two&nbsp;fields&nbsp;have&nbsp;the&nbsp;same&nbsp;`field_name`,&nbsp;only&nbsp;the&nbsp;latter&nbsp;sets&nbsp;the&nbsp;value."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;separator&nbsp;':'&nbsp;can&nbsp;be&nbsp;replaced&nbsp;by&nbsp;'+:'&nbsp;which&nbsp;appends&nbsp;the&nbsp;`field_value`&nbsp;to"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"the&nbsp;previous&nbsp;value&nbsp;of&nbsp;the&nbsp;value&nbsp;(rather&nbsp;than&nbsp;erasing&nbsp;it).&nbsp;Beware&nbsp;that&nbsp;appending"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"is&nbsp;value&nbsp;dependent,&nbsp;some&nbsp;fields&nbsp;can&nbsp;concatenate,&nbsp;some&nbsp;cannot."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;':'&nbsp;can&nbsp;also&nbsp;be&nbsp;replaced&nbsp;by&nbsp;'\\$:',&nbsp;see&nbsp;[Conditional&nbsp;value](#conditional-value)."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Sections"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Sections&nbsp;can&nbsp;be&nbsp;an&nbsp;identifier&nbsp;or&nbsp;a&nbsp;string:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;Library&nbsp;foo"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"or&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;Library&nbsp;\"foo\"."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Section&nbsp;name&nbsp;can&nbsp;be&nbsp;:&nbsp;`Library`,&nbsp;`Executable`,&nbsp;`Document`,&nbsp;`Test`&nbsp;and"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`SourceRepository`.&nbsp;Content&nbsp;of&nbsp;a&nbsp;section&nbsp;is&nbsp;indented&nbsp;relative&nbsp;to&nbsp;the&nbsp;section"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"begin."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Example:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Toplevel&nbsp;fields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;OASISFormat:&nbsp;&nbsp;1.0"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;Library&nbsp;\"foo\""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Library&nbsp;fields&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Path:&nbsp;src/"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Back&nbsp;to&nbsp;toplevel&nbsp;fields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;Synopsis:&nbsp;bar"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Conditional&nbsp;value"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"It&nbsp;is&nbsp;possible&nbsp;to&nbsp;define&nbsp;some&nbsp;fields&nbsp;conditionally.&nbsp;Not&nbsp;all&nbsp;fields&nbsp;can&nbsp;be"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"specified&nbsp;this&nbsp;way,&nbsp;only&nbsp;fields&nbsp;that&nbsp;have&nbsp;no&nbsp;good&nbsp;default&nbsp;values&nbsp;and&nbsp;that&nbsp;must"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"be&nbsp;evaluated&nbsp;at&nbsp;runtime&nbsp;is&nbsp;defined."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"For&nbsp;example:&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Toplevel&nbsp;fields&nbsp;`Name`&nbsp;and&nbsp;`Version`&nbsp;cannot&nbsp;be&nbsp;conditional."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Library&nbsp;fields&nbsp;`Build`&nbsp;and&nbsp;`Install`&nbsp;can&nbsp;be&nbsp;conditional."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"A&nbsp;condition&nbsp;is&nbsp;defined&nbsp;using&nbsp;a&nbsp;`if&nbsp;...&nbsp;else&nbsp;...`&nbsp;construct."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Example:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;Library&nbsp;bar"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;os_type(Win32)"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build:&nbsp;true"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build:&nbsp;false"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Available&nbsp;tests&nbsp;are&nbsp;:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISTests"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;values&nbsp;from&nbsp;these&nbsp;tests&nbsp;are&nbsp;extracted&nbsp;from&nbsp;theoutput&nbsp;of&nbsp;`ocamlc&nbsp;-config`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"An&nbsp;additional&nbsp;`flag`&nbsp;test&nbsp;is&nbsp;available&nbsp;which&nbsp;check&nbsp;that&nbsp;the&nbsp;a&nbsp;Flag&nbsp;is&nbsp;defined.&nbsp;See&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"the&nbsp;chapter&nbsp;on&nbsp;the&nbsp;[Flag&nbsp;section](#flag)."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Tests&nbsp;and&nbsp;flags&nbsp;can&nbsp;be&nbsp;combined&nbsp;using&nbsp;standard&nbsp;boolean&nbsp;operation:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"*&nbsp;`(expr)`"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"*&nbsp;`!&nbsp;expr`:&nbsp;negation&nbsp;of&nbsp;`expr`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"*&nbsp;`expr1&nbsp;&amp;&amp;&nbsp;expr2`:&nbsp;boolean&nbsp;and."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"*&nbsp;`expr1&nbsp;||&nbsp;expr2`:&nbsp;boolean&nbsp;or."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"*&nbsp;`true`&nbsp;and&nbsp;`false`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"For&nbsp;boolean&nbsp;fields,&nbsp;you&nbsp;can&nbsp;replace&nbsp;the&nbsp;`if&nbsp;...&nbsp;else&nbsp;...`&nbsp;construct&nbsp;by&nbsp;`\\$:`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"For&nbsp;example:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;Library&nbsp;bar"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;os_type(Win32)"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build:&nbsp;true"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build:&nbsp;false"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"is&nbsp;equivalent&nbsp;to:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build\\$:&nbsp;os_type(Win32)"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Package"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Package&nbsp;fields&nbsp;are&nbsp;defined&nbsp;outside&nbsp;sections.&nbsp;They&nbsp;apply&nbsp;to&nbsp;the&nbsp;whole&nbsp;project."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISPackageFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`BuildDepends`&nbsp;and&nbsp;`BuildTools`&nbsp;are&nbsp;appended&nbsp;to&nbsp;all&nbsp;sections&nbsp;and&nbsp;not&nbsp;used"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"directly&nbsp;in&nbsp;the&nbsp;package."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Sections"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"--------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"There&nbsp;are&nbsp;6&nbsp;possible&nbsp;sections:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`Flag`:&nbsp;a&nbsp;command&nbsp;line&nbsp;flag."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`Library`:&nbsp;an&nbsp;OCaml&nbsp;library."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`Executable`:&nbsp;an&nbsp;OCaml&nbsp;executable."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`Document`:&nbsp;a&nbsp;document."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`Test`:&nbsp;a&nbsp;test."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`SourceRepository`:&nbsp;version&nbsp;control&nbsp;system&nbsp;information."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"None&nbsp;of&nbsp;these&nbsp;sections&nbsp;are&nbsp;mandatory.&nbsp;`Library`,&nbsp;`Executable`,&nbsp;`Document`&nbsp;and"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`Test`&nbsp;can&nbsp;be&nbsp;dependent&nbsp;on&nbsp;each&nbsp;other.&nbsp;This&nbsp;not&nbsp;a&nbsp;problem&nbsp;as&nbsp;long&nbsp;as&nbsp;there&nbsp;is&nbsp;no"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"cycle&nbsp;inside&nbsp;the&nbsp;dependency&nbsp;graph.&nbsp;Dependencies&nbsp;can&nbsp;be&nbsp;expressed&nbsp;through"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`BuildDepends`&nbsp;and&nbsp;`BuildTools`&nbsp;fields."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Flag"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"A&nbsp;flag&nbsp;section&nbsp;defines&nbsp;a&nbsp;configure&nbsp;command&nbsp;line&nbsp;option.&nbsp;It&nbsp;will&nbsp;be&nbsp;translated&nbsp;to"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"to&nbsp;`--enable-XXX`&nbsp;and&nbsp;`--disable-XXX`&nbsp;for&nbsp;the&nbsp;command&nbsp;line.&nbsp;It&nbsp;can&nbsp;be&nbsp;used"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"inside&nbsp;conditional&nbsp;fields."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISFlagFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Common&nbsp;fields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"These&nbsp;fields&nbsp;are&nbsp;used&nbsp;inside&nbsp;`Library`&nbsp;and&nbsp;`Executable`.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISBuildFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"All&nbsp;files&nbsp;defined&nbsp;in&nbsp;the&nbsp;section&nbsp;are&nbsp;relative&nbsp;to&nbsp;`Path`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Library&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Define&nbsp;an&nbsp;OCaml&nbsp;library.&nbsp;OCaml&nbsp;API&nbsp;is&nbsp;generated&nbsp;using&nbsp;`ocamldoc`&nbsp;applied&nbsp;to"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`Modules`&nbsp;with&nbsp;`BuildDepends`&nbsp;required&nbsp;flags."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISLibraryFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Include&nbsp;all&nbsp;common&nbsp;fields."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Executable&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Define&nbsp;an&nbsp;OCaml&nbsp;executable.&nbsp;If&nbsp;the&nbsp;executable&nbsp;is&nbsp;a&nbsp;bytecode&nbsp;that&nbsp;use&nbsp;internal"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"library,&nbsp;an&nbsp;helper&nbsp;script&nbsp;can&nbsp;be&nbsp;generated&nbsp;to&nbsp;set&nbsp;library&nbsp;path."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISExecutableFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Include&nbsp;all&nbsp;common&nbsp;fields."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Document"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Define&nbsp;a&nbsp;generated&nbsp;document."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISDocumentFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;Test&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Define&nbsp;a&nbsp;test&nbsp;to&nbsp;run."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISTestFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"###&nbsp;SourceRepository&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Define&nbsp;VCS&nbsp;informations.&nbsp;There&nbsp;is&nbsp;two&nbsp;special&nbsp;identified&nbsp;repository:&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;head:&nbsp;identify&nbsp;the&nbsp;main&nbsp;development&nbsp;repository."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;this:&nbsp;identify&nbsp;the&nbsp;repository&nbsp;at&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;current&nbsp;version."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Fields:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISSourceRepositoryFields"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Supported&nbsp;VCS&nbsp;types&nbsp;are:&nbsp;darcs,&nbsp;git,&nbsp;svn,&nbsp;cvs,&nbsp;hg,&nbsp;bzr,&nbsp;arch,&nbsp;monotone."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"License"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"We&nbsp;have&nbsp;adopted&nbsp;a&nbsp;[DEP-5][]&nbsp;license&nbsp;style&nbsp;description.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;[DEP-5]:&nbsp;http://dep.debian.net/deps/dep5/#license-specification&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;reason&nbsp;of&nbsp;this&nbsp;format&nbsp;is&nbsp;to&nbsp;have&nbsp;machine-readable&nbsp;license&nbsp;description."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Using&nbsp;this&nbsp;former&nbsp;work,&nbsp;we&nbsp;hope&nbsp;to&nbsp;be&nbsp;compatible&nbsp;with&nbsp;future&nbsp;standards&nbsp;of"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Debian."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"We&nbsp;have&nbsp;limited&nbsp;the&nbsp;number&nbsp;of&nbsp;license&nbsp;to:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListShortLicenses"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;or&nbsp;an&nbsp;URL&nbsp;describing&nbsp;the&nbsp;license"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"And&nbsp;license&nbsp;exception&nbsp;to:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListLicenseExceptions"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;or&nbsp;an&nbsp;URL&nbsp;describing&nbsp;the&nbsp;license&nbsp;exception"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"You&nbsp;can&nbsp;specify&nbsp;a&nbsp;license&nbsp;version&nbsp;using&nbsp;a&nbsp;dash&nbsp;and&nbsp;only&nbsp;digits&nbsp;or&nbsp;dashes&nbsp;at&nbsp;the"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"end&nbsp;of&nbsp;the&nbsp;license&nbsp;short&nbsp;name.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Examples&nbsp;:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`LGPL-2.1&nbsp;with&nbsp;OCaml&nbsp;linking&nbsp;exception`:&nbsp;LGPL&nbsp;v2.1&nbsp;with&nbsp;OCaml&nbsp;linking&nbsp;exception"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`GPL-2+`:&nbsp;GPL&nbsp;v2&nbsp;or&nbsp;later"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Data&nbsp;files"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"----------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`DataFiles`&nbsp;fields&nbsp;help&nbsp;to&nbsp;install&nbsp;extra&nbsp;data&nbsp;inside&nbsp;`\\$datadir/\\$pkg_name`.&nbsp;This"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"field&nbsp;is&nbsp;a&nbsp;comma&nbsp;separated&nbsp;list&nbsp;of&nbsp;file,&nbsp;with&nbsp;optional&nbsp;value&nbsp;inside&nbsp;parenthesis.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"You&nbsp;can&nbsp;override&nbsp;target&nbsp;directory&nbsp;using&nbsp;`fn&nbsp;(\\$datadir/other_location)`.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"You&nbsp;can&nbsp;use&nbsp;wildcard&nbsp;`*`&nbsp;but&nbsp;only&nbsp;for&nbsp;a&nbsp;filename&nbsp;and&nbsp;followed&nbsp;by&nbsp;a&nbsp;single&nbsp;dot"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"extension:&nbsp;`dir/*.html`&nbsp;is&nbsp;valid&nbsp;but&nbsp;`dir/*`&nbsp;and&nbsp;`dir/*.tar.gz`&nbsp;are&nbsp;not&nbsp;valid."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Substitution&nbsp;inside&nbsp;text"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Substitution&nbsp;is&nbsp;performed&nbsp;using&nbsp;[Buffer.add\\_substitute][]."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;[Buffer.add\\_substitute]:&nbsp;http://caml.inria.fr/pub/docs/manual-ocaml/libref/Buffer.html#VALadd_substitute"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Variable&nbsp;are&nbsp;evaluated&nbsp;using&nbsp;environment.&nbsp;This&nbsp;is&nbsp;a&nbsp;mix&nbsp;of&nbsp;various&nbsp;data&nbsp;coming"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"from&nbsp;`_oasis`&nbsp;file,&nbsp;`ocamlc&nbsp;-config`&nbsp;output&nbsp;and&nbsp;configure&nbsp;tests.&nbsp;So&nbsp;environment"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"variables&nbsp;depends&nbsp;of&nbsp;each&nbsp;project.&nbsp;You&nbsp;can&nbsp;have&nbsp;a&nbsp;precise&nbsp;idea&nbsp;of&nbsp;what&nbsp;variables"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"is&nbsp;available&nbsp;looking&nbsp;at&nbsp;the&nbsp;file&nbsp;`setup.data`.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Here&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;standard&nbsp;variables:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListStandardVariables"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Other&nbsp;variables&nbsp;are&nbsp;defined&nbsp;depending&nbsp;on&nbsp;your&nbsp;`_oasis`&nbsp;file:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Variables&nbsp;from&nbsp;BuildDepends:&nbsp;&nbsp;`pkg_`&nbsp;&nbsp;and&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;findlib&nbsp;package."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;It&nbsp;points&nbsp;to&nbsp;the&nbsp;directory&nbsp;containing&nbsp;the&nbsp;package."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;If&nbsp;there&nbsp;is&nbsp;a&nbsp;version&nbsp;constraint,&nbsp;it&nbsp;is&nbsp;also&nbsp;translated&nbsp;to&nbsp;a&nbsp;variable.&nbsp;It"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;contains&nbsp;a&nbsp;boolean&nbsp;value&nbsp;to&nbsp;know&nbsp;if&nbsp;the&nbsp;version&nbsp;is&nbsp;ok&nbsp;or&nbsp;not."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;Internal&nbsp;findlib&nbsp;packages&nbsp;don't&nbsp;create&nbsp;variables."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;Example:&nbsp;`BuildDepends:&nbsp;oUnit&nbsp;(&gt;=&nbsp;1.0.3)`&nbsp;becomes&nbsp;two&nbsp;variables&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;`pkg_oUnit&nbsp;=&nbsp;/usr/lib/ocaml/ounit`&nbsp;and&nbsp;`pkg_oUnit_ge_1_0_3&nbsp;=&nbsp;true`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Variables&nbsp;from&nbsp;external&nbsp;BuildTools:&nbsp;the&nbsp;variable&nbsp;is&nbsp;the&nbsp;name&nbsp;given"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;field&nbsp;and&nbsp;its&nbsp;value&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;executable.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;Example:&nbsp;`BuildTools:&nbsp;make`&nbsp;becomes&nbsp;`make&nbsp;=&nbsp;/usr/bin/make`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;Dynamic&nbsp;variables&nbsp;from&nbsp;internal&nbsp;BuildTools:&nbsp;the&nbsp;variable&nbsp;is&nbsp;the&nbsp;name"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;Executable&nbsp;section&nbsp;and&nbsp;its&nbsp;value&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;executable."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;Example:&nbsp;`Executable&nbsp;ocamlmod`&nbsp;becomes&nbsp;`ocamlmod&nbsp;="</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;_build/src/tools/ocamlmod`.&nbsp;These&nbsp;variables&nbsp;are&nbsp;set&nbsp;through&nbsp;`setup.log`"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;rather&nbsp;than&nbsp;`setup.data`.&nbsp;They&nbsp;are&nbsp;set&nbsp;only&nbsp;when&nbsp;the&nbsp;corresponding&nbsp;files"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;is&nbsp;built."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"It&nbsp;is&nbsp;also&nbsp;possible&nbsp;to&nbsp;apply&nbsp;transformation&nbsp;through&nbsp;functions.&nbsp;This&nbsp;is&nbsp;useful"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"when&nbsp;you&nbsp;need&nbsp;to&nbsp;use&nbsp;properties&nbsp;that&nbsp;need&nbsp;to&nbsp;be&nbsp;determined&nbsp;at&nbsp;runtime:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`utoh`:&nbsp;convert&nbsp;an&nbsp;Unix&nbsp;filename&nbsp;into&nbsp;a&nbsp;host&nbsp;filename&nbsp;(e.g.&nbsp;UNIX&nbsp;-&gt;&nbsp;Win32"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;&nbsp;conversion)."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;`ocaml_escaped`:&nbsp;call&nbsp;to&nbsp;`String.escaped`.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"For&nbsp;example&nbsp;`\\$(utoh&nbsp;src/test.ml)`&nbsp;will&nbsp;be&nbsp;replaced&nbsp;by&nbsp;`src\\test.ml`&nbsp;on&nbsp;Windows."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Customization&nbsp;of&nbsp;generated&nbsp;files"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"--------------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"When&nbsp;OASIS&nbsp;generates&nbsp;file,&nbsp;it&nbsp;always&nbsp;replace&nbsp;only&nbsp;lines&nbsp;between"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`OASIS_START`&nbsp;and&nbsp;`OASIS_STOP`.&nbsp;These&nbsp;keywords&nbsp;are&nbsp;commented&nbsp;and"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"followed&nbsp;by&nbsp;data&nbsp;to&nbsp;check&nbsp;that&nbsp;content&nbsp;is&nbsp;unchanged."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"If&nbsp;the&nbsp;file&nbsp;doesn't&nbsp;exist,&nbsp;OASIS&nbsp;will&nbsp;create&nbsp;the&nbsp;whole&nbsp;file&nbsp;using&nbsp;default"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"header&nbsp;and&nbsp;footer."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"If&nbsp;OASIS&nbsp;detects&nbsp;a&nbsp;change&nbsp;inside&nbsp;the&nbsp;section&nbsp;being&nbsp;replaced,&nbsp;it&nbsp;will&nbsp;create&nbsp;a"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"backup&nbsp;of&nbsp;the&nbsp;file&nbsp;and&nbsp;issue&nbsp;a&nbsp;warning."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Customization&nbsp;of&nbsp;setup.ml"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`setup.ml`&nbsp;as&nbsp;any&nbsp;generated&nbsp;files&nbsp;can&nbsp;be&nbsp;customized&nbsp;in&nbsp;its&nbsp;header&nbsp;and&nbsp;footer."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Moreover&nbsp;it&nbsp;can&nbsp;be&nbsp;customized&nbsp;through&nbsp;hook&nbsp;in&nbsp;the&nbsp;code&nbsp;directly."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"TODO:&nbsp;explains&nbsp;hook."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Using&nbsp;OASIS&nbsp;during&nbsp;software&nbsp;development"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"---------------------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Since&nbsp;`_oasis`&nbsp;becomes&nbsp;a&nbsp;central&nbsp;place&nbsp;of&nbsp;information&nbsp;about&nbsp;the&nbsp;building"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"process,&nbsp;it&nbsp;can&nbsp;be&nbsp;quite&nbsp;cumbersome&nbsp;to&nbsp;run&nbsp;again&nbsp;and&nbsp;again&nbsp;`oasis`.&nbsp;You&nbsp;can&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"avoid&nbsp;it&nbsp;using&nbsp;the&nbsp;`-dev`&nbsp;flags&nbsp;when&nbsp;calling&nbsp;`oasis`&nbsp;for&nbsp;the&nbsp;first&nbsp;time.&nbsp;This"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"way&nbsp;it&nbsp;will&nbsp;rebuilt&nbsp;very&nbsp;dependents&nbsp;build&nbsp;files&nbsp;each&nbsp;time&nbsp;you&nbsp;call&nbsp;`ocaml"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"setup.ml`.&nbsp;A&nbsp;`setup.ml`&nbsp;built&nbsp;this&nbsp;way,&nbsp;should&nbsp;not&nbsp;be&nbsp;distributed.&nbsp;This&nbsp;intended"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"for&nbsp;development&nbsp;purpose&nbsp;only."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Plugins&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"OASIS&nbsp;is&nbsp;basically&nbsp;built&nbsp;around&nbsp;plugins.&nbsp;They&nbsp;are&nbsp;used&nbsp;to&nbsp;define"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"specific&nbsp;behavior&nbsp;for&nbsp;generating&nbsp;files&nbsp;and&nbsp;including&nbsp;their&nbsp;own&nbsp;code&nbsp;in&nbsp;`setup.ml`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"There&nbsp;are&nbsp;6&nbsp;categories&nbsp;of&nbsp;plugin:"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;__Conf__:&nbsp;apply&nbsp;to&nbsp;configure&nbsp;step,&nbsp;used&nbsp;in&nbsp;the&nbsp;field&nbsp;`ConfType`"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;__Build__:&nbsp;apply&nbsp;to&nbsp;build&nbsp;stepi,&nbsp;used&nbsp;in&nbsp;the&nbsp;field&nbsp;`BuildType`"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;__Test__:&nbsp;apply&nbsp;to&nbsp;test&nbsp;sections,&nbsp;used&nbsp;in&nbsp;the&nbsp;field&nbsp;`Type`&nbsp;of&nbsp;a&nbsp;test"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;__Doc__:&nbsp;apply&nbsp;to&nbsp;documentation&nbsp;sections,&nbsp;used&nbsp;in&nbsp;the&nbsp;field&nbsp;`Type`&nbsp;of&nbsp;a&nbsp;document"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;__Install__:&nbsp;apply&nbsp;to&nbsp;install&nbsp;and&nbsp;uninstall&nbsp;steps,&nbsp;used&nbsp;in&nbsp;the&nbsp;field&nbsp;`DocType`"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"&nbsp;*&nbsp;__Extra__:&nbsp;everything&nbsp;else,&nbsp;used&nbsp;in&nbsp;the&nbsp;field&nbsp;`Plugins`"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$ListOASISPlugins"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Building&nbsp;and&nbsp;installing"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"======================="</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;file&nbsp;`setup.ml`&nbsp;is&nbsp;the&nbsp;base&nbsp;system&nbsp;to&nbsp;run&nbsp;every&nbsp;targets.&nbsp;It&nbsp;contains&nbsp;a"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"self&nbsp;contained&nbsp;OCaml&nbsp;script,&nbsp;that&nbsp;only&nbsp;depends&nbsp;on&nbsp;OCaml&nbsp;standard&nbsp;installation"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"that&nbsp;doesn't&nbsp;require&nbsp;using&nbsp;stublibs&nbsp;(no&nbsp;Str&nbsp;or&nbsp;Unix).&nbsp;This&nbsp;constraint&nbsp;is"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"required&nbsp;to&nbsp;be&nbsp;fully&nbsp;portable&nbsp;even&nbsp;on&nbsp;system&nbsp;that&nbsp;doesn't&nbsp;support&nbsp;dynamic"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"loading."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;file&nbsp;`setup.data`&nbsp;is&nbsp;the&nbsp;result&nbsp;of&nbsp;the&nbsp;configure&nbsp;step&nbsp;and&nbsp;contains&nbsp;data&nbsp;that"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"can&nbsp;be&nbsp;used&nbsp;for&nbsp;other&nbsp;step.&nbsp;It&nbsp;is&nbsp;removed&nbsp;only&nbsp;in&nbsp;`distclean`&nbsp;target.&nbsp;The&nbsp;format"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"of&nbsp;this&nbsp;file&nbsp;is&nbsp;on&nbsp;variable&nbsp;and&nbsp;values&nbsp;per&nbsp;line:&nbsp;`var=\"value\"`.&nbsp;The&nbsp;value&nbsp;is&nbsp;an&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"OCaml&nbsp;string.&nbsp;The&nbsp;file&nbsp;in&nbsp;this&nbsp;form&nbsp;can&nbsp;be&nbsp;read&nbsp;by&nbsp;`make`&nbsp;and&nbsp;`sh`.&nbsp;Once"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"generated&nbsp;this&nbsp;file&nbsp;should&nbsp;not&nbsp;be&nbsp;modified."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"The&nbsp;file&nbsp;`setup.log`&nbsp;contains&nbsp;a&nbsp;list&nbsp;of&nbsp;action&nbsp;done&nbsp;and&nbsp;is&nbsp;used&nbsp;and&nbsp;updated&nbsp;by"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"action&nbsp;done&nbsp;and&nbsp;cancel&nbsp;(e.g.&nbsp;action&nbsp;`install`&nbsp;log&nbsp;files&nbsp;installed&nbsp;which&nbsp;action"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"`uninstall`&nbsp;remove)."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-configure"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;is&nbsp;the&nbsp;first&nbsp;step&nbsp;to&nbsp;perform.&nbsp;It&nbsp;is&nbsp;mandatory.&nbsp;It&nbsp;runs&nbsp;various&nbsp;test&nbsp;of&nbsp;the"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"build&nbsp;environment&nbsp;to&nbsp;check&nbsp;that&nbsp;everything&nbsp;required&nbsp;is&nbsp;installed.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-build"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"---------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;mandatory.&nbsp;Build&nbsp;libraries&nbsp;and&nbsp;executables."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-test"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"--------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;optional.&nbsp;Run&nbsp;defined&nbsp;test.&nbsp;Need&nbsp;the&nbsp;build&nbsp;step&nbsp;before."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-doc"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;optional.&nbsp;It&nbsp;builds&nbsp;API&nbsp;documentation&nbsp;for&nbsp;library&nbsp;and&nbsp;extra"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"documentation&nbsp;as&nbsp;defined&nbsp;in&nbsp;`Document`."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-install&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-----------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;mandatory.&nbsp;Install&nbsp;what&nbsp;has&nbsp;been&nbsp;built&nbsp;in&nbsp;build&nbsp;and&nbsp;doc&nbsp;step.&nbsp;Also"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"install&nbsp;data&nbsp;files&nbsp;as&nbsp;defined&nbsp;in&nbsp;`DataFiles`&nbsp;fields."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-uninstall"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;optional.&nbsp;Remove&nbsp;files&nbsp;and&nbsp;libraries&nbsp;installed.&nbsp;"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-reinstall"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;optional.&nbsp;Perform&nbsp;an&nbsp;uninstall&nbsp;and&nbsp;then&nbsp;an&nbsp;install&nbsp;step."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-clean"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"---------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;optional.&nbsp;Clean&nbsp;generated&nbsp;files&nbsp;during&nbsp;build&nbsp;and&nbsp;doc&nbsp;steps."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-distclean"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;optional.&nbsp;Try&nbsp;to&nbsp;go&nbsp;back&nbsp;to&nbsp;pristine&nbsp;source&nbsp;state."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ocaml&nbsp;setup.ml&nbsp;-all"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"-------------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"This&nbsp;step&nbsp;is&nbsp;optional.&nbsp;Run&nbsp;configure,&nbsp;build,&nbsp;test&nbsp;and&nbsp;doc&nbsp;step&nbsp;in&nbsp;one&nbsp;run."</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"OASIS&nbsp;usage"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"==================="</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Command&nbsp;line"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"------------"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"$OASISCommandLineHelp"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">""</span>;<br>
+&nbsp;&nbsp;]</code></body></html>

@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>OASISMessage</title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>OASISMessage</title>
 </head>
 <body>
 <div class="navbar"><a href="OASISGettext.html">Previous</a>
@@ -77,20 +85,16 @@
     been displayed.<br>
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
-<pre><span class="keyword">val</span> <a name="VALdebug"></a>debug : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
+<pre><span id="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
 Print a debug message.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALinfo"></a>info : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
+<pre><span id="VALinfo"><span class="keyword">val</span> info</span> : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
 Print information message.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALwarning"></a>warning : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
+<pre><span id="VALwarning"><span class="keyword">val</span> warning</span> : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
 Print a warning message.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALerror"></a>error : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
-Print an error message and exit.<br>
-</div>
-<pre><span class="keyword">val</span> <a name="VALstring_of_exception"></a>string_of_exception : <code class="type">exn -> string</code></pre><div class="info">
-Convert an exception to a string readable by user. If the appropriate
-    printer for the exception cannot be found, use <code class="code">Printexc.to_string</code>.<br>
+<pre><span id="VALerror"><span class="keyword">val</span> error</span> : <code class="type">ctxt:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
+Print an error message.<br>
 </div>
 </body></html>

@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="Aliases" rel="Section" href="#2_Aliases">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><link title="Aliases" rel="Section" href="#2_Aliases">
 <link title="OASIS package definition" rel="Section" href="#2_OASISpackagedefinition">
 <link title="Quickstart questions " rel="Section" href="#2_Quickstartquestions">
 <link title="ODN functions" rel="Section" href="#2_ODNfunctions">
@@ -80,77 +88,75 @@
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
 <br>
-<a name="2_Aliases"></a>
-<h2>Aliases</h2><br>
-<pre><span class="keyword">type</span> <a name="TYPEname"></a><code class="type"></code>name = <code class="type">string</code> </pre>
+<span id="2_Aliases"><h2>Aliases</h2></span><br>
+<pre><span id="TYPEname"><span class="keyword">type</span> <code class="type"></code>name</span> = <code class="type">string</code> </pre>
 <div class="info">
 Standard name.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEpackage_name"></a><code class="type"></code>package_name = <code class="type">string</code> </pre>
+<pre><span id="TYPEpackage_name"><span class="keyword">type</span> <code class="type"></code>package_name</span> = <code class="type">string</code> </pre>
 <div class="info">
 Name of a package, see <a href="OASISTypes.html#TYPEpackage"><code class="code">OASISTypes.package</code></a>.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEurl"></a><code class="type"></code>url = <code class="type">string</code> </pre>
+<pre><span id="TYPEurl"><span class="keyword">type</span> <code class="type"></code>url</span> = <code class="type">string</code> </pre>
 <div class="info">
 Standard URL.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEunix_dirname"></a><code class="type"></code>unix_dirname = <code class="type">string</code> </pre>
+<pre><span id="TYPEunix_dirname"><span class="keyword">type</span> <code class="type"></code>unix_dirname</span> = <code class="type">string</code> </pre>
 <div class="info">
 UNIX directory name.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEunix_filename"></a><code class="type"></code>unix_filename = <code class="type">string</code> </pre>
+<pre><span id="TYPEunix_filename"><span class="keyword">type</span> <code class="type"></code>unix_filename</span> = <code class="type">string</code> </pre>
 <div class="info">
 UNIX file name.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEhost_dirname"></a><code class="type"></code>host_dirname = <code class="type">string</code> </pre>
+<pre><span id="TYPEhost_dirname"><span class="keyword">type</span> <code class="type"></code>host_dirname</span> = <code class="type">string</code> </pre>
 <div class="info">
 Host directory name.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEhost_filename"></a><code class="type"></code>host_filename = <code class="type">string</code> </pre>
+<pre><span id="TYPEhost_filename"><span class="keyword">type</span> <code class="type"></code>host_filename</span> = <code class="type">string</code> </pre>
 <div class="info">
 Host file name.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEprog"></a><code class="type"></code>prog = <code class="type">string</code> </pre>
+<pre><span id="TYPEprog"><span class="keyword">type</span> <code class="type"></code>prog</span> = <code class="type">string</code> </pre>
 <div class="info">
 Program.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEarg"></a><code class="type"></code>arg = <code class="type">string</code> </pre>
+<pre><span id="TYPEarg"><span class="keyword">type</span> <code class="type"></code>arg</span> = <code class="type">string</code> </pre>
 <div class="info">
 Command line argument.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEargs"></a><code class="type"></code>args = <code class="type"><a href="OASISTypes.html#TYPEarg">arg</a> list</code> </pre>
+<pre><span id="TYPEargs"><span class="keyword">type</span> <code class="type"></code>args</span> = <code class="type"><a href="OASISTypes.html#TYPEarg">arg</a> list</code> </pre>
 <div class="info">
 Command line arguments.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEcommand_line"></a><code class="type"></code>command_line = <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> * <a href="OASISTypes.html#TYPEargs">args</a></code> </pre>
+<pre><span id="TYPEcommand_line"><span class="keyword">type</span> <code class="type"></code>command_line</span> = <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> * <a href="OASISTypes.html#TYPEargs">args</a></code> </pre>
 <div class="info">
 Command line.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEfindlib_name"></a><code class="type"></code>findlib_name = <code class="type">string</code> </pre>
+<pre><span id="TYPEfindlib_name"><span class="keyword">type</span> <code class="type"></code>findlib_name</span> = <code class="type">string</code> </pre>
 <div class="info">
 Package name for findlib, doesn't contain '.'.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEfindlib_full"></a><code class="type"></code>findlib_full = <code class="type">string</code> </pre>
+<pre><span id="TYPEfindlib_full"><span class="keyword">type</span> <code class="type"></code>findlib_full</span> = <code class="type">string</code> </pre>
 <div class="info">
 Package name + path for findlib, made of several findlib name concatenated with '.'.<br>
 </div>
 
 <br>
-<a name="2_OASISpackagedefinition"></a>
-<h2>OASIS package definition</h2><br>
-<br><code><span class="keyword">type</span> <a name="TYPEcompiled_object"></a><code class="type"></code>compiled_object = </code><table class="typetable">
+<span id="2_OASISpackagedefinition"><h2>OASIS package definition</h2></span><br>
+<br><code><span id="TYPEcompiled_object"><span class="keyword">type</span> <code class="type"></code>compiled_object</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -177,7 +183,7 @@ Package name + path for findlib, made of several findlib name concatenated with 
 Compilation type.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEdependency"></a><code class="type"></code>dependency = </code><table class="typetable">
+<br><code><span id="TYPEdependency"><span class="keyword">type</span> <code class="type"></code>dependency</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -197,7 +203,7 @@ Compilation type.<br>
 Package dependency.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEtool"></a><code class="type"></code>tool = </code><table class="typetable">
+<br><code><span id="TYPEtool"><span class="keyword">type</span> <code class="type"></code>tool</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -217,7 +223,7 @@ Package dependency.<br>
 Tool dependency.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEvcs"></a><code class="type"></code>vcs = </code><table class="typetable">
+<br><code><span id="TYPEvcs"><span class="keyword">type</span> <code class="type"></code>vcs</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -286,37 +292,37 @@ Tool dependency.<br>
 Possible VCS.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEconditional"></a><code class="type">'a</code> conditional = <code class="type">'a <a href="OASISExpr.html#TYPEchoices">OASISExpr.choices</a></code> </pre>
+<pre><span id="TYPEconditional"><span class="keyword">type</span> <code class="type">'a</code> conditional</span> = <code class="type">'a <a href="OASISExpr.html#TYPEchoices">OASISExpr.choices</a></code> </pre>
 <div class="info">
 Conditional value, last expression that evaluate to true define
     the value.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEplugin_kind"></a><code class="type"></code>plugin_kind = <code class="type">[ `Build | `Configure | `Doc | `Extra | `Install | `Test ]</code> </pre>
+<pre><span id="TYPEplugin_kind"><span class="keyword">type</span> <code class="type"></code>plugin_kind</span> = <code class="type">[ `Build | `Configure | `Doc | `Extra | `Install | `Test ]</code> </pre>
 <div class="info">
 Plugin kind.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEplugin_data_purpose"></a><code class="type"></code>plugin_data_purpose = <code class="type">[ `Build<br>       | `Clean<br>       | `Configure<br>       | `Distclean<br>       | `Doc<br>       | `Extra<br>       | `Install<br>       | `Other of string<br>       | `Test<br>       | `Uninstall ]</code> </pre>
+<pre><span id="TYPEplugin_data_purpose"><span class="keyword">type</span> <code class="type"></code>plugin_data_purpose</span> = <code class="type">[ `Build<br>       | `Clean<br>       | `Configure<br>       | `Distclean<br>       | `Doc<br>       | `Extra<br>       | `Install<br>       | `Other of string<br>       | `Test<br>       | `Uninstall ]</code> </pre>
 <div class="info">
 Additional data to allow registration of more than
     one data property per plugin. See <a href="OASISPlugin.html#VALdata_new_property"><code class="code">OASISPlugin.data_new_property</code></a><br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEplugin"></a><code class="type">'a</code> plugin = <code class="type">'a * <a href="OASISTypes.html#TYPEname">name</a> * <a href="OASISVersion.html#TYPEt">OASISVersion.t</a> option</code> </pre>
+<pre><span id="TYPEplugin"><span class="keyword">type</span> <code class="type">'a</code> plugin</span> = <code class="type">'a * <a href="OASISTypes.html#TYPEname">name</a> * <a href="OASISVersion.html#TYPEt">OASISVersion.t</a> option</code> </pre>
 <div class="info">
 Plugin definition, plugin type depends on which fields this
     types is used for.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEall_plugin"></a><code class="type"></code>all_plugin = <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">plugin</a></code> </pre>
+<pre><span id="TYPEall_plugin"><span class="keyword">type</span> <code class="type"></code>all_plugin</span> = <code class="type"><a href="OASISTypes.html#TYPEplugin_kind">plugin_kind</a> <a href="OASISTypes.html#TYPEplugin">plugin</a></code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEplugin_data"></a><code class="type"></code>plugin_data = <code class="type">(<a href="OASISTypes.html#TYPEall_plugin">all_plugin</a> * <a href="OASISTypes.html#TYPEplugin_data_purpose">plugin_data_purpose</a> * (unit -> unit))<br>       list</code> </pre>
+<pre><span id="TYPEplugin_data"><span class="keyword">type</span> <code class="type"></code>plugin_data</span> = <code class="type">(<a href="OASISTypes.html#TYPEall_plugin">all_plugin</a> * <a href="OASISTypes.html#TYPEplugin_data_purpose">plugin_data_purpose</a> * (unit -> unit))<br>       list</code> </pre>
 <div class="info">
 Property list storage for plugin data<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEcustom"></a><code class="type"></code>custom = {</code><table class="typetable">
+<br><code><span id="TYPEcustom"><span class="keyword">type</span> <code class="type"></code>custom</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -337,7 +343,7 @@ Property list storage for plugin data<br>
 Set of command lines to run before and after a step.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEcommon_section"></a><code class="type"></code>common_section = {</code><table class="typetable">
+<br><code><span id="TYPEcommon_section"><span class="keyword">type</span> <code class="type"></code>common_section</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -365,7 +371,7 @@ Set of command lines to run before and after a step.<br>
 Common attributes for sections.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEbuild_section"></a><code class="type"></code>build_section = {</code><table class="typetable">
+<br><code><span id="TYPEbuild_section"><span class="keyword">type</span> <code class="type"></code>build_section</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -470,13 +476,20 @@ Common attributes for sections.<br>
 Common attributes for Executable and Library sections.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPElibrary"></a><code class="type"></code>library = {</code><table class="typetable">
+<br><code><span id="TYPElibrary"><span class="keyword">type</span> <code class="type"></code>library</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code>lib_modules&nbsp;: <code class="type">string list</code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >List of modules exported by the library.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>lib_pack&nbsp;: <code class="type">bool</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Are we building a packed library?</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -505,7 +518,7 @@ Common attributes for Executable and Library sections.<br>
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code>lib_findlib_containers&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> list</code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Name of virtual containes (empty findlib package) between findlib
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Name of virtual containers (empty findlib package) between findlib
           parent and findlib name</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
@@ -514,7 +527,29 @@ Common attributes for Executable and Library sections.<br>
 Library definition.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEexecutable"></a><code class="type"></code>executable = {</code><table class="typetable">
+<br><code><span id="TYPEobject_"><span class="keyword">type</span> <code class="type"></code>object_</span> = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>obj_modules&nbsp;: <code class="type">string list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>obj_findlib_fullname&nbsp;: <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> list option</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Findlib name of this library, this name is used to refer to this
+          library in build dependencies.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Object definition.<br>
+</div>
+
+<br><code><span id="TYPEexecutable"><span class="keyword">type</span> <code class="type"></code>executable</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -536,7 +571,7 @@ Library definition.<br>
 Executable definition.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEflag"></a><code class="type"></code>flag = {</code><table class="typetable">
+<br><code><span id="TYPEflag"><span class="keyword">type</span> <code class="type"></code>flag</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -557,7 +592,7 @@ Executable definition.<br>
 Command line flag definition.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEsource_repository"></a><code class="type"></code>source_repository = {</code><table class="typetable">
+<br><code><span id="TYPEsource_repository"><span class="keyword">type</span> <code class="type"></code>source_repository</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -613,7 +648,7 @@ Command line flag definition.<br>
 Source repository definition.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEtest"></a><code class="type"></code>test = {</code><table class="typetable">
+<br><code><span id="TYPEtest"><span class="keyword">type</span> <code class="type"></code>test</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -662,7 +697,7 @@ Source repository definition.<br>
 Test definition.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEdoc_format"></a><code class="type"></code>doc_format = </code><table class="typetable">
+<br><code><span id="TYPEdoc_format"><span class="keyword">type</span> <code class="type"></code>doc_format</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -718,7 +753,7 @@ Test definition.<br>
 Document formats.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEdoc"></a><code class="type"></code>doc = {</code><table class="typetable">
+<br><code><span id="TYPEdoc"><span class="keyword">type</span> <code class="type"></code>doc</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -803,12 +838,19 @@ Document formats.<br>
 Document definition.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEsection"></a><code class="type"></code>section = </code><table class="typetable">
+<br><code><span id="TYPEsection"><span class="keyword">type</span> <code class="type"></code>section</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span class="constructor">Library</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEbuild_section">build_section</a> * <a href="OASISTypes.html#TYPElibrary">library</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Object</span> <span class="keyword">of</span> <code class="type"><a href="OASISTypes.html#TYPEcommon_section">common_section</a> * <a href="OASISTypes.html#TYPEbuild_section">build_section</a> * <a href="OASISTypes.html#TYPEobject_">object_</a></code></code></td>
 
 </tr>
 <tr>
@@ -851,7 +893,9 @@ Document definition.<br>
 All sections and their attributes.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEpackage"></a><code class="type"></code>package = {</code><table class="typetable">
+<pre><span id="TYPEsection_kind"><span class="keyword">type</span> <code class="type"></code>section_kind</span> = <code class="type">[ `Doc | `Executable | `Flag | `Library | `Object | `SrcRepo | `Test ]</code> </pre>
+
+<br><code><span id="TYPEpackage"><span class="keyword">type</span> <code class="type"></code>package</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -1056,9 +1100,8 @@ OASIS package, what an '_oasis' file contains.<br>
 </div>
 
 <br>
-<a name="2_Quickstartquestions"></a>
-<h2>Quickstart questions </h2><br>
-<br><code><span class="keyword">type</span> <a name="TYPEquickstart_level"></a><code class="type">'a</code> quickstart_level = </code><table class="typetable">
+<span id="2_Quickstartquestions"><h2>Quickstart questions </h2></span><br>
+<br><code><span id="TYPEquickstart_level"><span class="keyword">type</span> <code class="type">'a</code> quickstart_level</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -1092,7 +1135,7 @@ OASIS package, what an '_oasis' file contains.<br>
 Quickstart level. <b>Not exported</b>.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEquickstart_question"></a><code class="type">'a</code> quickstart_question = </code><table class="typetable">
+<br><code><span id="TYPEquickstart_question"><span class="keyword">type</span> <code class="type">'a</code> quickstart_question</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -1127,8 +1170,7 @@ Howto ask questions in quickstart. <b>Not exported</b>.<br>
 </div>
 
 <br>
-<a name="2_ODNfunctions"></a>
-<h2>ODN functions</h2> 
+<span id="2_ODNfunctions"><h2>ODN functions</h2></span> 
 <p>
 
     These functions allow to generate setup.ml standalone code, by serializing
@@ -1136,4 +1178,4 @@ Howto ask questions in quickstart. <b>Not exported</b>.<br>
 <p>
 
     See <a href="http://forge.ocamlcore.org/projects/odn"> the OCaml data notation project</a><br>
-<pre><span class="keyword">val</span> <a name="VALodn_of_name"></a>odn_of_name : <code class="type"><a href="OASISTypes.html#TYPEname">name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_package_name"></a>odn_of_package_name : <code class="type"><a href="OASISTypes.html#TYPEpackage_name">package_name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_url"></a>odn_of_url : <code class="type"><a href="OASISTypes.html#TYPEurl">url</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_unix_dirname"></a>odn_of_unix_dirname : <code class="type"><a href="OASISTypes.html#TYPEunix_dirname">unix_dirname</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_unix_filename"></a>odn_of_unix_filename : <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_prog"></a>odn_of_prog : <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_arg"></a>odn_of_arg : <code class="type"><a href="OASISTypes.html#TYPEarg">arg</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_args"></a>odn_of_args : <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_command_line"></a>odn_of_command_line : <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> * <a href="OASISTypes.html#TYPEargs">args</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_findlib_name"></a>odn_of_findlib_name : <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_findlib_full"></a>odn_of_findlib_full : <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_conditional"></a>odn_of_conditional : <code class="type">('a -> ODN.t) -> 'a <a href="OASISExpr.html#TYPEchoices">OASISExpr.choices</a> -> ODN.t</code></pre><pre><span class="keyword">val</span> <a name="VALodn_of_package"></a>odn_of_package : <code class="type"><a href="OASISTypes.html#TYPEpackage">package</a> -> ODN.t</code></pre></body></html>
+<pre><span id="VALodn_of_name"><span class="keyword">val</span> odn_of_name</span> : <code class="type"><a href="OASISTypes.html#TYPEname">name</a> -> ODN.t</code></pre><pre><span id="VALodn_of_package_name"><span class="keyword">val</span> odn_of_package_name</span> : <code class="type"><a href="OASISTypes.html#TYPEpackage_name">package_name</a> -> ODN.t</code></pre><pre><span id="VALodn_of_url"><span class="keyword">val</span> odn_of_url</span> : <code class="type"><a href="OASISTypes.html#TYPEurl">url</a> -> ODN.t</code></pre><pre><span id="VALodn_of_unix_dirname"><span class="keyword">val</span> odn_of_unix_dirname</span> : <code class="type"><a href="OASISTypes.html#TYPEunix_dirname">unix_dirname</a> -> ODN.t</code></pre><pre><span id="VALodn_of_unix_filename"><span class="keyword">val</span> odn_of_unix_filename</span> : <code class="type"><a href="OASISTypes.html#TYPEunix_filename">unix_filename</a> -> ODN.t</code></pre><pre><span id="VALodn_of_prog"><span class="keyword">val</span> odn_of_prog</span> : <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> -> ODN.t</code></pre><pre><span id="VALodn_of_arg"><span class="keyword">val</span> odn_of_arg</span> : <code class="type"><a href="OASISTypes.html#TYPEarg">arg</a> -> ODN.t</code></pre><pre><span id="VALodn_of_args"><span class="keyword">val</span> odn_of_args</span> : <code class="type"><a href="OASISTypes.html#TYPEargs">args</a> -> ODN.t</code></pre><pre><span id="VALodn_of_command_line"><span class="keyword">val</span> odn_of_command_line</span> : <code class="type"><a href="OASISTypes.html#TYPEprog">prog</a> * <a href="OASISTypes.html#TYPEargs">args</a> -> ODN.t</code></pre><pre><span id="VALodn_of_findlib_name"><span class="keyword">val</span> odn_of_findlib_name</span> : <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> -> ODN.t</code></pre><pre><span id="VALodn_of_findlib_full"><span class="keyword">val</span> odn_of_findlib_full</span> : <code class="type"><a href="OASISTypes.html#TYPEfindlib_name">findlib_name</a> -> ODN.t</code></pre><pre><span id="VALodn_of_conditional"><span class="keyword">val</span> odn_of_conditional</span> : <code class="type">('a -> ODN.t) -> 'a <a href="OASISExpr.html#TYPEchoices">OASISExpr.choices</a> -> ODN.t</code></pre><pre><span id="VALodn_of_package"><span class="keyword">val</span> odn_of_package</span> : <code class="type"><a href="OASISTypes.html#TYPEpackage">package</a> -> ODN.t</code></pre></body></html>

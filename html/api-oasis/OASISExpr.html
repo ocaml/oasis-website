@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,7 +65,9 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><link title="Test" rel="Section" href="#2_Test">
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><link title="Test" rel="Section" href="#2_Test">
 <link title="Expression" rel="Section" href="#2_Expression">
 <title>OASISExpr</title>
 </head>
@@ -79,28 +87,26 @@
 <b>See also</b> <a href="http://oasis.forge.ocamlcore.org/MANUAL.html#conditional-value">OASIS Manual</a><br>
 <hr width="100%">
 <br>
-<a name="2_Test"></a>
-<h2>Test</h2><br>
-<pre><span class="keyword">type</span> <a name="TYPEtest"></a><code class="type"></code>test </pre>
+<span id="2_Test"><h2>Test</h2></span><br>
+<pre><span id="TYPEtest"><span class="keyword">type</span> <code class="type"></code>test</span> </pre>
 <div class="info">
 Test definition.<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALtests"></a>tests : <code class="type"><a href="OASISExpr.html#TYPEtest">test</a> list</code></pre><div class="info">
+<pre><span id="VALtests"><span class="keyword">val</span> tests</span> : <code class="type"><a href="OASISExpr.html#TYPEtest">test</a> list</code></pre><div class="info">
 Mandatory tests.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALstring_of_test"></a>string_of_test : <code class="type"><a href="OASISExpr.html#TYPEtest">test</a> -> string</code></pre><div class="info">
+<pre><span id="VALstring_of_test"><span class="keyword">val</span> string_of_test</span> : <code class="type"><a href="OASISExpr.html#TYPEtest">test</a> -> string</code></pre><div class="info">
 Convert a test to string.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALtest_of_string"></a>test_of_string : <code class="type">string -> <a href="OASISExpr.html#TYPEtest">test</a></code></pre><div class="info">
+<pre><span id="VALtest_of_string"><span class="keyword">val</span> test_of_string</span> : <code class="type">string -> <a href="OASISExpr.html#TYPEtest">test</a></code></pre><div class="info">
 Convert a string to test.<br>
 </div>
 <br>
-<a name="2_Expression"></a>
-<h2>Expression</h2><br>
-<pre><span class="keyword">type</span> <a name="TYPEflag"></a><code class="type"></code>flag = <code class="type">string</code> </pre>
+<span id="2_Expression"><h2>Expression</h2></span><br>
+<pre><span id="TYPEflag"><span class="keyword">type</span> <code class="type"></code>flag</span> = <code class="type">string</code> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t = </code><table class="typetable">
+<br><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -148,16 +154,16 @@ Convert a string to test.<br>
 Boolean expression definition.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEchoices"></a><code class="type">'a</code> choices = <code class="type">(<a href="OASISExpr.html#TYPEt">t</a> * 'a) list</code> </pre>
+<pre><span id="TYPEchoices"><span class="keyword">type</span> <code class="type">'a</code> choices</span> = <code class="type">(<a href="OASISExpr.html#TYPEt">t</a> * 'a) list</code> </pre>
 <div class="info">
 Choose among different values<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALeval"></a>eval : <code class="type">(string -> string) -> <a href="OASISExpr.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">(string -> string) -> <a href="OASISExpr.html#TYPEt">t</a> -> bool</code></pre><div class="info">
 <code class="code">eval eval_tst t</code> Evaluates the expression. Use <code class="code">eval_tst</code> 
     to get values of flags and tests.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALchoose"></a>choose : <code class="type">?printer:('a -> string) -><br>       ?name:string -> (string -> string) -> 'a <a href="OASISExpr.html#TYPEchoices">choices</a> -> 'a</code></pre><div class="info">
+<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">?printer:('a -> string) -><br>       ?name:string -> (string -> string) -> 'a <a href="OASISExpr.html#TYPEchoices">choices</a> -> 'a</code></pre><div class="info">
 <code class="code">choose ~printer ~name eval_tst choices</code> Evaluate each conditions
     of <code class="code">choices</code> and choose the last condition that evaluates to <code class="code">true</code>.
     If something goes wrong, use <code class="code">printer</code> to display values and <code class="code">~name</code> as the
@@ -166,16 +172,26 @@ Choose among different values<br>
 
     See also <a href="OASISExpr.html#VALeval"><code class="code">OASISExpr.eval</code></a>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcheck"></a>check : <code class="type"><a href="OASISExpr.html#TYPEflag">flag</a> list -> <a href="OASISExpr.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALcheck"><span class="keyword">val</span> check</span> : <code class="type"><a href="OASISExpr.html#TYPEflag">flag</a> list -> <a href="OASISExpr.html#TYPEt">t</a> -> unit</code></pre><div class="info">
 Check that a boolean expression only use available flags. <b>Not exported</b>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALreduce"></a>reduce : <code class="type"><a href="OASISExpr.html#TYPEt">t</a> -> <a href="OASISExpr.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALreduce"><span class="keyword">val</span> reduce</span> : <code class="type"><a href="OASISExpr.html#TYPEt">t</a> -> <a href="OASISExpr.html#TYPEt">t</a></code></pre><div class="info">
 Try to reduce the size of a boolean expression. <b>Not exported</b>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALreduce_choices"></a>reduce_choices : <code class="type">(<a href="OASISExpr.html#TYPEt">t</a> * 'a) list -> (<a href="OASISExpr.html#TYPEt">t</a> * 'a) list</code></pre><div class="info">
+<pre><span id="VALreduce_choices"><span class="keyword">val</span> reduce_choices</span> : <code class="type">(<a href="OASISExpr.html#TYPEt">t</a> * 'a) list -> (<a href="OASISExpr.html#TYPEt">t</a> * 'a) list</code></pre><div class="info">
 Try to reduce the size of a choice list. <b>Not exported</b>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALodn_of_t"></a>odn_of_t : <code class="type"><a href="OASISExpr.html#TYPEt">t</a> -> ODN.t</code></pre><div class="info">
+<pre><span id="VALif_then_else"><span class="keyword">val</span> if_then_else</span> : <code class="type"><a href="OASISExpr.html#TYPEt">t</a> -><br>       (<a href="OASISExpr.html#TYPEt">t</a> * 'a) list -> (<a href="OASISExpr.html#TYPEt">t</a> * 'a) list -> (<a href="OASISExpr.html#TYPEt">t</a> * 'a) list</code></pre><div class="info">
+<code class="code">if_then_else cond choices_if choices_else</code> Combine choices, if_then_else
+    style.<br>
+</div>
+<pre><span id="VALodn_of_t"><span class="keyword">val</span> odn_of_t</span> : <code class="type"><a href="OASISExpr.html#TYPEt">t</a> -> ODN.t</code></pre><div class="info">
 Dump ODN.t. <b>Not exported</b>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALodn_of_choices"></a>odn_of_choices : <code class="type">('a -> ODN.t) -> 'a <a href="OASISExpr.html#TYPEchoices">choices</a> -> ODN.t</code></pre></body></html>
+<pre><span id="VALodn_of_choices"><span class="keyword">val</span> odn_of_choices</span> : <code class="type">('a -> ODN.t) -> 'a <a href="OASISExpr.html#TYPEchoices">choices</a> -> ODN.t</code></pre><pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="OASISExpr.html#TYPEt">t</a> -> string</code></pre><div class="info">
+Transform an expression into a string. <b>Not exported</b><br>
+</div>
+<pre><span id="VALstring_of_choices"><span class="keyword">val</span> string_of_choices</span> : <code class="type">('a -> string) -> 'a <a href="OASISExpr.html#TYPEchoices">choices</a> -> string</code></pre><div class="info">
+Transform a list of choice into a string. <b>Not exported</b><br>
+</div>
+</body></html>

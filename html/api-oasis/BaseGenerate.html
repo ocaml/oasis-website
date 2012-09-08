@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="BaseFileUtil.html">
+<link rel="previous" href="BaseFileAB.html">
 <link rel="next" href="BaseLog.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -13,6 +13,7 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="FormatExt" rel="Chapter" href="FormatExt.html">
+<link title="FormatMarkdown" rel="Chapter" href="FormatMarkdown.html">
 <link title="ODNFunc" rel="Chapter" href="ODNFunc.html">
 <link title="PropList" rel="Chapter" href="PropList.html">
 <link title="OASISUtils" rel="Chapter" href="OASISUtils.html">
@@ -32,24 +33,29 @@
 <link title="OASISExecutable" rel="Chapter" href="OASISExecutable.html">
 <link title="OASISFlag" rel="Chapter" href="OASISFlag.html">
 <link title="OASISLibrary" rel="Chapter" href="OASISLibrary.html">
+<link title="OASISObject" rel="Chapter" href="OASISObject.html">
 <link title="OASISPackage" rel="Chapter" href="OASISPackage.html">
 <link title="OASISSourceRepository" rel="Chapter" href="OASISSourceRepository.html">
 <link title="OASISTest" rel="Chapter" href="OASISTest.html">
 <link title="OASISPlugin" rel="Chapter" href="OASISPlugin.html">
+<link title="OASISFindlib" rel="Chapter" href="OASISFindlib.html">
 <link title="OASISSchema" rel="Chapter" href="OASISSchema.html">
+<link title="OASISSection" rel="Chapter" href="OASISSection.html">
+<link title="OASISData" rel="Chapter" href="OASISData.html">
+<link title="OASISString" rel="Chapter" href="OASISString.html">
+<link title="OASISExec" rel="Chapter" href="OASISExec.html">
+<link title="OASISFileUtil" rel="Chapter" href="OASISFileUtil.html">
+<link title="OASISHostPath" rel="Chapter" href="OASISHostPath.html">
+<link title="OASISGraph" rel="Chapter" href="OASISGraph.html">
 <link title="BaseArgExt" rel="Chapter" href="BaseArgExt.html">
 <link title="BaseBuilt" rel="Chapter" href="BaseBuilt.html">
 <link title="BaseCheck" rel="Chapter" href="BaseCheck.html">
 <link title="BaseCustom" rel="Chapter" href="BaseCustom.html">
 <link title="BaseData" rel="Chapter" href="BaseData.html">
-<link title="BaseDev" rel="Chapter" href="BaseDev.html">
 <link title="BaseDoc" rel="Chapter" href="BaseDoc.html">
 <link title="BaseEnvLight" rel="Chapter" href="BaseEnvLight.html">
 <link title="BaseEnv" rel="Chapter" href="BaseEnv.html">
-<link title="BaseExec" rel="Chapter" href="BaseExec.html">
 <link title="BaseFileAB" rel="Chapter" href="BaseFileAB.html">
-<link title="BaseFilePath" rel="Chapter" href="BaseFilePath.html">
-<link title="BaseFileUtil" rel="Chapter" href="BaseFileUtil.html">
 <link title="BaseGenerate" rel="Chapter" href="BaseGenerate.html">
 <link title="BaseLog" rel="Chapter" href="BaseLog.html">
 <link title="BaseOCamlcConfig" rel="Chapter" href="BaseOCamlcConfig.html">
@@ -59,10 +65,12 @@
 <link title="BaseDynVar" rel="Chapter" href="BaseDynVar.html">
 <link title="BaseMessage" rel="Chapter" href="BaseMessage.html">
 <link title="BaseContext" rel="Chapter" href="BaseContext.html">
-<link title="SubCommand" rel="Chapter" href="SubCommand.html"><title>BaseGenerate</title>
+<link title="SubCommand" rel="Chapter" href="SubCommand.html">
+<link title="ArgExt" rel="Chapter" href="ArgExt.html">
+<link title="Pager" rel="Chapter" href="Pager.html"><title>BaseGenerate</title>
 </head>
 <body>
-<div class="navbar"><a href="BaseFileUtil.html">Previous</a>
+<div class="navbar"><a href="BaseFileAB.html">Previous</a>
 &nbsp;<a href="index.html">Up</a>
 &nbsp;<a href="BaseLog.html">Next</a>
 </div>
@@ -71,11 +79,35 @@
 <pre><span class="keyword">module</span> BaseGenerate: <code class="code">sig</code> <a href="BaseGenerate.html">..</a> <code class="code">end</code></pre>Generate 'setup.ml' and other files<br>
 <b>Author(s):</b> Sylvain Le Gall<br>
 <hr width="100%">
-<pre><span class="keyword">val</span> <a name="VALrestore"></a>restore : <code class="type">?msg:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> unit -> unit</code></pre><div class="info">
+<br><code><span id="TYPEupdate"><span class="keyword">type</span> <code class="type"></code>update</span> = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">NoUpdate</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Weak</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Dynamic</span></code></td>
+
+</tr></table>
+
+
+<pre><span id="VALrestore"><span class="keyword">val</span> restore</span> : <code class="type">?msg:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -> unit -> unit</code></pre><div class="info">
 Restore generated files, when <code class="code">generate</code> has been called with 
     <code class="code">~restore:true</code>. <b>Not exported</b>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALgenerate"></a>generate : <code class="type">?msg:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -><br>       restore:bool -><br>       backup:bool -><br>       dev:bool -><br>       setup_fn:<a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a> -><br>       ?oasis_exec:string -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISFileTemplate.html#TYPEfile_generate_change">OASISFileTemplate.file_generate_change</a> list</code></pre><div class="info">
+<pre><span id="VALgenerate"><span class="keyword">val</span> generate</span> : <code class="type">?msg:<a href="OASISContext.html#TYPEt">OASISContext.t</a> -><br>       restore:bool -><br>       backup:bool -><br>       setup_fn:<a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a> -><br>       ?oasis_exec:<a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a> -><br>       ?oasis_fn:<a href="OASISTypes.html#TYPEhost_filename">OASISTypes.host_filename</a> -><br>       ?oasis_setup_args:string list -><br>       <a href="BaseGenerate.html#TYPEupdate">update</a> -><br>       <a href="OASISTypes.html#TYPEpackage">OASISTypes.package</a> -> <a href="OASISFileTemplate.html#TYPEfile_generate_change">OASISFileTemplate.file_generate_change</a> list</code></pre><div class="info">
 Generate 'setup.ml' file and the rest of the build system.
     <b>Not exported</b>.<br>
 </div>

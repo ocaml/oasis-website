@@ -67,15 +67,22 @@ The file contains semi-colon fields and sections.
 
 ### Fields
 
-Fields follow are `field_name: field_value`:
+Fields are defined as `field_name: field_value`:
  
- * Field name is an identifier.
+ * Field name is an identifier, it contains only alphanumeric chars.
  * Field name is case insensitive.
- * Field value follow string convention (without ").
+ * Field value follow OCaml string convention, expect you don't need '"' around it.
  * Leading and trailing blanks of field value are removed.
- * A field value can continue on several lines, indent the next line relative to
-   the field name.
- * A blank line in field\_name is represented by `.`.
+ * A field value can continue on several lines, in this case the content of the value
+   must be indented one level more then the field name. In the body of the value a 
+   blank line is represented by `.`.
+ * If two fields have the same `field_name`, only the latter sets the value.
+
+The separator ':' can be replaced by '+:' which appends the `field_value` to
+the previous value of the value (rather than erasing it). Beware that appending
+is value dependent, some fields can concatenate, some cannot.
+
+The ':' can also be replaced by '$:', see [Conditional value](#conditional-value).
 
 ### Sections
 
@@ -109,12 +116,14 @@ specified this way, only fields that have no good default values and that must
 be evaluated at runtime is defined.
 
 For example: 
+
  * Toplevel fields `Name` and `Version` cannot be conditional.
  * Library fields `Build` and `Install` can be conditional.
 
 A condition is defined using a `if ... else ...` construct.
 
 Example:
+
     Library bar
       if os_type(Win32)
         Build: true
@@ -129,12 +138,11 @@ Available tests are :
 * `ccomp_type(X)`
 * `ocaml_version(X)`
 
-All tests check that the value `X` match the value defined in the output of: 
-
-    ocamlc -config
+The values from these tests are extracted from theoutput of `ocamlc -config`.
 
 
-An additional `flag` test is available which check that the flag `X` is defined,
+An additional `flag` test is available which check that the a Flag is defined. See 
+the chapter on the [Flag section](#flag).
 
 Tests and flags can be combined using standard boolean operation:
 
@@ -143,6 +151,23 @@ Tests and flags can be combined using standard boolean operation:
 * `expr1 && expr2`: boolean and.
 * `expr1 || expr2`: boolean or.
 * `true` and `false`.
+
+
+For boolean fields, you can replace the `if ... else ...` construct by `$:`.
+
+For example:
+
+    Library bar
+      if os_type(Win32)
+        Build: true
+      else 
+        Build: false
+
+is equivalent to:
+
+
+        Build$: os_type(Win32)
+
 
 Package
 -------
@@ -255,6 +280,7 @@ Fields:
 
  * `Modules`: List of modules to compile.
  * `InternalModules`: List of modules to compile which are not exported.
+ * `Pack`: Set if we should build a packed library.
  * `FindlibParent`: Library which includes the current library. The current
    library will be built as its parents and installed along it.
  * `FindlibName`: Name used by findlib.
@@ -337,7 +363,7 @@ License
 
 We have adopted a [DEP-5][] license style description. 
 
- [DEP-5]: http://dep.debian.net/deps/dep5/
+ [DEP-5]: http://dep.debian.net/deps/dep5/#license-specification 
 
 The reason of this format is to have machine-readable license description.
 Using this former work, we hope to be compatible with future standards of
@@ -345,8 +371,8 @@ Debian.
 
 We have limited the number of license to:
 
- * `Apache`: Apache license (versions 1.0, 1.1, 2.0)
- * `Artistic`: Artistic license (versions 1.0, 2.0)
+ * `Apache`: Apache license (versions 1.0, 1, 1.1, 2.0, 2)
+ * `Artistic`: Artistic license (versions 1.0, 1, 2.0, 2)
  * `BSD3`: Berkeley software distribution license (3 clauses)
  * `BSD4`: Berkeley software distribution license (4 clauses)
  * `CC-BY`: Creative Commons Attribution license
@@ -360,29 +386,29 @@ We have limited the number of license to:
  * `CeCILL`: CEA-CNRS-INRIA Logiciel Libre. GPL like. (versions 1, 2)
  * `CeCILL-B`: CEA-CNRS-INRIA Logiciel Libre, BSD-like
  * `CeCILL-C`: CEA-CNRS-INRIA Logiciel Libre, LGPL-like
- * `CPL`: IBM Common Public License (version 1.0)
+ * `CPL`: IBM Common Public License (versions 1.0, 1)
  * `Eiffel`: The Eiffel Forum License (version 2)
  * `Expat`: The Expat license
  * `FreeBSD`: FreeBSD Project license
  * `GFDL`: GNU Free Documentation License (versions 1.1, 1.2, 1.3)
  * `GFDL-NIV`: GNU Free Documentation License, with no invariant
    sections (versions 1.1, 1.2, 1.3)
- * `GPL`: GNU General Public License (versions 1.0, 2.0, 3.0)
+ * `GPL`: GNU General Public License (versions 1.0, 1, 2.0, 2, 3.0, 3)
  * `ISC`: Internet Software Consortium's license. Sometimes also known as the
    OpenBSD License.
  * `LGPL`: GNU Lesser General Public License. GNU Library General Public
-   License for versions lower than 2.1 (versions 2.0, 2.1, 3.0)
+   License for versions lower than 2.1 (versions 2.0, 2, 2.1, 3.0, 3)
  * `LPPL`: LaTeX Project Public License (version 1.3c)
  * `MIT`: MIT License
- * `MPL`: Mozilla Public License (versions 1.0, 1.1)
+ * `MPL`: Mozilla Public License (versions 1.0, 1, 1.1)
  * `PD`: Public domain. This is not a true license.
  * `Perl`: Perl license. Equates to GPL-1+ or Artistic-1.
  * `PROP`: Proprietary license, all rights reserved
  * `PSF`: Python Software Foundation license (version 2)
- * `QPL`: Q Public License (version 1.0)
+ * `QPL`: Q Public License (versions 1.0, 1)
  * `W3C-Software`: W3C Software License (version 20021231)
  * `ZLIB`: zlib/libpng license (version 1.2.2)
- * `Zope`: Zope Public License (versions 1.0, 2.0, 2.1)
+ * `Zope`: Zope Public License (versions 1.0, 1, 2.0, 2, 2.1)
  * or an URL describing the license
 
 And license exception to:
@@ -448,6 +474,8 @@ Here is a list of standard variables:
  * `ext_dll`
  * `default_executable_name`
  * `systhread_supported`
+ * `flexlink`
+ * `flexdll_version`: FlexDLL version (Win32)
  * `prefix`: Install architecture-independent files dir
  * `exec_prefix`: Install architecture-dependent files in dir
  * `bindir`: User executables
@@ -473,8 +501,9 @@ Here is a list of standard variables:
  * `suffix_program`
  * `rm`: Remove a file.
  * `rmdir`: Remove a directory.
- * `debug`: Compile with ocaml debug flag on.
- * `profile`: Compile with ocaml profile flag on.
+ * `debug`: Turn ocaml debug flag on
+ * `profile`: Turn ocaml profile flag on
+ * `native_dynlink`: Compiler support generation of .cmxs.
  * `ocamlbuildflags`: OCamlbuild additional flags
 
 Other variables are defined depending on your `_oasis` file:
@@ -554,7 +583,7 @@ There are 6 categories of plugin:
 
 ### Plugin Custom (doc, conf, test, install, build)
 
-__Version__: 0.2<br/>
+__Version__: 0.3<br/>
 
 This plugin allow to define a set of three commands to perform each steps,
 associated with the following fields:
@@ -594,15 +623,19 @@ Test fields:
  * `XCustomClean`: Run command to clean test step.
  * `XCustomDistclean`: Run command to distclean test step.
 
+The file `setup.data` remains __mandatory__, even when using the custom plugin.
+You must create it. A simple `touch setup.data; ./configure` should be enough,
+though.
+
 ### Plugin None (install, test, build, doc, conf)
 
-__Version__: 0.2<br/>
+__Version__: 0.3<br/>
 
 This plugin basically does nothing. It helps to replace mandatory step by nothing.
 
 ### Plugin OCamlbuild (build, doc)
 
-__Version__: 0.2<br/>
+__Version__: 0.3<br/>
 
 This plugin uses OCamlbuild to generate a build system. It is the default value
 for `BuildType`.
@@ -622,7 +655,7 @@ Document fields:
 
 ### Plugin Internal (conf, install)
 
-__Version__: 0.2<br/>
+__Version__: 0.3<br/>
 
 This plugin is the default value for the `ConfType` and `InstallType`. It
 represents a default behavior for configuring and installing OCaml project.
@@ -640,7 +673,7 @@ using standard environment variable (`$bindir`, `$datadir` et al).
 
 ### Plugin META (extra)
 
-__Version__: 0.2<br/>
+__Version__: 0.3<br/>
 
 This plugin is an helper to generate a `META` files that can be distributed and
 install with a library. It uses library name, version, synopsis and dependencies
@@ -651,11 +684,12 @@ Library fields:
  * `XMETAEnable`: Enable META generation
  * `XMETADescription`: META package description
  * `XMETAType`: Type of META package, set default predicates for archive
+ * `XMETAExtraLines`: Extra lines to add to the META
  * `XMETARequires`: Requires field for META package
 
 ### Plugin StdFiles (extra)
 
-__Version__: 0.2<br/>
+__Version__: 0.3<br/>
 
 This plugin generates standard files like `README.txt`, `INSTALL.txt` and
 `AUTHORS.txt`. These files will summarize data contains in `_oasis`. 
@@ -674,7 +708,7 @@ Package fields:
 
 ### Plugin DevFiles (extra)
 
-__Version__: 0.2<br/>
+__Version__: 0.3<br/>
 
 It helps to generate a toplevel `Makefile` and `configure` files which only
 invoke `setup.ml`. It aims to provide good old entry points.
@@ -765,11 +799,15 @@ OASIS usage
 Command line
 ------------
 
-OASIS (C) 2009-2010 OCamlCore SARL
+OASIS v0.3.1 (C) 2009-2010 OCamlCore SARL
 
 oasis [global-options*] subcommand [subcommand-options*]
 
-Global options:
+Environment variables: 
+
+OASIS_PAGER: pager to use to display long textual output.
+
+Global command line options:
 
 This program allows to manipulate OASIS enabled package, i.e. package that
 contains an `_oasis` file. It is made of several subcommands that provide
@@ -783,6 +821,9 @@ You need to specify a subcommand as defined in the following above.
 
 `-quiet`
 :   Run quietly
+
+`-info`
+:   Display information message
 
 `-debug`
 :   Output debug message
@@ -801,6 +842,9 @@ Available subcommands:
 `manual`
 :   Display user manual
 
+`plugin-list`
+:   List available plugin
+
 `query`
 :   Query an _oasis file
 
@@ -814,7 +858,10 @@ Available subcommands:
 :   Clean all template files from their content
 
 `setup-dev`
-:   Translate _oasis into a build system that auto-update
+:   Translate _oasis into a build system that auto-update (deprecated).
+
+`version`
+:   Display the version of the OASIS program running
 
 Subcommand check
 ----------------
@@ -856,6 +903,37 @@ Options:
 
 `-o fn`
 :   Output manual to filename.
+
+Subcommand plugin-list
+----------------------
+
+This subcommand list available plugins on the system. 
+
+TODO: most of the plugins listed here are not yet released.
+
+There are two kind of plugin: 
+
+* command line plugins: they create subcommand for the command line interface
+  of `oasis`. For example, the subcommand `oasis install pkg_name` is provided
+  by the plugin `install`. You can load them using 
+  `oasis --plugin-cli install ...`.
+* plugin that are used in `_oasis`: these plugins help to process the content 
+  of an `_oasis` file. They generate additional content in `setup.ml` and so on.
+  You don't have to load them, they will be automatically loaded when they are
+  found in the `_oasis` file. For example `Plugins: AutoGenerate (0.1)` in the 
+  `_oasis` file will trigger the load of the plugin `autogenerate`.
+
+The plugin system of `oasis` use findlib to detect plugins, so you must instal
+plugins as a standard OCaml library with a META file. OASIS detects plugin when
+they have a field `plugin_system = "oasis"` or `plugin_system = "oasis-cli"` in
+their META file.
+
+Usage: oasis [global-options*] plugin-list [options*]
+
+Options: 
+
+`--long`
+:   Display a long description for plugin.
 
 Subcommand query
 ----------------
@@ -933,9 +1011,30 @@ This is the main subcommand of `oasis`, it compiles the `_oasis` file into a
 self contained `setup.ml`. The generated file handle the various step to
 configure, build and install your project.
 
+It also contains a small piece of code that checks for `_oasis` changes. If it
+detects a change in this file, it will try to run `oasis setup` again  to
+regenerate the `setup.ml`. It also checks for `oasis` version, because we need
+to use at least the same version as the one that has generated the first version
+of `setup.ml`. You can disable this behavior using
+`ocaml setup.ml -no-update-setup-ml [...]`.
+
 Usage: oasis [global-options*] setup 
 
 Options: 
+
+`-real-oasis`
+:   Use the real 'oasis' executable filename when generating setup.ml.
+
+`-setup-update {none|weak|dynamic}`
+:   Different ways to allow setup.ml to auto-update. The 'weak' is only
+    triggered to regenerate setup.ml and all files when something change in
+    `_oasis`. It has a weak dependency on the executable oasis, because it only
+    needs it when `_oasis` is changed. The 'dynamic' mode has a strong
+    dependency on the library oasis but it generates a very small `setup.ml`.
+    If you want contributor to checkout your VCS and be able to work without
+    oasis installed, prefer the 'weak' mode. If you want to have very avoid VCS
+    history pollution, use the 'dynamic' mode. Always distribute tarball       
+              with mode 'none'.
 
 `-oasis fn`
 :   _oasis file to use.
@@ -961,18 +1060,8 @@ Options:
 Subcommand setup-dev
 --------------------
 
-This subcommand is the developper counterpart of the Setup subcommand. It
-acts the same way but it produces a `setup.ml` that still requires the 
-executable `oasis` in order to recompile the `_oasis` file at each invocation.
-
-The big advantage to create a `setup.ml` this way is that you don't have
-to call `oasis setup` each time you update the `_oasis` file. The other
-advantage is that it keeps clean your build system, i.e. it generates a file,
-use it and reset it to its pristine state, which helps to maintain the changes 
-in this file to the bare minimum. 
-
-This subcommand is suited for developpers, but you should use the Setup
-subcommand when you want to distribute your work.
+This subcommand is deprecated. The subcommand Setup now embeds into `setup.ml`
+a checks of `_oasis` for changes. See the subcommand Setup for further details.
 
 Usage: oasis [global-options*] setup-dev [options*]
 
@@ -992,6 +1081,13 @@ Options:
 
 `-oasis fn`
 :   _oasis file to use.
+
+Subcommand version
+------------------
+
+
+
+Usage: oasis [global-options*] version 
 
 
 
