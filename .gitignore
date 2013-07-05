@@ -1,4 +1,4 @@
-html/MANUAL.html
+html/MANUAL-*.html
 html/advertise.html
 html/alreadyusing.html
 html/contribute.html
@@ -8,3 +8,7 @@ html/oasis-badge.png
 html/powered-by-oasis.png
 html/quickstart.html
 html/oasis-db.html
+html/oasis-doc-*
+cache/
+Makefile.mkd
+Makefile.scrape
