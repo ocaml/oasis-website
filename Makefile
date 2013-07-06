@@ -13,6 +13,7 @@ include Makefile.mkd
 
 GENERATED_HTML=$(patsubst mkd/%.mkd,html/%.html,$(wildcard mkd/*.mkd))
 GENERATED_HTML+=$(patsubst %,html/MANUAL-%.html,$(OASIS_DOC_VERSIONS))
+GENERATED_HTML+=html/MANUAL.html
 GENERATED_IMG=html/oasis-badge.png html/powered-by-oasis.png html/logo.png
 
 all: $(GENERATED_HTML) $(GENERATED_IMG)
@@ -25,17 +26,19 @@ clean::
 
 .PHONY: clean
 
-html/%.html: html/part-header.html html/part-before-body.html html/part-after-body.html
-	$(PANDOC) \
-	  $(PANDOCFLAGS) \
+html/%.html: mkd/part-header.html mkd/part-before-body.html mkd/part-after-body.html
+	$(PANDOC) $(PANDOCFLAGS) \
 	  -c default.css \
-	  -H html/part-header.html \
-	  -B html/part-before-body.html \
+	  -H mkd/part-header.html \
+	  -B mkd/part-before-body.html \
 	  $(filter %.mkd,$^) \
-	  -A html/part-after-body.html \
-    --email-obfuscation=references > $@
+	  -A mkd/part-after-body.html \
+    --email-obfuscation=references \
+		--output $@
 
 html/MANUAL-%.html: PANDOCFLAGS=--toc
+
+html/MANUAL.html: cache/MANUAL-$(OASIS_LATEST_VERSION).mkd
 
 #
 # Image generation.

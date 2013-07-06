@@ -22,18 +22,18 @@ h3 { color: #555; font-size; medium;}
 
 /* Header */
 
-h1.title 
-{ 
+h1.title
+{
   display: none;
 }
 
-#header
+#header_page
 {
   height: 217px;
   background: url(banner.jpg);
 }
 
-#header .logo
+#header_page .logo
 {
   position: relative;
   float: left;
@@ -41,17 +41,17 @@ h1.title
   padding-left: 20px;
 }
 
-#header h1.logo a 
+#header_page h1.logo a
 {
   text-decoration: none;
 }
 
-#header h1.logo img
+#header_page h1.logo img
 {
   border: none;
 }
 
-#header .subtitle
+#header_page .subtitle
 {
   color:#FFFFFF;
   float:left;

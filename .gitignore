@@ -9,6 +9,7 @@ html/powered-by-oasis.png
 html/quickstart.html
 html/oasis-db.html
 html/oasis-doc-*
+html/MANUAL.html
 cache/
 Makefile.mkd
 Makefile.scrape
