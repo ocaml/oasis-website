@@ -1,18 +1,24 @@
-INKSCAPE="inkscape"
-COMPOSITE="composite"
-PANDOC="pandoc"
+INKSCAPE=inkscape
+COMPOSITE=composite
+PANDOC=pandoc
+TAR=tar
+
+# Determine if we can scrape host.
+ONLINE := $(shell (ping -c 1 forge.ocamlcore.org > /dev/null 2>&1 && echo true) || echo false)
 
 default: all
 
 include Makefile.scrape
-include Makefile.mkd
 
 #
 # Convert .mkd to .html
 #
 
-GENERATED_HTML=$(patsubst mkd/%.mkd,html/%.html,$(wildcard mkd/*.mkd))
-GENERATED_HTML+=$(patsubst %,html/MANUAL-%.html,$(OASIS_DOC_VERSIONS))
+GENERATED_MKD=$(patsubst %.mkd.tmpl,%.mkd,$(wildcard mkd/*.mkd.tmpl))
+
+GENERATED_HTML=$(patsubst mkd/%.mkd,html/%.html, \
+								$(wildcard mkd/*.mkd) $(GENERATED_MKD))
+GENERATED_HTML+=$(foreach version,$(OASIS_DOC_VERSIONS),html/MANUAL-$(version).html)
 GENERATED_HTML+=html/MANUAL.html
 GENERATED_IMG=html/oasis-badge.png html/powered-by-oasis.png html/logo.png
 
@@ -22,23 +28,47 @@ all: $(GENERATED_HTML) $(GENERATED_IMG)
 .PHONY: all
 
 clean::
-	-$(RM) $(GENERATED_HTML) $(GENERATED_IMG) logo-tmp.png
+	-$(RM) $(GENERATED_MKD) $(GENERATED_HTML) $(GENERATED_IMG) logo-tmp.png
 
 .PHONY: clean
 
-html/%.html: mkd/part-header.html mkd/part-before-body.html mkd/part-after-body.html
+html/MANUAL-%.html: PANDOCFLAGS=--toc
+
+html/%.html: mkd/%.mkd mkd/part-header.html mkd/part-before-body.html mkd/part-after-body.html
 	$(PANDOC) $(PANDOCFLAGS) \
 	  -c default.css \
 	  -H mkd/part-header.html \
 	  -B mkd/part-before-body.html \
 	  $(filter %.mkd,$^) \
 	  -A mkd/part-after-body.html \
-    --email-obfuscation=references \
+	  --email-obfuscation=references \
+	  --output $@
+
+html/MANUAL.html: html/MANUAL-$(OASIS_LATEST_VERSION).html
+	cp $< $@
+
+#
+# Convert .mkd.tmpl into .mkd.
+#
+
+%.mkd: %.mkd.tmpl scrape.json
+	./template.py $(foreach file,$(filter %.json,$^),--data $(file) ) \
+		--input $(filter %.mkd.tmpl,$^) \
 		--output $@
 
-html/MANUAL-%.html: PANDOCFLAGS=--toc
+#
+# Extract tarballs.
+#
 
-html/MANUAL.html: cache/MANUAL-$(OASIS_LATEST_VERSION).mkd
+cache/oasis-doc-%.dir: cache/oasis-doc-%.tar.gz
+	$(TAR) xzf $^ -C cache
+	mv cache/oasis-doc-$* $@
+
+mkd/MANUAL-%.mkd: cache/oasis-doc-%.dir
+	cp $</doc/MANUAL.mkd $@
+
+clean::
+	-$(RM) -r doc/oasis-doc-*.dir
 
 #
 # Image generation.
@@ -68,21 +98,10 @@ Makefile.scrape: scrape.sh
 	./scrape.sh
 
 clean::
-	-$(RM) -r html/oasis-doc-*
-	-$(RM) scrape-include
+	if $(ONLINE) ; then -$(RM) -r html/oasis-doc-* scrape-include; fi
 
 distclean::
 	-$(RM) -R cache
-
-#
-# Extract mkd dependencies
-#
-
-Makefile.mkd:
-	ls -1 mkd/*.mkd | sed 's,mkd/\(.*\)\.mkd,html/\1.html: \0,' > $@
-
-clean::
-	-$(RM) Makefile.mkd
 
 #
 # Deployment target.

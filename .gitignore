@@ -11,5 +11,5 @@ html/oasis-db.html
 html/oasis-doc-*
 html/MANUAL.html
 cache/
-Makefile.mkd
 Makefile.scrape
+scrape.json
