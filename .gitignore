@@ -14,3 +14,4 @@ cache/
 Makefile.scrape
 scrape.json
 html/api-oasis*
+html/robots.txt

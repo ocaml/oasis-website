@@ -1,0 +1,13 @@
+User-Agent: *
+
+# Don't index versionned documentation.
+Disallow: /api-oasis-dev
+Disallow: /MANUAL-dev.html
+
+Disallow: /api-oasis-${data['oasis']['latest']['version']}
+Disallow: /MANUAL-${data['oasis']['latest']['version']}.html
+
+% for version in data['oasis-doc']['others']:
+Disallow: /api-oasis-${version['version']}
+Disallow: /MANUAL-${version['version']}.html
+% endfor

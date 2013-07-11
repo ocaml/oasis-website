@@ -38,9 +38,9 @@ GENERATED_DIR+=html/api-oasis
 GENERATED_IMG=html/oasis-badge.png html/powered-by-oasis.png html/logo.png
 
 # Generated files.
-GENERATED_FILE=Makefile.scrape
+GENERATED_FILE=Makefile.scrape html/robots.txt
 
-all: $(GENERATED_HTML) $(GENERATED_IMG) $(GENERATED_DIR)
+all: $(GENERATED_HTML) $(GENERATED_IMG) $(GENERATED_DIR) html/robots.txt
 
 .PHONY: all
 
@@ -89,6 +89,8 @@ TEMPLATE_PY= ./template.py --cache_dir "$(CURDIR)/cache" \
 mkd/%: mkd/%.tmpl
 	$(TEMPLATE_PY) --input "$<" --output "$@"
 
+html/robots.txt: tmpl/robots.txt.tmpl
+	$(TEMPLATE_PY) --input "$<" --output "$@"
 #
 # Download tarballs.
 #
