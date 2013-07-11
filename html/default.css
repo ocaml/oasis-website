@@ -1,7 +1,6 @@
 /* General settings */
 
-body
-{
+body {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
@@ -22,47 +21,40 @@ h3 { color: #555; font-size; medium;}
 
 /* Header */
 
-h1.title
-{
+h1.title {
   display: none;
 }
 
-#header_page
-{
-  height: 217px;
+#header_page {
+  height: 150px;
   background: url(banner.jpg);
 }
 
-#header_page .logo
-{
+#header_page .logo {
   position: relative;
   float: left;
-  padding-top: 8px;
-  padding-left: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-#header_page h1.logo a
-{
+#header_page h1.logo a {
   text-decoration: none;
 }
 
-#header_page h1.logo img
-{
+#header_page h1.logo img {
   border: none;
 }
 
-#header_page .subtitle
-{
-  color:#FFFFFF;
-  float:left;
-  font-size:16pt;
-  font-weight:bold;
-  margin-top:120px;
+#header_page .subtitle {
+  color: #FFFFFF;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 94px;
 }
 
 /* Menu */
-#menu
-{
+#menu {
   text-align: center;
   padding: 10px;
   background: url(menu.png) repeat-x;
@@ -70,8 +62,7 @@ h1.title
   border-bottom: solid 2px #e0dfdf;
 }
 
-#menu a
-{
+#menu a {
   text-decoration: none;
   font-weight: bold;
   font-size: 110%;
@@ -80,21 +71,18 @@ h1.title
   padding: 0;
 }
 
-#menu a:hover
-{
+#menu a:hover {
   color: green;
   border-bottom:1px dotted green;
 }
 
-#menu li
-{
+#menu li {
   display: inline;
   margin: 0;
   padding: 3em;
 }
 
-#menu ul
-{
+#menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -109,54 +97,43 @@ h1.title
   background: #ffe8bf;
 }
 
-#content hr
-{
+#content hr {
   color: grey;
   width: 90%;
 }
 
-#content a
-{
+#content a {
   color: #67a76d;
   text-decoration: none;
   font-weight: bold;
 }
 
-#content a:hover
-{
+#content a:hover {
   color: green;
 }
 
-#content code
-{
+#content code {
   font-family: monospace;
   color: #1e6694;
 }
 
-#content pre
-{
+#content pre {
   border-left-style: double;
   border-left-color: #1e6694;
   padding-left: 1em;
 }
 
-#download-latest
-{
+#download-latest {
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-#download-latest a
-{
+#download-latest a {
   font-weight: bold;
   font-size: x-large;
   padding-left: 24px;
   background: url(download.png) no-repeat;
-}
-
-#news .subtitle
-{
-  font-style: italic;
-  font-size: 80%;
 }
 
 /* Footer */
