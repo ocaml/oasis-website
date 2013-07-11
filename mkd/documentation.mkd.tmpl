@@ -1,0 +1,85 @@
+%%OASIS Documentation
+
+This section provides information you need to get started.
+
+* [OASIS Quickstart](quickstart.html) which show you how to set up
+  OASIS for a single executable and library.
+* OASIS User manual the definitive guide:
+    * [manual for version ${data['oasis']['latest']['version']}, the latest stable version](MANUAL.html)
+% for version in data['oasis-doc']['others']:
+    * [manual for version ${version['version']}](MANUAL-${version['version']}.html)
+% endfor
+    * [manual for the version under development](MANUAL-dev.html)
+
+* The OASIS API, to use OASIS as an OCaml library, generated with OCamldoc:
+    * [API for version ${data['oasis']['latest']['version']}, the latest stable version](api-oasis/index.html)
+% for version in data['oasis-doc']['others']:
+    * [API for version ${version['version']}](api-oasis-${version['version']}/index.html)
+% endfor
+    * [API for the version under development](api-oasis-dev/index.html)
+
+Extra documentation can be found in the project documentation
+[section](https://forge.ocamlcore.org/docman/?group_id=54):
+
+* some
+  [slides](https://forge.ocamlcore.org/docman/view.php/54/94/SlidesCamlConsortium2009.pdf)
+  about OASIS design which was presented at OCaml Consortium meeting on December
+  4th 2009.
+* [browse all](https://forge.ocamlcore.org/docman/?group_id=54)
+
+Featured examples:
+
+* [custom](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/examples/custom/_oasis)
+ a project that uses the custom plugin and make to build
+* [flags](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/examples/flags/_oasis)
+ a project that uses flags and .ab files where these flags are substituted
+* [interdepend-libraries](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/examples/interdepend-libraries/_oasis)
+ a project that uses several libraries linked together
+* [with-c](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/examples/with-c/_oasis)
+ a project that uses C files in libraries and executables
+* [with-data](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/examples/with-data/_oasis)
+ a project that installs data files
+* [with-subpackages](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=headblob;f=/examples/with-subpackage/_oasis)
+ a project that uses a syntax extension and a library
+* [browse the examples](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis;a=tree;f=/examples)
+ directory of OASIS for other examples
+
+Featured projects that use \_oasis:
+
+* [OCaml Data Notation](https://forge.ocamlcore.org/projects/odn):
+  the [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-data-notation;a=headblob;f=/_oasis) file includes 2 syntax extensions, a library and tests
+* [ocamlify](https://forge.ocamlcore.org/projects/ocamlify):
+  the [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocamlify;a=headblob;f=/_oasis) is very simple and only provide one library
+* [browse other projects](alreadyusing.html) that use \_oasis
+
+<a title="View OCaml Meeting 2010 OASIS Slides on Scribd"
+   href="http://www.scribd.com/doc/39582083/OCaml-Meeting-2010-OASIS-Slides"
+   style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif;
+          font-style: normal; font-variant: normal; font-weight: normal;
+          font-size: 14px; line-height: normal; font-size-adjust: none;
+          font-stretch: normal; -x-system-font: none; display:
+          block; text-decoration: underline;">OCaml Meeting 2010 OASIS Slides</a>
+<object id="doc_313966474258373"
+        name="doc_313966474258373"
+        height="600" width="100%"
+        type="application/x-shockwave-flash"
+        data="http://d1.scribdassets.com/ScribdViewer.swf"
+        style="outline:none;" >
+<param name="movie" value="http://d1.scribdassets.com/ScribdViewer.swf">
+<param name="wmode" value="opaque">
+<param name="bgcolor" value="#ffffff">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<param name="FlashVars" value="document_id=39582083&access_key=key-glzevf6euwjjx11r5gr&page=1&viewMode=slideshow">
+<embed id="doc_313966474258373"
+      name="doc_313966474258373"
+      src="http://d1.scribdassets.com/ScribdViewer.swf?document_id=39582083&access_key=key-glzevf6euwjjx11r5gr&page=1&viewMode=list"
+      type="application/x-shockwave-flash"
+      allowscriptaccess="always"
+      allowfullscreen="true"
+      height="600"
+      width="100%"
+      wmode="opaque"
+      bgcolor="#ffffff">
+</embed>
+</object>

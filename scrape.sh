@@ -3,6 +3,8 @@
 # Gather OASIS doc tarballs and versions from the website.
 #
 
+# TODO: convert this to a python script.
+
 set -e
 set -x
 

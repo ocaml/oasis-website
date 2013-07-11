@@ -13,3 +13,4 @@ html/MANUAL.html
 cache/
 Makefile.scrape
 scrape.json
+html/api-oasis*
