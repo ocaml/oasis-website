@@ -140,12 +140,12 @@ h1.title
   padding-left: 1em;
 }
 
-#download-latest 
+#download-latest
 {
   text-align: center;
 }
 
-#download-latest a 
+#download-latest a
 {
   font-weight: bold;
   font-size: x-large;
@@ -165,29 +165,30 @@ h1.title
   clear: both;
   position: relative;
   color: black;
-  font-size: 70%;
+  font-size: 13px;
   padding: 5px;
+  height: 13px;
   background: url(footer.png) repeat-x;
   border-top: solid 2px #e0dfdf;
 }
 
+#footer div {
+  margin-left: 10px;
+}
+
 #footer .copyright {
-  position: relative;
-  width: 33%;
+  float: left;
+  margin-left: 0px;
+}
+
+#footer .googleplus {
+  float: right;
 }
 
 #footer .lastmodified {
-  position: relative;
   float: right;
-  width: 33%;
-  text-align: right;
 }
 
 #footer .badge {
-  position: relative;
-  float: right;
-  width: 33%;
   text-align: center;
 }
-
-
