@@ -104,3 +104,10 @@ Writing tools is not yet very easy. You need to depend only on the content of
 everything needed to parse and extract information from an `_oasis` file.
 You can also subscribe to the
 [oasis-devel mailing list](https://lists.forge.ocamlcore.org/cgi-bin/listinfo/oasis-devel).
+
+<a href="https://github.com/ocaml/oasis">
+  <img
+    id="forkme"
+    src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
+    alt="Fork me on GitHub">
+</a>

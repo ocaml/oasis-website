@@ -102,8 +102,8 @@ h1.title
 
 /* Content */
 
-#content
-{
+#content {
+  position: relative;
   padding: 2em;
   padding-top: 0.5em;
   background: #ffe8bf;
@@ -181,14 +181,20 @@ h1.title
   margin-left: 0px;
 }
 
-#footer .googleplus {
-  float: right;
-}
-
-#footer .lastmodified {
+#footer .links {
   float: right;
 }
 
 #footer .badge {
   text-align: center;
 }
+
+#forkme {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
