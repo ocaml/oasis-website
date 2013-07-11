@@ -198,3 +198,9 @@ h1.title
   border: 0;
 }
 
+#g-page {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: 0;
+}
