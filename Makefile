@@ -81,7 +81,8 @@ html/api-oasis: html/api-oasis-$(OASIS_LATEST_VERSION)
 #
 
 TEMPLATE_PY= ./template.py --cache_dir "$(CURDIR)/cache" \
-						   --forge_page $(FORGE_PAGE) --online $(ONLINE)
+						   --forge_page $(FORGE_PAGE) --online $(ONLINE) \
+							 --log=INFO
 
 %: %.tmpl
 	$(TEMPLATE_PY) --input "$<" --output "$@"

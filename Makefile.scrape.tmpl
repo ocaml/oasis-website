@@ -1,7 +1,7 @@
-OASIS_DOC_VERSIONS=dev ${data['oasis-doc']['latest']['version']}
-cache/oasis-doc-${data['oasis-doc']['latest']['version']}.tar.gz: URL = ${data['oasis-doc']['latest']['url']}
-% for version in data['oasis-doc']['others']:
-OASIS_DOC_VERSIONS+=${version['version']}
-cache/oasis-doc-${version['version']}: URL = ${version['url']}
+OASIS_DOC_VERSIONS=dev ${oasis_doc.latest.version}
+cache/oasis-doc-${oasis_doc.latest.version}.tar.gz: URL = ${oasis_doc.latest.url}
+% for version in oasis_doc.others:
+OASIS_DOC_VERSIONS+=${version.version}
+cache/oasis-doc-${version.version}: URL = ${version.url}
 % endfor
-OASIS_LATEST_VERSION=${data['oasis']['latest']['version']}
+OASIS_LATEST_VERSION=${oasis.latest.version}

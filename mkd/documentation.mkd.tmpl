@@ -5,16 +5,16 @@ This section provides information you need to get started.
 * [OASIS Quickstart](quickstart.html) which show you how to set up
   OASIS for a single executable and library.
 * OASIS User manual the definitive guide:
-    * [manual for version ${data['oasis']['latest']['version']}, the latest stable version](MANUAL.html)
-% for version in data['oasis-doc']['others']:
-    * [manual for version ${version['version']}](MANUAL-${version['version']}.html)
+    * [manual for version ${oasis.latest.version}, the latest stable version](MANUAL.html)
+% for version in oasis_doc.others:
+    * [manual for version ${version.version}](MANUAL-${version.version}.html)
 % endfor
     * [manual for the version under development](MANUAL-dev.html)
 
 * The OASIS API, to use OASIS as an OCaml library, generated with OCamldoc:
-    * [API for version ${data['oasis']['latest']['version']}, the latest stable version](api-oasis/index.html)
-% for version in data['oasis-doc']['others']:
-    * [API for version ${version['version']}](api-oasis-${version['version']}/index.html)
+    * [API for version ${oasis.latest.version}, the latest stable version](api-oasis/index.html)
+% for version in oasis_doc.others:
+    * [API for version ${version.version}](api-oasis-${version.version}/index.html)
 % endfor
     * [API for the version under development](api-oasis-dev/index.html)
 
