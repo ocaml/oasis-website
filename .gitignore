@@ -16,3 +16,5 @@ scrape.json
 html/api-oasis*
 html/robots.txt
 html/index.html
+fabfile.pyc
+dist/

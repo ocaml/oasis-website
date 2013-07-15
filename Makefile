@@ -3,6 +3,7 @@ COMPOSITE=composite
 PANDOC=pandoc
 TAR=tar
 CURL=curl
+FAB=fab
 
 # Determine if we can scrape host.
 ONLINE := $(shell (ping -c 1 forge.ocamlcore.org > /dev/null 2>&1 && echo true) || echo false)
@@ -143,11 +144,10 @@ html/logo.png: INKSCAPEFLAGS=-w 160 -h 150
 # Deploy generated website to oasis.forge.o.o.
 #
 
-deploy: all
-	rsync -av -O --no-perms --delete \
-		--exclude oasis-db/server-dev/*.log \
-		--exclude oasis-db/server-dev/incoming \
-		--exclude oasis-db/server-dev/dist html/ \
-		ssh.ocamlcore.org:/home/groups/oasis/htdocs/
+deploy:
+	fab deploy
 
-.PHONY: deploy
+rollback:
+	fab rollback
+
+.PHONY: deploy rollback
