@@ -175,9 +175,13 @@ h1.title {
   border: 0;
 }
 
-#g-page {
+#g-page-container {
+  width: 100%;
+  position: relative;
+  height: 85px;
+}
+
+#g-page-container > div {
   position: absolute;
-  top: 5px;
-  right: 10px;
-  border: 0;
+  right: 0;
 }

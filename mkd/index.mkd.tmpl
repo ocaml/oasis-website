@@ -37,11 +37,21 @@ advantages of OASIS metadata:
   package
 * [GODI](godi.html): a package manager that [imports OASIS-DB packages](http://godi.camlcity.org/godi/oasis.html)
 
-<!-- Place this code where you want the badge to render. -->
-<div id="g-page">
-  <a href="https://plus.google.com/105318132004091872602?prsrc=3"
-     rel="publisher" target="_top"
-     style="text-decoration:none;display:inline-block;color:#333;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;">
-  <img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="Google+" style="border:0;width:32px;height:32px;"/>
-  </a>
+<!-- Place this tag where you want the widget to render. -->
+<div id="g-page-container">
+  <div class="g-page"
+       data-href="//plus.google.com/105318132004091872602"
+       data-layout="landscape"
+       data-showtagline="false"
+       data-showcoverphoto="false"
+       data-rel="publisher"></div>
 </div>
+
+<!-- Place this tag after the last widget tag. -->
+<script id="g-page-script" type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementById('g-page-script'); s.parentNode.insertBefore(po, s);
+  })();
+</script>
