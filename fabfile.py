@@ -1,7 +1,6 @@
 # Fabric deploy/rollback handling of OASIS website.
 
-from fabric.api import run, env, cd, prompt
-from fabric.contrib.project import rsync_project
+from fabric.api import run, env, cd, prompt, local, put
 
 import datetime
 import os
@@ -39,16 +38,32 @@ def check_short_release_names(short_names, choice):
   else:
     raise Error('"%s" is not a release.' % choice)
 
+def deploy_release(release_fn):
+  run('rm -R "%s"' % HTDOCS_DN)
+  with cd(TARGET_DIR):
+    run('tar xzf "%s"' % release_fn)
+
 def deploy():
   release_fn=os.path.join(TARGET_DIR, 'htdocs-' + NOW_STR + '.tar.gz')
+  release_local_fn=os.path.join(os.getcwd(),
+                                'dist',
+                                os.path.basename(release_fn))
   # Check we don't already have this version.
   run('! test -e "%s"' % release_fn)
-  # Send data.
-  rsync_project(local_dir='html/', remote_dir=HTDOCS_DN + '/',
-                delete=True, extra_opts='--omit-dir-times --no-perms')
-  # Do a backup for rollback.
-  with cd(TARGET_DIR):
-    run('tar czf "%s" htdocs' % release_fn)
+
+  # Build local tarball.
+  if os.path.exists('tmp'):
+    local('rm -Rf tmp')
+  local('mkdir tmp')
+  if not os.path.exists(os.path.dirname(release_local_fn)):
+    local('mkdir "%s"' % os.path.dirname(release_local_fn))
+  local('cp -pR html tmp/htdocs')
+  local('tar czf "%s" -C tmp htdocs' % release_local_fn)
+  local('rm -Rf tmp')
+
+  # Send data and deploy.
+  put(release_local_fn, release_fn)
+  deploy_release(release_fn)
   cleanup()
 
 def rollback():
@@ -67,8 +82,6 @@ def rollback():
                                  default=latest,
                                  validate=lambda r: check_short_release_names(short_names, r))
     rollback_release_fn = short_names[rollback_to_release]
-    run('rm -R "%s"' % HTDOCS_DN)
-    with cd(TARGET_DIR):
-      run('tar xzf "%s"' % rollback_release_fn)
+    deploy_release(rollback_release_fn)
   else:
     print "No old releases."
