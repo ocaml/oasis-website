@@ -42,6 +42,7 @@ def deploy_release(release_fn):
   run('rm -R "%s"' % HTDOCS_DN)
   with cd(TARGET_DIR):
     run('tar xzf "%s"' % release_fn)
+    run('chmod -R g+w htdocs')
 
 def deploy():
   release_fn=os.path.join(TARGET_DIR, 'htdocs-' + NOW_STR + '.tar.gz')
