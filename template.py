@@ -86,8 +86,11 @@ def CacheForgeHTML(page_url, online, cache_dir):
     else:
       logging.info("The file '%s' is recent enough.", html_fn)
   else:
-    logging.info("The file '%s' doesn't exist, downloading.")
+    logging.info("The file '%s' doesn't exist, downloading.", html_fn)
     html_download = True
+
+  if not os.path.exists(cache_dir):
+    os.mkdir(cache_dir)
 
   if html_download:
     download_ok = False

@@ -54,7 +54,7 @@ clean::
 			logo-tmp.png
 	-$(RM) -r $(GENERATED_DIR)
 
-distclean::
+distclean:: clean
 	-$(RM) -R cache
 
 .PHONY: clean distclean
