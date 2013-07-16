@@ -42,53 +42,54 @@ def main():
 
   # Extract FAQ.html.
   z = zipfile.ZipFile(zip_fn)
-  with z.open('FAQ.html') as fd:
-    out = sys.stdout
-    if options.output_filename:
-      out = StringIO.StringIO()
+  fd = z.open('FAQ.html')
+  out = sys.stdout
+  if options.output_filename:
+    out = StringIO.StringIO()
 
-    # Extract data from the HTML file.
-    soup = BeautifulSoup(fd)
-    title = soup.find('title')
-    body = soup.find('body')
-    style = soup.find('style')
+  # Extract data from the HTML file.
+  soup = BeautifulSoup(fd)
+  title = soup.find('title')
+  body = soup.find('body')
+  style = soup.find('style')
 
-    print >>out, """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  print >>out, """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta name="generator" content="googledoc.py" />
-<meta name="author" content="author Sylvain Le Gall" />
-%s
-%s
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="googledoc.py" />
+  <meta name="author" content="author Sylvain Le Gall" />
+  %s
+  %s
 """ % (title, style.prettify())
-    if options.css:
-      print >>out, """
-<link rel="stylesheet" href="%s" type="text/css" />
-""" % options.css
-    dumpFile('part_header', options.part_header, out)
+  if options.css:
     print >>out, """
+  <link rel="stylesheet" href="%s" type="text/css" />
+""" % options.css
+  dumpFile('part_header', options.part_header, out)
+  print >>out, """
 </head>
 <body>
 """
-    dumpFile('part_before_body', options.part_before_body, out)
-    print >>out, """
-<!-- body -->
+  dumpFile('part_before_body', options.part_before_body, out)
+  print >>out, """
+  <!-- body -->
 """
-    for i in soup.body:
-      print >>out, i.prettify()
-    dumpFile('part_after_body', options.part_after_body, out)
-    print >>out, """
+  for i in soup.body:
+    print >>out, i.prettify()
+  dumpFile('part_after_body', options.part_after_body, out)
+  print >>out, """
 </body>
 </html>
 """
-    if options.output_filename:
-      with open(options.output_filename, 'w') as real_out:
-        print >>real_out, out.getvalue()
-      out.close()
+  if options.output_filename:
+    with open(options.output_filename, 'w') as real_out:
+      print >>real_out, out.getvalue()
+    out.close()
 
-    z.close()
+  fd.close()
+  z.close()
 
 
 if __name__ == '__main__':
