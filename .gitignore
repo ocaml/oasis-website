@@ -10,11 +10,12 @@ html/quickstart.html
 html/oasis-db.html
 html/oasis-doc-*
 html/MANUAL.html
+html/FAQ.html
 cache/
 Makefile.scrape
 scrape.json
 html/api-oasis*
 html/robots.txt
 html/index.html
-fabfile.pyc
+*.pyc
 dist/

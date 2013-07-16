@@ -30,6 +30,7 @@ ALL_MKD=$(wildcard mkd/*.mkd) $(GENERATED_MKD)
 GENERATED_HTML=$(patsubst mkd/%.mkd,html/%.html,$(ALL_MKD))
 GENERATED_HTML+=$(foreach version,$(OASIS_DOC_VERSIONS),html/MANUAL-$(version).html)
 GENERATED_HTML+=html/MANUAL.html
+GENERATED_HTML+=html/FAQ.html
 
 # Directories created during the process.
 GENERATED_DIR+=$(foreach version,$(OASIS_DOC_VERSIONS),html/api-oasis-$(version))
@@ -76,6 +77,16 @@ html/MANUAL.html: html/MANUAL-$(OASIS_LATEST_VERSION).html
 	cp $< $@
 html/api-oasis: html/api-oasis-$(OASIS_LATEST_VERSION)
 	cp -R $< $@
+
+# Extract data from Google docs.
+html/FAQ.html: googledoc.py
+	./googledoc.py \
+		--cache_dir "$(CURDIR)/cache" \
+	  --css default.css \
+	  -H mkd/part-header.html \
+	  -B mkd/part-before-body.html \
+	  -A mkd/part-after-body.html \
+	  --output $@
 
 #
 # Convert template file.
