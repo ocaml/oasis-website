@@ -10,7 +10,7 @@ html/quickstart.html
 html/oasis-db.html
 html/oasis-doc-*
 html/MANUAL.html
-html/FAQ.html
+html/faq.html
 cache/
 Makefile.scrape
 scrape.json

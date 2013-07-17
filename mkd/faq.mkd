@@ -1,0 +1,23 @@
+%FAQ
+%author Sylvain Le Gall
+
+Using OASIS
+===========
+
+How to create a test?
+---------------------
+
+TBD
+
+How to report a bug?
+--------------------
+
+TBD
+
+Developing OASIS
+================
+
+How to send a patch?
+--------------------
+
+TBD
