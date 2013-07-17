@@ -5,7 +5,7 @@
 The best way to help the OASIS project is to use it, of course. From the
 beginning, OASIS has been designed using real-life projects as examples to
 define features. The first public version was the one matching the most
-common requirements for the author's projects. It is now time to expand this
+common requirements of the author's projects. It is now time to expand this
 requirements to your projects as well.
 
 * [Try OASIS](quickstart.html) on your libraries/programs
