@@ -41,7 +41,7 @@ GENERATED_IMG=html/oasis-badge.png html/powered-by-oasis.png html/logo.png
 # Generated files.
 GENERATED_FILE=Makefile.scrape html/robots.txt
 
-all: $(GENERATED_HTML) $(GENERATED_IMG) $(GENERATED_DIR) html/robots.txt
+all: $(GENERATED_HTML) $(GENERATED_IMG) $(GENERATED_DIR) html/robots.txt marknonlatest
 
 .PHONY: all
 
@@ -138,6 +138,28 @@ html/%.png: images/%.svg
 html/powered-by-oasis.png: INKSCAPEFLAGS=-w 128 -h 58
 
 html/logo.png: INKSCAPEFLAGS=-w 160 -h 150
+
+#
+# Mark the documentation for version which are not the latest.
+#
+
+marknonlatest: $(GENERATED_HTML)
+	./marknonlatest.py html/api-oasis-*/*.html \
+		--text 'You are not viewing the latest version of the library.' \
+		--link '../api-oasis/index.html'
+	./marknonlatest.py html/MANUAL-*.html \
+		--text 'You are not viewing the latest version of the manual.' \
+		--link 'MANUAL.html'
+	./marknonlatest.py html/api-oasis-dev/*.html \
+		--text 'You are viewing a development version of the library.' \
+		--link '../api-oasis/index.html'
+	./marknonlatest.py html/MANUAL-dev.html \
+		--text 'You are viewing a development version of the manual.' \
+		--link 'MANUAL.html'
+	./marknonlatest.py html/api-oasis-$(OASIS_LATEST_VERSION)/*.html --unset
+	./marknonlatest.py html/MANUAL-$(OASIS_LATEST_VERSION).html --unset
+
+.PHONY: marknonlatest
 
 #
 # Deployment target.
