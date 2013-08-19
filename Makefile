@@ -4,6 +4,7 @@ PANDOC=pandoc
 TAR=tar
 CURL=curl
 FAB=fab
+LINKCHECKER=linkchecker
 
 # Determine if we can scrape host.
 ONLINE := $(shell (ping -c 1 forge.ocamlcore.org > /dev/null 2>&1 && echo true) || echo false)
@@ -41,7 +42,7 @@ GENERATED_IMG=html/oasis-badge.png html/powered-by-oasis.png html/logo.png
 # Generated files.
 GENERATED_FILE=Makefile.scrape html/robots.txt
 
-all: $(GENERATED_HTML) $(GENERATED_IMG) $(GENERATED_DIR) html/robots.txt marknonlatest
+all: $(GENERATED_HTML) $(GENERATED_IMG) $(foreach d,$(GENERATED_DIR),$d/stamp) html/robots.txt marknonlatest
 
 .PHONY: all
 
@@ -75,8 +76,8 @@ html/%.html: mkd/%.mkd mkd/part-header.html mkd/part-before-body.html mkd/part-a
 # Default linking to stable version.
 html/MANUAL.html: html/MANUAL-$(OASIS_LATEST_VERSION).html
 	cp $< $@
-html/api-oasis: html/api-oasis-$(OASIS_LATEST_VERSION)
-	cp -R $< $@
+html/api-oasis/stamp: html/api-oasis-$(OASIS_LATEST_VERSION)/stamp
+	cp -R $$(dirname $<) $$(dirname $@)
 
 #
 # Convert template file.
@@ -112,11 +113,17 @@ cache/oasis-doc-%.dir/stamp: cache/oasis-doc-%.tar.gz
 	mv cache/oasis-doc-$* $$(dirname $@)
 	touch $@
 
+mkd/MANUAL-0.3.0.mkd: cache/oasis-doc-0.3.0.dir/stamp
+	cp $$(dirname $<)/doc/MANUAL.mkd $@
+	sed -i -e 's,http://omake.metaprl.org,http://omake.metaprl.org/index.html,' $@
+	sed -i -e 's,http://ocaml.info/home/ocaml_sources.html,http://www.ocaml.info/software.html#build_tools,' $@
+
 mkd/MANUAL-%.mkd: cache/oasis-doc-%.dir/stamp
 	cp $$(dirname $<)/doc/MANUAL.mkd $@
 
-html/api-oasis-%: cache/oasis-doc-%.dir/stamp
-	cp -R $$(dirname $<)/api-oasis $@
+html/api-oasis-%/stamp: cache/oasis-doc-%.dir/stamp
+	cp -R $$(dirname $<)/api-oasis $$(dirname $@)
+	touch $@
 
 clean::
 	-$(RM) -r cache/oasis-doc-*.dir
@@ -143,20 +150,22 @@ html/logo.png: INKSCAPEFLAGS=-w 160 -h 150
 # Mark the documentation for version which are not the latest.
 #
 
-marknonlatest: $(GENERATED_HTML)
-	./marknonlatest.py html/api-oasis-*/*.html \
-		--text 'You are not viewing the latest version of the library.' \
-		--link '../api-oasis/index.html'
+MARKNONLATESTARGS=--text 'You are viewing a development version of the library.'
+
+html/api-oasis-dev/marknonlatest.stamp: MARKNONLATESTARGS=--text 'You are viewing a development version of the library.'
+html/api-oasis-$(OASIS_LATEST_VERSION)/marknonlatest.stamp: MARKNONLATESTARGS=--unset
+
+html/api-oasis-%/marknonlatest.stamp: html/api-oasis-%/stamp
+	./marknonlatest.py $$(dirname $@)/*.html $(MARKNONLATESTARGS) --link '../api-oasis/index.html'
+	touch $@
+
+marknonlatest: $(GENERATED_HTML) $(foreach version,$(OASIS_DOC_VERSIONS),html/api-oasis-$(version)/marknonlatest.stamp)
 	./marknonlatest.py html/MANUAL-*.html \
 		--text 'You are not viewing the latest version of the manual.' \
 		--link 'MANUAL.html'
-	./marknonlatest.py html/api-oasis-dev/*.html \
-		--text 'You are viewing a development version of the library.' \
-		--link '../api-oasis/index.html'
 	./marknonlatest.py html/MANUAL-dev.html \
 		--text 'You are viewing a development version of the manual.' \
 		--link 'MANUAL.html'
-	./marknonlatest.py html/api-oasis-$(OASIS_LATEST_VERSION)/*.html --unset
 	./marknonlatest.py html/MANUAL-$(OASIS_LATEST_VERSION).html --unset
 
 .PHONY: marknonlatest
@@ -174,3 +183,15 @@ rollback:
 	fab rollback
 
 .PHONY: deploy rollback
+
+
+#
+# Test quality of the website.
+#
+
+test:
+	linkchecker $(CURDIR)/html/index.html \
+		--ignore-url=^http://d1.scribdassets.com \
+		--ignore-url=^mailto: \
+		--ignore-url=^https://s3.amazonaws.com \
+		--ignore-url=^http://ocsigen.org

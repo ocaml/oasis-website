@@ -4,7 +4,6 @@
 	position: relative;
 	overflow: hidden;
 	border: 1px solid #999;
-	background: #FEFEFE url(../images/spinner-bg.gif) repeat-x left bottom;
 	padding: 0 5px;
 }
 

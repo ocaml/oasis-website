@@ -19,3 +19,6 @@ html/robots.txt
 html/index.html
 *.pyc
 dist/
+html/oasis2debian.html
+html/oasis2opam.html
+mkd/MANUAL-*.mkd

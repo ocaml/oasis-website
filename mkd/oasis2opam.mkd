@@ -1,0 +1,10 @@
+%oasi2opam sub-project
+
+## What is oasis2opan ##
+
+This sub-project aims to create a tool that can automatically translate an
+`_oasis`file into an [OPAM ](http://opam.ocamlpro.com) specification.
+
+## Contribute ##
+
+The source code is on [github](https://github.com/ocaml/oasis2opam)

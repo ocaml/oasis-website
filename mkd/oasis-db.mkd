@@ -7,7 +7,7 @@ This sub-project aims to create a [CPAN][] for OCaml in OCaml. It relies on the
 metadata contained in the `_oasis` files that must be contained in the tarball
 of a project.
 
- [CPAN]: http://cpan.org
+ [CPAN]: http://www.cpan.org/
 
 The project manages packages, which are sets of versioned tarballs of the same
 project. For example, the package `ounit` is the set of tarballs
@@ -18,7 +18,7 @@ You can upload a tarball for a package directly on our [website][] or on the
 [sandbox website][]. It is then checked for a valid `_oasis` file and published. 
 
   [website]: http://oasis.ocamlcore.org
-  [sandbox website]: http://oasis.ocamlcore.org/dev/
+  [sandbox website]: http://oasis.ocamlcore.org/dev/home
 
 Once uploaded, a notification is sent through the website RSS feed. You can
 download the new tarball using a command line tool or directly from the website.
@@ -43,10 +43,10 @@ This project is a joint effort of [Jane Street][] and [OCamlCore][].
  * __Reduce the paperwork to publish a new version of your package.__
 
    Just upload a tarball to the website. OASIS-DB creates a web page, provide a
-   download link and publish an RSS feed aggregated on [OCaml planet][]. 
+   download link and publish an RSS feed aggregated on [OCaml planet][].
 
  * __Integrated library dependencies management.__
- 
+
    OASIS-DB package's web page links to other published projects which are
    required to compile. We also use this feature to create "bundled" tarball
    that can integrate your project, its build dependencies and a script to
@@ -58,39 +58,39 @@ This project is a joint effort of [Jane Street][] and [OCamlCore][].
    your choice, but we also provide a backup of this tarball.
 
  * __Integration with [OCaml forge][].__
- 
+
    If you publish a new version of your project in the forge with a `_oasis`
    file, it is automatically published through OASIS-DB. The login/password
    information of OASIS-DB website are shared with the forge.
 
  * __Integration with GODI and a [cabal-install][] like system.__
- 
+
    To ease the publication of your project, OASIS-DB translates
    `_oasis` files into a GODI alternate repository. Since we also follow
-   the track of [Cabal][], we provide a tool similar to [cabal-install][] as 
+   the track of [Cabal][], we provide a tool similar to [cabal-install][] as
    a proof of concept .
 
  * __Integration with LinkDB, The Hump.__
- 
+
    We will cooperate with these OCaml search engines, by publishing data in a
    format that allows them to easily reuse new version notification.
 
  * __Automatic tracking of off-site packages.__
 
    We use [uscan][] and [DEHS][] ideas to get your package directly from your
-   website. If you are already hosted on github, Google Code or SourceForge, you 
+   website. If you are already hosted on github, Google Code or SourceForge, you
    can create an action that will check for new upstream releases directly on these
    website and publish them automatically on OASIS-DB.
 
  * __Interaction through an API and a command line tools.__
 
-  OASIS-DB is a website and a sub-system of OASIS. The website provide an API to 
+  OASIS-DB is a website and a sub-system of OASIS. The website provide an API to
   manage packages. This API is used by the command line interface to publish and
   download packages from the website.
- 
+
 
  [Cabal]: http://haskell.org/cabal/
- [HackageDB]: http://hackage.haskell.org
+ [HackageDB]: http://hackage.haskell.org/packages/hackage.html
  [cabal-install]: http://www.haskell.org/haskellwiki/Cabal-Install
  [OCaml planet]: http://planet.ocamlcore.org
  [OCaml forge]: http://forge.ocamlcore.org
@@ -113,7 +113,7 @@ projects:
  * We use OASIS to provide information about packages
 
  [Ocsigen]: http://ocsigen.org
- [sexplib]: http://www.ocaml.info/home/ocaml_sources.html#toc10
+ [sexplib]: https://github.com/janestreet/sexplib
 
 
 ## Contribute ##
@@ -124,7 +124,7 @@ product for your submission.
    [bugs]: https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291
    [feature requests]: https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=add
 
-We use darcs to manage our source code. You can 
+We use darcs to manage our source code. You can
 [browse it online](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis/oasis-db;a=summary).
 
 To get a copy of the source tree: 

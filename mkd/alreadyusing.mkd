@@ -20,26 +20,22 @@
   [\_oasis](http://git.ocamlcore.org/cgi-bin/gitweb.cgi?p=ocaml-lua/ocaml-lua.git;a=blob;f=_oasis)
 * [ounit](https://forge.ocamlcore.org/projects/ounit):
   [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ounit;a=headblob;f=/_oasis)
-* [xenops](http://github.com/xen-org/xenops):
-  [\_oasis](http://github.com/xen-org/xenops/blob/master/_oasis)
-* [ocaml-text](https://forge.ocamlcore.org/project/ocaml-text):
-  [\_oasis](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=ocaml-text;a=headblob;f=/_oasis)
-* [ocaml-sqlexpr](http://github.com/mfp/ocaml-sqlexpr): 
-  [\_oasis](http://github.com/mfp/ocaml-sqlexpr/blob/master/_oasis)
-* [activity-reporter](http://github.com/celtic/activity-reporter):
-  [\_oasis](http://github.com/celtic/activity-reporter/blob/master/_oasis)
+* [ocaml-sqlexpr](https://github.com/mfp/ocaml-sqlexpr):
+  [\_oasis](https://github.com/mfp/ocaml-sqlexpr/blob/master/_oasis)
+* [activity-reporter](https://github.com/gildor478/activity-reporter):
+  [\_oasis](https://github.com/gildor478/activity-reporter/blob/master/_oasis)
 * [ocaml-sphinx](http://sphinx.forge.ocamlcore.org/):
   [\_oasis](http://git.ocamlcore.org/cgi-bin/gitweb.cgi?p=sphinx/sphinx.git;a=blob;f=_oasis)
 * [lwt](http://ocsigen.org/lwt/):
   [\_oasis](http://ocsigen.org/lwt/sources/_oasis?view=content)
 * [ANSITerminal](https://forge.ocamlcore.org/projects/ansiterminal/):
   [VCS](https://forge.ocamlcore.org/scm/browser.php?group_id=187)
-* [Sexplib](http://ocaml.janestreet.com/?q=node/13)
-* [Jane Street Core](http://ocaml.janestreet.com/?q=node/13)
-* [Jane Street Core Extended](http://ocaml.janestreet.com/?q=node/13)
-* [Bin_prot](http://ocaml.janestreet.com/?q=node/13)
-* [Fieldslib](http://ocaml.janestreet.com/?q=node/13)
-* [Type-conv](http://ocaml.janestreet.com/?q=node/13)
+* [Sexplib](https://ocaml.janestreet.com/?q=node/13)
+* [Jane Street Core](https://ocaml.janestreet.com/?q=node/13)
+* [Jane Street Core Extended](https://ocaml.janestreet.com/?q=node/13)
+* [Bin_prot](https://ocaml.janestreet.com/?q=node/13)
+ [Fieldslib](https://ocaml.janestreet.com/?q=node/13)
+* [Type-conv](https://ocaml.janestreet.com/?q=node/13)
 
 
 To be added to this list, fill a bug with website as component, "project using
