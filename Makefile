@@ -95,6 +95,7 @@ mkd/%: mkd/%.tmpl
 
 html/robots.txt: tmpl/robots.txt.tmpl
 	$(TEMPLATE_PY) --input "$<" --output "$@"
+
 #
 # Download tarballs.
 #
@@ -177,10 +178,10 @@ marknonlatest: $(GENERATED_HTML) $(foreach version,$(OASIS_DOC_VERSIONS),html/ap
 #
 
 deploy:
-	fab deploy
+	$(FAB) deploy
 
 rollback:
-	fab rollback
+	$(FAB) rollback
 
 .PHONY: deploy rollback
 
