@@ -4,20 +4,31 @@ from fabric.api import run, env, cd, prompt, local, put
 
 import datetime
 import os
+import glob
 
 NOW = datetime.datetime.now()
 NOW_STR = NOW.strftime('%Y-%m-%d-%H%M')
 MAX_AGE = datetime.timedelta(days=10)
 TARGET_DIR = '/home/groups/oasis'
+DIST_DIR = os.path.join(os.getcwd(), 'dist')
 HTDOCS_DN=os.path.join(TARGET_DIR, 'htdocs')
 
 env.hosts = ['ssh.ocamlcore.org']
 env.use_ssh_config = True
 
-def releases():
+def releases(local=False):
   """List releases and their date."""
-  releases = run('ls -1 %s' % (os.path.join(TARGET_DIR,
-                                            'htdocs-*.tar.gz'))).split()
+  dn = TARGET_DIR
+  if local:
+    dn = DIST_DIR
+  glb = os.path.join(dn, 'htdocs-*.tar.gz')
+
+  releases = []
+  if local:
+    releases = glob.glob(glb)
+  else:
+    releases = run('ls -1 %s' % glb).split()
+
   date_releases = []
   for release in releases:
     date = datetime.datetime.strptime(os.path.basename(release),
@@ -31,6 +42,9 @@ def cleanup():
   for (date, release) in releases():
     if NOW - date > MAX_AGE:
       run ('rm "%s"' % release)
+  for (date, release) in releases(local=True):
+    if NOW - date > MAX_AGE:
+      local ('rm "%s"' % release)
 
 def check_short_release_names(short_names, choice):
   if choice in short_names:
@@ -46,9 +60,7 @@ def deploy_release(release_fn):
 
 def deploy():
   release_fn=os.path.join(TARGET_DIR, 'htdocs-' + NOW_STR + '.tar.gz')
-  release_local_fn=os.path.join(os.getcwd(),
-                                'dist',
-                                os.path.basename(release_fn))
+  release_local_fn=os.path.join(DIST_DIR, os.path.basename(release_fn))
   # Check we don't already have this version.
   run('! test -e "%s"' % release_fn)
 
