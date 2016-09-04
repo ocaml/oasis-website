@@ -21,3 +21,23 @@ How to send a patch?
 --------------------
 
 TBD
+
+Why the project doesn't use the Github bug tracker?
+---------------------------------------------------
+
+The OASIS project currently uses the [OCaml Forge bug tracker][1],
+
+GitHub Issue tracker is a very nice tool and OASIS will probably greatly
+benefits from using it. But, the project needs a single bug tracker. This means
+that all bugs from the current bug tracker will have to be migrated to Github.
+It takes time to do this kind of migration and the time spends on this topic
+will not be spent coding.
+
+The project would be glad to see someone stepping in to do the migration or find
+a way to do it automatically.
+
+The migration is about time, as the project is OK to migrate. Currently we have
+a [tracking bug][2] for this migration.
+
+[1]: https://forge.ocamlcore.org/tracker/?group_id=54
+[2]: https://forge.ocamlcore.org/tracker/index.php?func=detail&aid=1669&group_id=54&atid=294
