@@ -13,7 +13,7 @@ TARGET_DIR = '/home/groups/oasis'
 DIST_DIR = os.path.join(os.getcwd(), 'dist')
 HTDOCS_DN=os.path.join(TARGET_DIR, 'htdocs')
 
-env.hosts = ['ssh.ocamlcore.org']
+env.hosts = ['ssh.ocamlcore.org:522']
 env.use_ssh_config = True
 
 def releases(local=False):
