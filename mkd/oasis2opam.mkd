@@ -3,7 +3,7 @@
 ## What is oasis2opan ##
 
 This sub-project aims to create a tool that can automatically translate an
-`_oasis`file into an [OPAM ](http://opam.ocamlpro.com) specification.
+`_oasis`file into an [OPAM](http://opam.ocamlpro.com) specification.
 
 ## Contribute ##
 
