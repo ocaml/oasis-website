@@ -14,6 +14,44 @@ How to report a bug?
 
 TBD
 
+How to create a string flag?<a name="string-flag"></a>
+----------------------------
+
+Flag in `_oasis` are only boolean. As of OASIS 0.4.7, there is no way to define
+a string flag. A string flag, can be useful when you want e.g.
+`CCOpt: -D $(STR)`.
+
+The reason why this has not been done are:
+* boolean flags are easy to switch on and off to test various branches, which
+  can allow auto exploration for the package.
+* string flags would require a way to validate them, make sure that quoting
+  is correct when they are used in substitution.
+* string flags are easily implementable directly in `setup.ml`.
+
+The quick solution to have a string flag `FOO` is to add the following code to
+`setup.ml`:
+
+    (* OASIS_STOP *)
+    let _ = BaseEnv.var_define "FOO" (fun _ -> "123");;
+    let () = setup ();;
+
+This can be used like this:
+
+    Executable "opam-build-revdeps"
+      Path: src/bin/opam-build-revdeps
+      MainIs: OPAMBuildRevdeps.ml
+      CompiledObject: best
+      CCOpt:-D $(FOO)
+
+
+The value of the flag `FOO` can be set through command line and environment
+variable.
+
+This [bug][string-flag-1] tracks the progress and discussion around this topic.
+
+[string-flag-1]: https://forge.ocamlcore.org/tracker/?group_id=54&atid=294&func=detail&aid=851
+
+
 Developing OASIS
 ================
 
@@ -22,7 +60,7 @@ How to send a patch?
 
 TBD
 
-Why the project doesn't use the Github bug tracker?
+Why the project doesn't use the Github bug tracker?<a name="github-tracker"></a>
 ---------------------------------------------------
 
 The OASIS project currently uses the [OCaml Forge bug tracker][1],
@@ -37,7 +75,8 @@ The project would be glad to see someone stepping in to do the migration or find
 a way to do it automatically.
 
 The migration is about time, as the project is OK to migrate. Currently we have
-a [tracking bug][2] for this migration.
+a [tracking bug][github-tracker-2] for this migration.
 
-[1]: https://forge.ocamlcore.org/tracker/?group_id=54
-[2]: https://forge.ocamlcore.org/tracker/index.php?func=detail&aid=1669&group_id=54&atid=294
+[github-tracker-1]: https://forge.ocamlcore.org/tracker/?group_id=54
+[github-tracker-2]: https://forge.ocamlcore.org/tracker/index.php?func=detail&aid=1669&group_id=54&atid=294
+
