@@ -1,6 +1,22 @@
 %OASIS-DB sub-project
 %author Sylvain Le Gall
 
+<div style="color: red;
+           font-weight: bold;
+           text-align: center;
+           width: 80%;
+           background: white;
+           border: solid 2px red;
+           margin-top: 0.5em;
+           margin-left: auto;
+           margin-right: auto;">
+  <p>
+  This sub-project is
+  <a href="https://forge.ocamlcore.org/forum/forum.php?forum_id=959">deprecated</a>
+  since 2017-01-27
+  </p>
+</div>
+
 ## What is OASIS-DB ##
 
 This sub-project aims to create a [CPAN][] for OCaml in OCaml. It relies on the
@@ -114,30 +130,3 @@ projects:
 
  [Ocsigen]: http://ocsigen.org
  [sexplib]: https://github.com/janestreet/sexplib
-
-
-## Contribute ##
-
-You can submit [bugs][] and [feature requests][]. Just use the OASIS-DB
-product for your submission.
-
-   [bugs]: https://forge.ocamlcore.org/tracker/?func=add&group_id=54&atid=291
-   [feature requests]: https://forge.ocamlcore.org/tracker/?atid=294&group_id=54&func=add
-
-We use darcs to manage our source code. You can
-[browse it online](http://darcs.ocamlcore.org/cgi-bin/darcsweb.cgi?r=oasis/oasis-db;a=summary).
-
-To get a copy of the source tree: 
-
-    $> darcs get http://darcs.ocamlcore.org/repos/oasis-db
-
-To send back patches using darcs:
-
-    $> darcs send --to oasis-devel@lists.forge.ocamlcore.org 
-
-To update the source code with the latest available version:
-
-    $> darcs pull http://darcs.ocamlcore.org/repos/oasis-db
-
-Further documentation about darcs on [darcs.net](http://darcs.net/manual/).
-
