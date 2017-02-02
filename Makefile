@@ -13,7 +13,7 @@ ONLINE := $(shell (ping -c 1 forge.ocamlcore.org > /dev/null 2>&1 && echo true) 
 FORGE_PAGE := "http://forge.ocamlcore.org/frs/?group_id=54"
 
 # Dev documetation link.
-DEV_DOC_URL := "file:///$(shell pwd)/oasis-doc-dev.tar.gz"
+DEV_DOC_URL := "file://$(shell pwd)/oasis-doc-dev.tar.gz"
 
 default: all
 
